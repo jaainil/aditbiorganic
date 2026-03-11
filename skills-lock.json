@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "computedHash": "6412eb4eb3b91595ebab937f0c69501240e7ba761b3d82510b5cf506ec5c7adc"
+    },
+    "react-aria": {
+      "source": "react-aria.adobe.com",
+      "sourceType": "well-known",
+      "computedHash": "88f92384476cee8ab0a588b8e6fb7e759bbf952ccdcd5080522a27a12312ed9c"
+    },
+    "react-expert": {
+      "source": "reactjs/react.dev",
+      "sourceType": "github",
+      "computedHash": "e53cc1a286987b7f28ba5cdd29e8ebacdde0d5822d40e938652fec8c47f33efa"
+    }
+  }
+}
