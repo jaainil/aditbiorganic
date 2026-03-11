@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "persona": "E1",
+    "mission": "Create a premium, high-trust B2B organic fertilizer brand that blends industrial reliability with natural vitality.",
+    "principles": [
+      "Fusion over Imitation: Mix Corporate Reliability (structure) with Organic Warmth (texture/color).",
+      "Emotion First: Evoke 'Growth' and 'Stability'.",
+      "Content is King: Every section must build trust for a B2B distributor partnership.",
+      "Zoom In: specific details of granules/leaves to show quality.",
+      "Negative Space: Luxury = Space. Don't crowd the data."
+    ],
+    "anti_patterns": [
+      "No 'Generic Farm' Clichés (clipart tractors, cartoon plants).",
+      "No Purple/Teal gradients (keep it earthy/industrial).",
+      "No 'Boring Grids' (use Bento or asymmetric layouts).",
+      "No 'Center-Everything' (use strong left alignment for corporate feel)."
+    ]
+  },
+  "brand_strategy": {
+    "archetype": "The Performance Pro (Industrial/Science) + Organic & Earthy (Nature)",
+    "tone": "Professional, Scientific, Established, Sustainable.",
+    "target_audience": "B2B Distributors, Fertilizer Brands, Large Scale Agriculture.",
+    "key_goals": "Phone Calls, Distributor Inquiries, Product Catalog Downloads."
+  },
+  "design_system": {
+    "colors": {
+      "palette": {
+        "primary": {
+          "name": "Deep Forest",
+          "value": "#1B4D3E",
+          "usage": "Headers, Primary Buttons, Strong Branding Elements",
+          "description": "Represents established growth, trust, and nature."
+        },
+        "secondary": {
+          "name": "Industrial Earth",
+          "value": "#8D7F71",
+          "usage": "Subheadings, Borders, Secondary Actions",
+          "description": "A grounded, mineral-rich earth tone. Not too soft."
+        },
+        "accent": {
+          "name": "Harvest Gold",
+          "value": "#D97706",
+          "usage": "CTAs, Highlights, 'New' Badges, Conversion points",
+          "description": "Energy, high-value yield, premium quality."
+        },
+        "background": {
+          "base": "#F9F9F7",
+          "surface": "#FFFFFF",
+          "subtle": "#F2F2F0"
+        },
+        "text": {
+          "primary": "#1A1A1A",
+          "secondary": "#4A4A4A",
+          "muted": "#71717A"
+        },
+        "status": {
+            "success": "#15803d",
+            "error": "#b91c1c",
+            "warning": "#b45309"
+        }
+      },
+      "rules": [
+        "Never use pure black (#000000). Use #1A1A1A.",
+        "Use the 'Deep Forest' green sparingly for impact, not as a background for text unless needed for a specific dark section.",
+        "Ensure all text on colored backgrounds meets WCAG AA contrast."
+      ]
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Outfit, sans-serif",
+        "body": "Manrope, sans-serif",
+        "accents": "Playfair Display, serif (Use sparingly for testimonials or 'Our Story' quotes)"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tight",
+        "h2": "text-4xl md:text-5xl font-semibold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-medium",
+        "body_lg": "text-lg md:text-xl leading-relaxed",
+        "body_base": "text-base leading-relaxed text-secondary"
+      },
+      "rules": [
+        "Headings must be 'Outfit'. It creates a modern, geometric, industrial feel.",
+        "Body text must be 'Manrope' for excellent legibility at small sizes.",
+        "Use tight tracking (-0.02em) on large headings.",
+        "Use relaxed leading (1.6) on body text."
+      ]
+    },
+    "spacing": {
+      "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      "section_padding": "py-20 md:py-32",
+      "element_gap": "gap-8 md:gap-12",
+      "rules": [
+        "Use generous whitespace. B2B luxury comes from breathing room.",
+        "Double the standard padding for cards (p-8 instead of p-4)."
+      ]
+    },
+    "shapes_and_surfaces": {
+      "border_radius": {
+        "buttons": "rounded-full",
+        "cards": "rounded-2xl",
+        "inputs": "rounded-lg"
+      },
+      "shadows": {
+        "card": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+        "hover": "shadow-[0_8px_30px_rgb(0,0,0,0.12)]",
+        "dropdown": "shadow-xl border border-gray-100"
+      },
+      "borders": "1px solid #E5E7EB (gray-200) for structural lines."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#1B4D3E] text-white hover:bg-[#143d30] hover:shadow-lg transition-all duration-300 font-medium px-8 py-3 rounded-full",
+      "secondary": "bg-white text-[#1B4D3E] border border-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white transition-all duration-300 px-8 py-3 rounded-full",
+      "accent": "bg-[#D97706] text-white hover:bg-[#b45309] hover:shadow-lg px-8 py-3 rounded-full font-bold uppercase tracking-wide text-sm"
+    },
+    "cards": {
+      "feature": "bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-gray-100 group",
+      "product": "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100"
+    },
+    "inputs": {
+      "default": "bg-[#F9F9F7] border-gray-200 focus:border-[#1B4D3E] focus:ring-[#1B4D3E] rounded-lg h-12 px-4"
+    },
+    "navigation": {
+        "header": "bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50",
+        "footer": "bg-[#1B4D3E] text-white py-20"
+    }
+  },
+  "layout_strategies": {
+    "bento_grid": "Use grid-cols-1 md:grid-cols-3 gap-6 for feature showcases. Span items (col-span-2) to create visual interest.",
+    "asymmetry": "Avoid perfect centering. Use split layouts (Text Left / Image Right) with offset vertical alignment.",
+    "overlap": "Allow images to overlap sections or cards to overlap images to create depth (z-index layering)."
+  },
+  "images": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1758873115221-9a27e7090614?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Modern sustainable agriculture, lush green fields",
+      "usage": "Full width hero background or large split-screen image"
+    },
+    "factory": {
+      "url": "https://images.unsplash.com/photo-1678984239754-75191344a9ce?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Fertilizer manufacturing plant exterior",
+      "usage": "About Us or Infrastructure section"
+    },
+    "product_closeups": [
+        {
+            "url": "https://images.unsplash.com/photo-1581625458995-7989d049a1b3?crop=entropy&cs=srgb&fm=jpg&q=85",
+            "alt": "Close up of organic fertilizer granules",
+            "usage": "Product feature cards"
+        },
+        {
+             "url": "https://images.unsplash.com/photo-1581625458990-343ee0613bb8?crop=entropy&cs=srgb&fm=jpg&q=85",
+             "alt": "Hands holding rich soil",
+             "usage": "Sustainability or Quality section"
+        }
+    ],
+    "lab_quality": {
+      "url": "https://images.unsplash.com/photo-1707944745880-5c8a64617458?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Microscope in laboratory",
+      "usage": "Quality Control / R&D section"
+    },
+    "team_corporate": {
+      "url": "https://images.unsplash.com/photo-1758518730384-be3d205838e8?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Business handshake",
+      "usage": "Partnership / B2B Distributor CTA"
+    },
+     "certifications": [
+         {
+             "url": "https://images.unsplash.com/photo-1695370992816-3c5bb771e4b2?crop=entropy&cs=srgb&fm=jpg&q=85",
+             "alt": "Eco Friendly Certification Concept",
+             "usage": "Footer or Trust signals"
+         }
+     ]
+  },
+  "content_strategy": {
+    "headlines": "Strong, benefit-driven. Example: 'Powering India's Harvest with Organic Science.'",
+    "ctas": "Clear action. 'Become a Distributor', 'Download Product Catalog', 'Get a Quote'.",
+    "trust_signals": "Highlight ISO certifications, '10+ Years Experience', 'Trusted by 500+ Farmers' prominently."
+  },
+  "universal_guidelines": [
+    "Use 'sonner' for toasts.",
+    "Components MUST use named exports.",
+    "Pages MUST use default exports.",
+    "Do NOT use 'Inter' for headings. Use 'Outfit'.",
+    "Do NOT use generic gradients. Use solid, deep colors.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Use lucide-react for icons.",
+    "Use framer-motion for subtle entrance animations (fade-up)."
+  ],
+  "instructions_to_main_agent": "Implement the design using the specified colors and fonts. Override the default Tailwind config with the 'Deep Forest' palette. Build a custom 'Sticky Header' and a 'Mega Footer'. Use the 'Bento Grid' for the Services section. Ensure the 'Contact Us' form is prominent and high-contrast."
+}
