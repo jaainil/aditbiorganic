@@ -181,9 +181,9 @@ export const BlogPage = () => (
           </h2>
         </div>
         <div className="grid gap-6 lg:grid-cols-3">
-          {audienceCards.map((card, i) => (
+          {audienceCards.map((card) => (
             <div
-              key={i}
+              key={card.title}
               className="group overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
             >
               <div className="relative h-44 overflow-hidden">

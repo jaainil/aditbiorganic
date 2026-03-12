@@ -327,8 +327,8 @@ const HomePage = () => (
         <div className="flex gap-0">
           {/* First copy */}
           <div className="flex shrink-0 animate-[marquee_35s_linear_infinite] items-center gap-0">
-            {[...productTicker, ...productTicker].map((p, i) => (
-              <div key={i} className="flex shrink-0 items-center gap-4 px-6">
+            {[...productTicker, ...productTicker].map((p) => (
+              <div key={`ticker-1-${p.name.replace(/\s/g, '-')}-${Math.random().toString(36).slice(2)}`} className="flex shrink-0 items-center gap-4 px-6">
                 <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-border bg-surface-card p-2 shadow-sm">
                   <img src={p.img} alt={p.name} className="h-full w-full object-contain" loading="lazy" />
                 </div>
@@ -339,8 +339,8 @@ const HomePage = () => (
           </div>
           {/* Duplicate for seamless loop */}
           <div aria-hidden className="flex shrink-0 animate-[marquee_35s_linear_infinite] items-center gap-0">
-            {[...productTicker, ...productTicker].map((p, i) => (
-              <div key={i} className="flex shrink-0 items-center gap-4 px-6">
+            {[...productTicker, ...productTicker].map((p) => (
+              <div key={`ticker-2-${p.name.replace(/\s/g, '-')}-${Math.random().toString(36).slice(2)}`} className="flex shrink-0 items-center gap-4 px-6">
                 <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-border bg-surface-card p-2 shadow-sm">
                   <img src={p.img} alt={p.name} className="h-full w-full object-contain" loading="lazy" />
                 </div>
@@ -444,8 +444,8 @@ const HomePage = () => (
             With over a decade of manufacturing experience, we operate 24/7 to produce advanced organic granular fertilizers. Our state-of-the-art facilities and robust R&D allow us to create customized, eco-friendly solutions that improve soil health and boost farm productivity nationwide.
           </p>
           <div className="grid gap-3">
-            {partnerBenefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/5 p-4">
+            {partnerBenefits.map((benefit) => (
+              <div key={benefit} className="flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/5 p-4">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <p className="text-sm leading-7 text-white/85">{benefit}</p>
               </div>
@@ -496,8 +496,8 @@ const HomePage = () => (
         </div>
         <Carousel opts={{ align: "start", loop: true }} className="w-full">
           <CarouselContent className="-ml-6 items-stretch">
-            {products.map((product, index) => (
-              <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
+            {products.map((product) => (
+              <CarouselItem key={product.slug} className="pl-6 md:basis-1/2 lg:basis-1/3">
                 <Link
                   to={`/products/${product.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
@@ -580,8 +580,8 @@ const HomePage = () => (
         </Button>
       </div>
       <div className="grid gap-6 lg:grid-cols-3">
-        {insightPosts.map((post, index) => (
-          <InsightCard key={index} post={post} index={index} />
+        {insightPosts.map((post) => (
+          <InsightCard key={post.title} post={post} index={insightPosts.indexOf(post)} />
         ))}
       </div>
     </section>
@@ -600,8 +600,8 @@ const HomePage = () => (
             Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.
           </p>
           <div className="grid gap-4">
-            {partnerBenefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-3 rounded-[24px] border border-white/10 bg-white/5 p-5">
+            {partnerBenefits.map((benefit) => (
+              <div key={benefit} className="flex items-start gap-3 rounded-[24px] border border-white/10 bg-white/5 p-5">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <p className="text-sm leading-7 text-white/80">{benefit}</p>
               </div>

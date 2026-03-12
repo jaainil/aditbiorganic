@@ -80,14 +80,14 @@ export const ProductsPage = () => (
           </div>
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Recipe Granules Built Around Partner Requirements</h2>
           <div className="grid gap-4">
-            {productHighlights.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 rounded-[24px] border border-border bg-surface-card p-5">
-                <svg className="mt-1 h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <p className="text-sm leading-7 text-muted-foreground">{item}</p>
-              </div>
-            ))}
+          {productHighlights.map((item) => (
+            <div key={item.slice(0, 20)} className="flex items-start gap-3 rounded-[24px] border border-border bg-surface-card p-5">
+              <svg className="mt-1 h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <p className="text-sm leading-7 text-muted-foreground">{item}</p>
+            </div>
+          ))}
           </div>
         </div>
       </div>

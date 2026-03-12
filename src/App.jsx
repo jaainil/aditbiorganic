@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "next-themes";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
 import { SiteShell } from "@/components/SiteShell";
 import { Toaster } from "@/components/ui/sonner";
@@ -16,10 +16,14 @@ import { ContactPage } from "@/pages/ContactPage";
 import { HomePage } from "@/components/HomePage";
 
 const ScrollToTop = () => {
-  const { pathname } = window.location;
+  const { pathname } = useLocation();
+  const savedPathNameRef = useRef(pathname);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (savedPathNameRef.current !== pathname) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      savedPathNameRef.current = pathname;
+    }
   }, [pathname]);
 
   return null;

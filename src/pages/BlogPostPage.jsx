@@ -8,18 +8,24 @@ import { organizationSchema, buildBlogPostingSchema } from "@/data/seoSchemas";
 
 /** Prose component map — styles raw MDX output to match site design */
 const mdxComponents = {
-  h2: (props) => (
-    <h2
-      className="font-heading mt-10 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl first:mt-0"
-      {...props}
-    />
-  ),
-  h3: (props) => (
-    <h3
-      className="font-heading mt-8 text-xl font-semibold text-foreground"
-      {...props}
-    />
-  ),
+  h2: (props) => {
+    const { children, ...rest } = props;
+    return (
+      <h2
+        className="font-heading mt-10 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl first:mt-0"
+        {...rest}
+      >{children}</h2>
+    );
+  },
+  h3: (props) => {
+    const { children, ...rest } = props;
+    return (
+      <h3
+        className="font-heading mt-8 text-xl font-semibold text-foreground"
+        {...rest}
+      >{children}</h3>
+    );
+  },
   p: (props) => (
     <p className="mt-5 text-base leading-8 text-muted-foreground" {...props} />
   ),

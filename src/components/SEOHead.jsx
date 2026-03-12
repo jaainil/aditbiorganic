@@ -142,8 +142,8 @@ export function SEOHead({
           {article.section && (
             <meta property="article:section" content={article.section} />
           )}
-          {article.tags?.map((tag, i) => (
-            <meta key={i} property="article:tag" content={tag} />
+          {article.tags?.map((tag) => (
+            <meta key={tag} property="article:tag" content={tag} />
           ))}
         </>
       )}
@@ -172,10 +172,10 @@ export function SEOHead({
       <meta name="twitter:image" content={ogImageUrl} />
       <meta name="twitter:image:alt" content={ogImageAlt} />
       <meta name="twitter:domain" content="aditbiorganic.com" />
-
+      
       {/* ── JSON-LD Structured Data ── */}
-      {schemas.map((s, i) => (
-        <script key={i} type="application/ld+json">
+      {schemas.map((s) => (
+        <script key={JSON.stringify(s)} type="application/ld+json">
           {JSON.stringify(s, null, 0)}
         </script>
       ))}

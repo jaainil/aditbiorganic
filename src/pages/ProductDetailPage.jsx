@@ -173,8 +173,8 @@ export const ProductDetailPage = () => {
           </div>
 
           <div className="mt-10 lg:mt-0 space-y-6">
-            {product.description.split("\n\n").map((para, i) => (
-              <p key={i} className="text-base leading-8 text-muted-foreground">
+            {product.description.split("\n\n").map((para) => (
+              <p key={para.slice(0, 30)} className="text-base leading-8 text-muted-foreground">
                 {para}
               </p>
             ))}

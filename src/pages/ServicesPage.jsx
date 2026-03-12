@@ -202,8 +202,8 @@ export const ServicesPage = () => (
             { value: "24/7", label: "Round-the-Clock Operations" },
             { value: "ISO", label: "9001:2015 Certified Lab" },
             { value: "7+", label: "End-to-End Services" },
-          ].map((stat, i) => (
-            <div key={i} className="group text-center">
+          ].map((stat) => (
+            <div key={stat.label} className="group text-center">
               <p className="font-heading text-5xl font-bold text-white">{stat.value}</p>
               <p className="mt-2 text-base text-white/80">{stat.label}</p>
               <div className="mx-auto mt-3 h-0.5 w-10 rounded-full bg-accent/60 transition-all duration-300 group-hover:w-16" />

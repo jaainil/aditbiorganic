@@ -172,8 +172,8 @@ export const AboutPage = () => (
     <section className="bg-secondary py-14 lg:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((s, i) => (
-            <div key={i} className="group text-center">
+          {stats.map((s) => (
+            <div key={s.label} className="group text-center">
               <p className="font-heading text-5xl font-bold text-white">
                 {s.value}
                 {s.unit && <span className="text-accent ml-1 text-3xl">{s.unit}</span>}
@@ -303,9 +303,9 @@ export const AboutPage = () => (
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {expertiseItems.map((item, i) => (
+        {expertiseItems.map((item) => (
           <div
-            key={i}
+            key={item.title}
             className="group flex flex-col rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
           >
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
@@ -323,16 +323,16 @@ export const AboutPage = () => (
     <section className="overflow-hidden border-y border-border bg-secondary py-6">
       <div className="flex gap-0 animate-none">
         <div className="flex shrink-0 animate-[marquee_28s_linear_infinite] items-center gap-0">
-          {[...pillars, ...pillars].map((p, i) => (
-            <span key={i} className="flex items-center gap-4 px-6 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+          {[...pillars, ...pillars].map((p) => (
+            <span key={`marquee-p1-${p.replace(/\s/g, '-')}-${Math.random().toString(36).slice(2)}`} className="flex items-center gap-4 px-6 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               {p}
             </span>
           ))}
         </div>
         <div aria-hidden className="flex shrink-0 animate-[marquee_28s_linear_infinite] items-center gap-0">
-          {[...pillars, ...pillars].map((p, i) => (
-            <span key={i} className="flex items-center gap-4 px-6 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+          {[...pillars, ...pillars].map((p) => (
+            <span key={`marquee-p2-${p.replace(/\s/g, '-')}-${Math.random().toString(36).slice(2)}`} className="flex items-center gap-4 px-6 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               {p}
             </span>
@@ -361,8 +361,8 @@ export const AboutPage = () => (
             {/* Timeline */}
             <div className="relative space-y-0 pl-6">
               <div className="absolute left-[11px] top-2 h-[calc(100%-1rem)] w-0.5 bg-gradient-to-b from-primary/60 via-primary/20 to-transparent" />
-              {milestones.map((m, i) => (
-                <div key={i} className="relative flex gap-6 pb-8 last:pb-0">
+              {milestones.map((m) => (
+                <div key={m.title} className="relative flex gap-6 pb-8 last:pb-0">
                   <div className="absolute -left-6 flex h-6 w-6 items-center justify-center rounded-full border-2 border-primary bg-surface-card shadow-sm">
                     <div className="h-2 w-2 rounded-full bg-primary" />
                   </div>
@@ -409,8 +409,8 @@ export const AboutPage = () => (
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-3">
-        {infrastructureItems.map((item, i) => (
-          <div key={i} className="group overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]">
+        {infrastructureItems.map((item) => (
+          <div key={item.title} className="group overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]">
             <div className="relative h-52 overflow-hidden">
               <img
                 src={item.img}
@@ -463,9 +463,9 @@ export const AboutPage = () => (
               desc: "With a 190+ MT/day capacity, ISO-certified quality, and decades of manufacturing discipline, we are the trusted B2B backbone for leading fertilizer brands across India.",
               cta: { label: "Partner with us", href: "/contact" },
             },
-          ].map((item, i) => (
+          ].map((item) => (
             <div
-              key={i}
+              key={item.badge}
               className="group flex flex-col overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
             >
               <div className="relative h-48 overflow-hidden">
@@ -525,8 +525,8 @@ export const AboutPage = () => (
               { title: "Strict Quality Assurance", desc: "ISO certified testing for every batch produced" },
               { title: "Custom Formulations", desc: "Tailored nutrient solutions for your specific needs" },
               { title: "High-Volume Capacity", desc: "190+ MT/day to meet even the largest orders" },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-3 rounded-[20px] border border-border bg-surface-card p-4">
+            ].map((item) => (
+              <div key={item.title} className="flex gap-3 rounded-[20px] border border-border bg-surface-card p-4">
                 <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-accent/20">
                   <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />

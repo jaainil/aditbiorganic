@@ -229,7 +229,7 @@ export const ContactPage = () => (
               </div>
             </div>
             <Button asChild className="w-fit h-11 rounded-full bg-primary px-6 text-white hover:bg-primary/90">
-              <a href="https://maps.google.com/?q=Adas,Anand,Gujarat,388305" target="_blank" rel="noopener noreferrer">
+              <a href="https://maps.app.goo.gl/46AzcF1tCehVLQGNA" target="_blank" rel="noopener noreferrer">
                 Open in Google Maps
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -237,15 +237,18 @@ export const ContactPage = () => (
           </div>
 
           {/* Embedded map */}
-          <div className="relative min-h-[340px] lg:min-h-0">
-            <iframe
-              title="Adit Biorganic Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.2!2d72.9!3d22.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e0b0b0b0b0b%3A0x0!2sAdas%2C%20Anand%2C%20Gujarat%20388305!5e0!3m2!1sen!2sin!4v1"
-              className="absolute inset-0 h-full w-full border-0"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="embed-map-responsive relative w-full" style={{ paddingBottom: '66.66666666666666%' }}>
+            <div className="embed-map-container overflow-hidden bg-none absolute top-0 left-0 w-full h-full">
+              <iframe
+                className="embed-map-frame absolute top-0 left-0 w-full h-full border-0"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight="0"
+                marginWidth="0"
+                src="https://maps.google.com/maps?width=600&height=400&hl=en&q=ADIT%20PVT%20LTD&t=h&z=17&ie=UTF8&iwloc=B&output=embed"
+                title="Adit Biorganic Location"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -262,8 +265,8 @@ export const ContactPage = () => (
         </h2>
       </div>
       <div className="mx-auto max-w-4xl grid gap-4">
-        {faqs.map((faq, i) => (
-          <div key={i} className="rounded-[24px] border border-border bg-surface-card p-7 shadow-[0_8px_30px_rgba(16,24,40,0.04)]">
+        {faqs.map((faq) => (
+          <div key={faq.q} className="rounded-[24px] border border-border bg-surface-card p-7 shadow-[0_8px_30px_rgba(16,24,40,0.04)]">
             <p className="font-heading text-lg font-semibold text-foreground">{faq.q}</p>
             <p className="mt-3 text-sm leading-7 text-muted-foreground">{faq.a}</p>
           </div>
