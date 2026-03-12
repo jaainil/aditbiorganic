@@ -306,7 +306,7 @@ const HomePage = () => (
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-4">
+        <CarouselContent className="-ml-6">
           {[
             { name: "Mineral Base Granules", image: "/images/products/mineral-base-granules.png" },
             { name: "Bio-Fertilizer Base Granules", image: "/images/products/bio-fertilizer-base-granules.png" },
@@ -317,22 +317,24 @@ const HomePage = () => (
             { name: "Organic Base Granules", image: "/images/products/organic-base-granules.png" },
             { name: "Base Granules", image: "/images/products/base-granules.png" },
           ].map((product, index) => (
-            <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="group relative overflow-hidden rounded-[32px] border border-border bg-white p-8 shadow-[0_12px_40px_rgba(16,24,40,0.05)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_24px_70px_rgba(16,24,40,0.1)] h-full">
-                <div className="flex aspect-[4/3] items-center justify-center rounded-[24px] bg-muted/50 p-6">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="h-full w-full object-contain"
-                  />
+            <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
+              <div className="group relative h-full min-h-[420px] rounded-[32px] bg-white p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)]">
+                <div className="flex flex-col h-full">
+                  <div className="flex-1 overflow-hidden rounded-[24px]">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="mt-6 font-heading text-xl font-semibold text-foreground text-center">{product.name}</h3>
                 </div>
-                <h3 className="mt-6 font-heading text-xl font-semibold text-foreground text-center">{product.name}</h3>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="-left-5 top-1/2 -translate-y-1/2" />
-        <CarouselNext className="-right-5 top-1/2 -translate-y-1/2" />
+        <CarouselPrevious className="-left-6 top-1/2 -translate-y-1/2" />
+        <CarouselNext className="-right-6 top-1/2 -translate-y-1/2" />
       </Carousel>
     </section>
 
