@@ -24,6 +24,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Toaster } from "@/components/ui/sonner";
 import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
   company,
   companyPillars,
   expertiseCards,
@@ -272,6 +279,61 @@ const HomePage = () => (
           <MetricCard key={item.value} item={item} index={index} />
         ))}
       </div>
+    </section>
+
+    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="mb-10 flex flex-col gap-5 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            Our Products
+          </div>
+          <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            Premium Granular Products
+          </h2>
+          <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+            High-quality base granules engineered for consistent performance and sustainable agriculture.
+          </p>
+        </div>
+        <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white shrink-0" data-testid="home-products-link-button">
+          <Link to="/products">View All Products</Link>
+        </Button>
+      </div>
+      
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-4">
+          {[
+            { name: "Mineral Base Granules", image: "/images/products/mineral-base-granules.png" },
+            { name: "Bio-Fertilizer Base Granules", image: "/images/products/bio-fertilizer-base-granules.png" },
+            { name: "Bio-Stimulant Base Granules", image: "/images/products/bio-stimulant-base-granules.png" },
+            { name: "Mix Micro Base Granules", image: "/images/products/mix-micro-base-granules.png" },
+            { name: "Bio-Pesticide Base Granules", image: "/images/products/bio-pesticide-base-granules.png" },
+            { name: "Pesticide Base Granules", image: "/images/products/pesticide-base-granules.png" },
+            { name: "Organic Base Granules", image: "/images/products/organic-base-granules.png" },
+            { name: "Base Granules", image: "/images/products/base-granules.png" },
+          ].map((product, index) => (
+            <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="group relative overflow-hidden rounded-[32px] border border-border bg-white p-8 shadow-[0_12px_40px_rgba(16,24,40,0.05)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_24px_70px_rgba(16,24,40,0.1)] h-full">
+                <div className="flex aspect-[4/3] items-center justify-center rounded-[24px] bg-muted/50 p-6">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <h3 className="mt-6 font-heading text-xl font-semibold text-foreground text-center">{product.name}</h3>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="-left-5 top-1/2 -translate-y-1/2" />
+        <CarouselNext className="-right-5 top-1/2 -translate-y-1/2" />
+      </Carousel>
     </section>
 
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
