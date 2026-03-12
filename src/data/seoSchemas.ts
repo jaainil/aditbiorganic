@@ -17,12 +17,13 @@ const OG_IMAGE_URL = `${SITE_URL}/og-image.png`;
 // ─── Schema.org Type Definitions ───────────────────────────────────────────────
 
 interface SchemaBase {
-  "@context": string;
+  "@context"?: string;
   "@type": string | string[];
 }
 
 interface ImageObject {
   "@type": "ImageObject";
+  "@id"?: string;
   url: string;
   width?: number;
   height?: number;

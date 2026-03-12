@@ -8,7 +8,7 @@ const iconMap = {
   flask: FlaskConical,
 };
 
-export const ExpertiseCard = ({ card, index }) => {
+export const ExpertiseCard = ({ card }) => {
   const Icon = iconMap[card.icon] || BadgeCheck;
   return (
     <Card className="group h-full rounded-[28px] border-border bg-surface-card/95 shadow-[0_10px_40px_rgba(16,24,40,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(16,24,40,0.1)]">

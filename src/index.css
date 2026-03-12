@@ -9,6 +9,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
+  /* Widen the content container from 1280px → 1440px */
+  --width-7xl: 90rem;
+
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
 

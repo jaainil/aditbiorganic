@@ -22,6 +22,33 @@ const DEFAULT_KEYWORDS =
  *   article      {object}   Article meta: { publishedTime, modifiedTime, author, section, tags[] }
  *   product      {object}   Product meta: { price, currency, availability }
  */
+interface ArticleMeta {
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  section?: string;
+  tags?: string[];
+}
+
+interface ProductMeta {
+  price?: string;
+  currency?: string;
+  availability?: string;
+}
+
+interface SEOHeadProps {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  keywords?: string;
+  schema?: object | object[];
+  noindex?: boolean;
+  article?: ArticleMeta;
+  product?: ProductMeta;
+}
+
 export function SEOHead({
   title,
   description,
@@ -33,7 +60,7 @@ export function SEOHead({
   noindex = false,
   article,
   product,
-}) {
+}: SEOHeadProps) {
   const fullTitle = title
     ? `${title} | Adit Biorganic — India's #1 B2B Organic Fertilizer Manufacturer`
     : "Adit Biorganic — India's #1 B2B Organic Fertilizer Granule Manufacturer | Anand, Gujarat";

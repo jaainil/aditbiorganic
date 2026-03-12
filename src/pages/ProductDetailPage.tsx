@@ -17,7 +17,7 @@ export const ProductDetailPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const product = getProductBySlug(slug);
-  const related = getRelatedProducts(slug, 3);
+  const related = getRelatedProducts(slug).slice(0, 3);
 
   useEffect(() => {
     if (!product) {
@@ -231,7 +231,7 @@ export const ProductDetailPage = () => {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-          {product.benefits.map((benefit, index) => (
+          {product.benefits.map((benefit) => (
             <div
               key={benefit.title}
               className="flex gap-5 rounded-[28px] border border-border bg-surface-card p-7 transition hover:shadow-[0_16px_48px_rgba(16,24,40,0.06)]"

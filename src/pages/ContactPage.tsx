@@ -243,8 +243,8 @@ export const ContactPage = () => (
                 className="embed-map-frame absolute top-0 left-0 w-full h-full border-0"
                 frameBorder="0"
                 scrolling="no"
-                marginHeight="0"
-                marginWidth="0"
+                marginHeight={0}
+                marginWidth={0}
                 src="https://maps.google.com/maps?width=600&height=400&hl=en&q=ADIT%20PVT%20LTD&t=h&z=17&ie=UTF8&iwloc=B&output=embed"
                 title="Adit Biorganic Location"
               />

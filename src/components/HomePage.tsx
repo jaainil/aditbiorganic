@@ -10,6 +10,7 @@ import { InquiryForm } from "@/components/InquiryForm";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { SEOHead } from "@/components/SEOHead";
 import { organizationSchema, websiteSchema, homeFaqSchema } from "@/data/seoSchemas";
+import { getAllBlogs } from "@/lib/content";
 
 const company = {
   name: "Adit Biorganic",
@@ -125,29 +126,7 @@ const services = [
   },
 ];
 
-const insightPosts = [
-  {
-    title: "Why custom recipe granules matter for fertilizer brands",
-    excerpt:
-      "A stronger base granule can improve consistency, reduce compromise in formulation strategy, and sharpen your brand promise in the market.",
-    topic: "Custom manufacturing",
-    date: "23 May 2024",
-  },
-  {
-    title: "What procurement teams should check before choosing a granule partner",
-    excerpt:
-      "Capacity, testing discipline, dispatch capability, and formulation flexibility are the non-negotiables for dependable B2B supply.",
-    topic: "B2B procurement",
-    date: "23 May 2024",
-  },
-  {
-    title: "How quality assurance protects distributor confidence",
-    excerpt:
-      "Repeatable batches, controlled handling, and clear process discipline reduce downstream risk for large distribution networks.",
-    topic: "Quality systems",
-    date: "08 May 2024",
-  },
-];
+const insightPosts = getAllBlogs().slice(0, 3);
 
 const partnerBenefits = [
   "Over a decade of manufacturing experience",
@@ -190,6 +169,8 @@ const HomePage = () => (
       ogImage="/images/hero.jpg"
       keywords="organic fertilizer manufacturer india, granule fertilizer manufacturer gujarat, b2b fertilizer manufacturer, bio fertilizer manufacturer, organic base granules manufacturer, mineral base granules, fertilizer exporter india, anand gujarat fertilizer, ISO certified fertilizer manufacturer, custom fertilizer formulation"
       schema={[organizationSchema, websiteSchema, homeFaqSchema]}
+      article={null}
+      product={null}
     />
     {/* ── Hero ── */}
     <section className="relative overflow-hidden bg-background">
@@ -424,8 +405,8 @@ const HomePage = () => (
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {expertiseCards.map((card, index) => (
-          <ExpertiseCard key={card.title} card={card} index={index} />
+        {expertiseCards.map((card) => (
+          <ExpertiseCard key={card.title} card={card} />
         ))}
       </div>
     </section>
@@ -555,8 +536,8 @@ const HomePage = () => (
         </Button>
       </div>
       <div className="grid gap-6 lg:grid-cols-3">
-        {services.slice(0, 6).map((service, index) => (
-          <ServiceCard key={service.title} service={service} index={index} />
+        {services.slice(0, 6).map((service) => (
+          <ServiceCard key={service.title} service={service} />
         ))}
       </div>
     </section>
@@ -581,7 +562,7 @@ const HomePage = () => (
       </div>
       <div className="grid gap-6 lg:grid-cols-3">
         {insightPosts.map((post) => (
-          <InsightCard key={post.title} post={post} index={insightPosts.indexOf(post)} />
+          <InsightCard key={post.slug} post={post} />
         ))}
       </div>
     </section>

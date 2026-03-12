@@ -29,9 +29,11 @@ interface BlogPost {
   excerpt?: string;
   author?: string;
   image?: string;
+  topic?: string;
   tags?: string[];
   Component?: ComponentType;
-  [key: string]: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }
 
 /**
@@ -73,8 +75,10 @@ interface Service {
   title?: string;
   description?: string;
   image?: string;
+  concept?: string;
   Component?: ComponentType;
-  [key: string]: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }
 
 /**

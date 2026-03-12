@@ -1,4 +1,4 @@
-export const SectionIntro = ({ eyebrow, title, description, action }) => (
+export const SectionIntro = ({ eyebrow, title, description, action = null }) => (
   <div className="mb-10 flex flex-col gap-5 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
     <div className="max-w-3xl space-y-4">
       <div className="inline-flex rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary">

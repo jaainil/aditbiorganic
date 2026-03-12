@@ -2,7 +2,7 @@ import { ImagePanel } from "@/components/ImagePanel";
 
 const EMPTY_BADGES = [];
 
-export const PageHero = ({ eyebrow, title, description, imageSrc, imageAlt, badges = EMPTY_BADGES, primaryCta, secondaryCta, testId }) => (
+export const PageHero = ({ eyebrow, title, description, imageSrc, imageAlt, badges = EMPTY_BADGES, primaryCta, secondaryCta, testId = "" }) => (
   <section className="relative overflow-hidden border-b border-border bg-background">
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(27,77,62,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(217,119,6,0.08),transparent_30%)]" />
     <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-8 lg:py-24">

@@ -6,8 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 
-const API = `${import.meta.env.VITE_BACKEND_URL}/api`;
-
 const initialForm = {
   name: "",
   company: "",

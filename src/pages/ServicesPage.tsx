@@ -151,8 +151,8 @@ export const ServicesPage = () => (
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index} />
+          {services.map((service) => (
+            <ServiceCard key={service.title} service={service} />
           ))}
         </div>
       </div>
@@ -172,7 +172,7 @@ export const ServicesPage = () => (
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {processSteps.map((step, index) => (
+        {processSteps.map((step) => (
           <div
             key={step.title}
             className="group relative overflow-hidden rounded-[28px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"

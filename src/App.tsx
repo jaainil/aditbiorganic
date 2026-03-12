@@ -15,7 +15,7 @@ import { ServiceDetailPage } from "@/pages/ServiceDetailPage";
 import { ContactPage } from "@/pages/ContactPage";
 import { HomePage } from "@/components/HomePage";
 
-const ScrollToTop = (): JSX.Element => {
+const ScrollToTop = () => {
   const { pathname } = useLocation();
   const savedPathNameRef = useRef<string>(pathname);
 
@@ -29,7 +29,7 @@ const ScrollToTop = (): JSX.Element => {
   return null;
 };
 
-const AppRoutes = (): JSX.Element => (
+const AppRoutes = () => (
   <SiteShell>
     <ScrollToTop />
     <Routes>
@@ -47,7 +47,7 @@ const AppRoutes = (): JSX.Element => (
   </SiteShell>
 );
 
-export default function App(): JSX.Element {
+export default function App() {
   return (
     <HelmetProvider>
       <ThemeProvider attribute="class" forcedTheme="light">

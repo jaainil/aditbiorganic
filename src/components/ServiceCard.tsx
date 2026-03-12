@@ -11,7 +11,7 @@ const iconMap = {
   truck: Truck,
 };
 
-export const ServiceCard = ({ service, index }) => {
+export const ServiceCard = ({ service }) => {
   const Icon = iconMap[service.icon] || FileText;
 
   const href = service.slug ? `/services/${service.slug}` : "/services";

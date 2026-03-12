@@ -80,7 +80,7 @@ function losslessWebpGenerator(options: LosslessWebpGeneratorOptions = {}) {
           const isSvg = /\.svg$/i.test(filePath);
 
           try {
-            const inputOptions: sharp.MetadataOptions = isGif
+            const inputOptions: Parameters<typeof sharp>[1] = isGif
               ? { animated: true }
               : isSvg
                 ? { density: svgDensity }
@@ -116,10 +116,6 @@ function losslessWebpGenerator(options: LosslessWebpGeneratorOptions = {}) {
       );
     },
   };
-}
-
-interface ProductSource {
-  slug: string;
 }
 
 const productsFile = path.resolve(ROOT_DIR, 'src/data/products.ts');
@@ -298,6 +294,7 @@ export default defineConfig({
         ],
       },
       workbox: {
+        maximumFileSizeToCacheInBytes: 20 * 1024 * 1024, // 20 MiB
         globPatterns: [
           '**/*.{js,css,html,ico,png,svg,webp,avif,jpg,jpeg,gif,woff2}',
         ],
