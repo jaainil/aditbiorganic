@@ -18,7 +18,7 @@ export const SiteShell = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-white text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="hidden border-b border-secondary/20 bg-secondary text-white lg:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3 text-sm">
           <div className="flex flex-wrap items-center gap-5" data-testid="topbar-contact-list">
@@ -40,7 +40,7 @@ export const SiteShell = ({ children }) => {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 border-b border-border bg-white/85 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-border bg-surface-overlay/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center gap-3" data-testid="site-logo-link">
             <img src="/logo.png" alt="Adit Biorganic" className="h-12 w-auto rounded-lg object-contain" />
@@ -83,7 +83,7 @@ export const SiteShell = ({ children }) => {
         </div>
 
         {mobileMenuOpen ? (
-          <div className="border-t border-border bg-white px-4 py-4 lg:hidden" data-testid="mobile-navigation-panel">
+          <div className="border-t border-border bg-surface-card px-4 py-4 lg:hidden" data-testid="mobile-navigation-panel">
             <div className="flex flex-col gap-2">
               {navigation.map((item) => (
                 <NavLink

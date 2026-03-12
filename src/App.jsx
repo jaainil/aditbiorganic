@@ -92,7 +92,7 @@ const ImagePanel = ({ src, alt, testId, className = "", overlay }) => (
 );
 
 const MetricCard = ({ item, index }) => (
-  <div className="rounded-[28px] border border-border bg-white p-6 shadow-[0_12px_40px_rgba(16,24,40,0.05)]" data-testid={`hero-stat-card-${index}`}>
+  <div className="rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_12px_40px_rgba(16,24,40,0.05)]" data-testid={`hero-stat-card-${index}`}>
     <p className="font-heading text-3xl font-semibold text-primary">{item.value}</p>
     <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.label}</p>
   </div>
@@ -101,7 +101,7 @@ const MetricCard = ({ item, index }) => (
 const ExpertiseCard = ({ card, index }) => {
   const Icon = iconMap[card.icon] || BadgeCheck;
   return (
-    <Card className="group h-full rounded-[28px] border-border bg-white/95 shadow-[0_10px_40px_rgba(16,24,40,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(16,24,40,0.1)]" data-testid={`expertise-card-${index}`}>
+    <Card className="group h-full rounded-[28px] border-border bg-surface-card/95 shadow-[0_10px_40px_rgba(16,24,40,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(16,24,40,0.1)]" data-testid={`expertise-card-${index}`}>
       <CardContent className="p-8">
         <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
           <Icon className="h-7 w-7" />
@@ -114,7 +114,7 @@ const ExpertiseCard = ({ card, index }) => {
 };
 
 const ProductCard = ({ product, index }) => (
-  <Card className="group h-full rounded-[28px] border-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(16,24,40,0.08)]" data-testid={`product-card-${index}`}>
+  <Card className="group h-full rounded-[28px] border-border bg-surface-card transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(16,24,40,0.08)]" data-testid={`product-card-${index}`}>
     <CardContent className="flex h-full flex-col p-7">
       <div className="flex items-center justify-between gap-4">
         <div className="inline-flex rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -142,7 +142,7 @@ const ServiceCard = ({ service, index }) => {
   const spanClass = index === 0 ? "lg:col-span-2" : index === 3 ? "lg:col-span-2" : "";
 
   return (
-    <article className={`rounded-[30px] border border-border bg-white p-7 shadow-[0_16px_50px_rgba(16,24,40,0.06)] ${spanClass}`} data-testid={`service-card-${index}`}>
+    <article className={`rounded-[30px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.06)] ${spanClass}`} data-testid={`service-card-${index}`}>
       <div className="flex items-start justify-between gap-4">
         <div className="space-y-3">
           <div className="inline-flex rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -160,7 +160,7 @@ const ServiceCard = ({ service, index }) => {
 };
 
 const InsightCard = ({ post, index }) => (
-  <Card className="h-full rounded-[28px] border-border bg-white shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`insight-card-${index}`}>
+  <Card className="h-full rounded-[28px] border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`insight-card-${index}`}>
     <CardContent className="flex h-full flex-col p-7">
       <div className="inline-flex w-fit rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-accent" data-testid={`insight-topic-${index}`}>
         {post.topic}
@@ -180,7 +180,7 @@ const PageHero = ({ eyebrow, title, description, imageSrc, imageAlt, badges = []
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(27,77,62,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(217,119,6,0.08),transparent_30%)]" />
     <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-8 lg:py-24">
       <div className="space-y-7" data-testid={testId}>
-        <div className="inline-flex rounded-full border border-border bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+        <div className="inline-flex rounded-full border border-border bg-surface-overlay/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
           {eyebrow}
         </div>
         <h1 className="max-w-3xl font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">{title}</h1>
@@ -203,7 +203,7 @@ const PageHero = ({ eyebrow, title, description, imageSrc, imageAlt, badges = []
         testId={`${testId}-image-panel`}
         className="aspect-4/4.5 min-h-[360px] lg:min-h-[560px]"
         overlay={
-          <div className="rounded-[26px] border border-white/30 bg-white/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]" data-testid={`${testId}-overlay-card`}>
+          <div className="rounded-[26px] border border-white/30 bg-surface-overlay/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]" data-testid={`${testId}-overlay-card`}>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">Built for serious B2B buyers</p>
             <p className="mt-3 text-sm leading-7 text-secondary">Cleaner positioning, stronger credibility, and fast action paths for calls, inquiries, and distributor conversations.</p>
           </div>
@@ -219,7 +219,7 @@ const HomePage = () => (
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(27,77,62,0.1),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(217,119,6,0.08),transparent_28%)]" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-8 lg:py-24">
         <div className="space-y-8" data-testid="home-hero-content">
-          <div className="inline-flex rounded-full border border-border bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary" data-testid="home-hero-eyebrow">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary" data-testid="home-hero-eyebrow">
             {company.tagline}
           </div>
           <div className="space-y-5">
@@ -258,7 +258,7 @@ const HomePage = () => (
           className="aspect-[4/4.6] min-h-[360px] lg:min-h-[620px]"
           overlay={
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[24px] border border-white/30 bg-white/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]" data-testid="home-hero-overlay-card-1">
+              <div className="rounded-[24px] border border-white/30 bg-surface-overlay/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]" data-testid="home-hero-overlay-card-1">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">What clients need</p>
                 <p className="mt-3 font-heading text-2xl font-semibold text-foreground">Consistency at scale</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">Granules engineered for repeatability, handling, and dependable supply.</p>
@@ -307,31 +307,33 @@ const HomePage = () => (
         className="w-full"
       >
         <CarouselContent className="-ml-6">
-          {[
-            { name: "Mineral Base Granules", image: "/images/products/mineral-base-granules.png" },
-            { name: "Bio-Fertilizer Base Granules", image: "/images/products/bio-fertilizer-base-granules.png" },
-            { name: "Bio-Stimulant Base Granules", image: "/images/products/bio-stimulant-base-granules.png" },
-            { name: "Mix Micro Base Granules", image: "/images/products/mix-micro-base-granules.png" },
-            { name: "Bio-Pesticide Base Granules", image: "/images/products/bio-pesticide-base-granules.png" },
-            { name: "Pesticide Base Granules", image: "/images/products/pesticide-base-granules.png" },
-            { name: "Organic Base Granules", image: "/images/products/organic-base-granules.png" },
-            { name: "Base Granules", image: "/images/products/base-granules.png" },
-          ].map((product, index) => (
-            <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
-              <div className="group relative h-full min-h-[420px] rounded-[32px] bg-white p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)]">
-                <div className="flex flex-col h-full">
-                  <div className="flex-1 overflow-hidden rounded-[24px]">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
+          {products.map((product, index) => {
+            const imageSlug = product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+            return (
+              <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
+                <div className="group relative h-full rounded-[32px] bg-surface-card p-6 border border-gray-100 transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] flex flex-col">
+                  <div className="overflow-hidden rounded-[24px] aspect-[4/3]">
+                    <img
+                      src={`/images/products/${imageSlug}.png`}
+                      alt={product.title}
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="mt-6 font-heading text-xl font-semibold text-foreground text-center">{product.name}</h3>
+                  <div className="mt-5 flex flex-col flex-1">
+                    <h3 className="font-heading text-xl font-semibold text-foreground">{product.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground flex-1">{product.summary}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {product.fit.map((tag) => (
+                        <span key={tag} className="rounded-full border border-border px-3 py-1 text-xs font-medium text-primary">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </CarouselItem>
-          ))}
+              </CarouselItem>
+            );
+          })}
         </CarouselContent>
         <CarouselPrevious className="-left-6 top-1/2 -translate-y-1/2" />
         <CarouselNext className="-right-6 top-1/2 -translate-y-1/2" />
@@ -359,7 +361,7 @@ const HomePage = () => (
           testId="home-about-image-panel"
           className="aspect-[4/4.6] min-h-[360px]"
           overlay={
-            <div className="rounded-[26px] border border-white/30 bg-white/94 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]" data-testid="home-about-overlay-card">
+            <div className="rounded-[26px] border border-white/30 bg-surface-overlay/94 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]" data-testid="home-about-overlay-card">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Chairman’s message</p>
               <p className="mt-3 font-accent text-xl text-primary">
                 “Our mission is not just about business but about contributing positively to the environment.”
@@ -369,7 +371,7 @@ const HomePage = () => (
           }
         />
         <div className="space-y-6" data-testid="home-about-content">
-          <div className="inline-flex rounded-full border border-border bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
             About Adit Biorganic
           </div>
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
@@ -380,7 +382,7 @@ const HomePage = () => (
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             {companyPillars.map((pillar, index) => (
-              <div key={pillar.title} className="rounded-[26px] border border-border bg-white p-5" data-testid={`home-pillar-card-${index}`}>
+              <div key={pillar.title} className="rounded-[26px] border border-border bg-surface-card p-5" data-testid={`home-pillar-card-${index}`}>
                 <p className="font-heading text-xl font-semibold text-foreground">{pillar.title}</p>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">{pillar.description}</p>
               </div>
@@ -393,23 +395,6 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <SectionIntro
-        eyebrow="Product range"
-        title="Advanced granular products shaped around your formulation goals."
-        description="We kept the real product families from your existing site, but presented them in a cleaner, premium, easier-to-scan structure that helps buyers understand where Adit Biorganic fits into their supply chain."
-        action={
-          <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white" data-testid="home-products-link-button">
-            <Link to="/products">View all products</Link>
-          </Button>
-        }
-      />
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {products.slice(0, 4).map((product, index) => (
-          <ProductCard key={product.title} product={product} index={index} />
-        ))}
-      </div>
-    </section>
 
     <section className="bg-muted py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -439,7 +424,7 @@ const HomePage = () => (
         </div>
         <div className="space-y-4">
           {processSteps.map((step, index) => (
-            <div key={step.title} className="rounded-[28px] border border-border bg-white p-6 shadow-[0_12px_40px_rgba(16,24,40,0.05)]" data-testid={`process-step-card-${index}`}>
+            <div key={step.title} className="rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_12px_40px_rgba(16,24,40,0.05)]" data-testid={`process-step-card-${index}`}>
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 font-heading text-lg font-semibold text-primary">
                   0{index + 1}
@@ -539,7 +524,7 @@ const AboutPage = () => (
 
     <section className="bg-muted py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <article className="rounded-[32px] border border-border bg-white p-8 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid="about-mission-card">
+        <article className="rounded-[32px] border border-border bg-surface-card p-8 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid="about-mission-card">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Our mission</p>
           <h3 className="mt-4 font-heading text-3xl font-semibold text-foreground">{company.mission}</h3>
         </article>
@@ -574,7 +559,7 @@ const AboutPage = () => (
             description: "Finished goods can move faster into distribution workflows with better storage and planning support.",
           },
         ].map((item, index) => (
-          <div key={item.title} className="rounded-[28px] border border-border bg-white p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`about-infrastructure-card-${index}`}>
+          <div key={item.title} className="rounded-[28px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`about-infrastructure-card-${index}`}>
             <p className="font-heading text-2xl font-semibold text-foreground">{item.title}</p>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">{item.description}</p>
           </div>
@@ -623,13 +608,13 @@ const ProductsPage = () => (
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:items-center">
         <ImagePanel src={images.soil} alt="Healthy soil and organic performance" testId="products-highlight-image-panel" className="aspect-[4/4.6] min-h-[360px]" />
         <div className="space-y-5" data-testid="products-highlight-content">
-          <div className="inline-flex rounded-full border border-border bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
             What can be customized
           </div>
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Recipe granules built around partner requirements—not generic assumptions.</h2>
           <div className="grid gap-4">
             {productHighlights.map((item, index) => (
-              <div key={item} className="flex items-start gap-3 rounded-[24px] border border-border bg-white p-5" data-testid={`products-highlight-card-${index}`}>
+              <div key={item} className="flex items-start gap-3 rounded-[24px] border border-border bg-surface-card p-5" data-testid={`products-highlight-card-${index}`}>
                 <BadgeCheck className="mt-1 h-5 w-5 text-primary" />
                 <p className="text-sm leading-7 text-muted-foreground">{item}</p>
               </div>
@@ -685,7 +670,7 @@ const ServicesPage = () => (
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {processSteps.map((step, index) => (
-            <div key={step.title} className="rounded-[28px] border border-border bg-white p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`services-process-card-${index}`}>
+            <div key={step.title} className="rounded-[28px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`services-process-card-${index}`}>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 font-heading text-lg font-semibold text-primary">
                 0{index + 1}
               </div>
@@ -750,7 +735,7 @@ const BlogPage = () => (
             description: "Highlight quality checks, process clarity, and dispatch discipline to reduce vendor uncertainty during evaluation.",
           },
         ].map((item, index) => (
-          <div key={item.title} className="rounded-[28px] border border-border bg-white p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`blog-audience-card-${index}`}>
+          <div key={item.title} className="rounded-[28px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`blog-audience-card-${index}`}>
             <p className="font-heading text-2xl font-semibold text-foreground">{item.title}</p>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">{item.description}</p>
           </div>
@@ -812,7 +797,7 @@ const ContactPage = () => (
           ].map((item, index) => {
             const Icon = item.icon;
             return (
-              <a key={item.label} href={item.link} className="flex items-start gap-4 rounded-[28px] border border-border bg-white p-6 shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition hover:-translate-y-1" data-testid={`contact-card-${index}`}>
+              <a key={item.label} href={item.link} className="flex items-start gap-4 rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition hover:-translate-y-1" data-testid={`contact-card-${index}`}>
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" />
                 </div>

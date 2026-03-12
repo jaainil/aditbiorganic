@@ -43,6 +43,9 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
+  --color-surface-card: var(--surface-card);
+  --color-surface-overlay: var(--surface-overlay);
+
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
@@ -100,11 +103,11 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 40 13% 97%;
     --foreground: 0 0% 10%;
-    --card: 0 0% 100%;
+    --card: 40 13% 97%;
     --card-foreground: 0 0% 10%;
-    --popover: 0 0% 100%;
+    --popover: 40 13% 97%;
     --popover-foreground: 0 0% 10%;
     --primary: 200 85% 44%;
     --primary-foreground: 0 0% 100%;
@@ -131,6 +134,8 @@
     --brand-teal: #9AC5C2;
     --surface-soft: #f7fafa;
     --surface-base: #fafafa;
+    --surface-card: #F8F7F4;
+    --surface-overlay: #FCFCF7;
     --text-main: #1a1a1a;
     --text-muted: #4a4a4a;
   }
@@ -151,7 +156,7 @@
     color: var(--text-main);
     background:
       radial-gradient(circle at top left, rgba(5, 119, 194, 0.06), transparent 24%),
-      linear-gradient(180deg, #ffffff 0%, #f7fafa 100%);
+      linear-gradient(180deg, #FCFCF7 0%, #f7fafa 100%);
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;

@@ -68,7 +68,7 @@ export const InquiryForm = ({
 
   return (
     <form
-      className={`rounded-[28px] border border-border bg-white p-6 shadow-[0_20px_60px_rgba(16,24,40,0.08)] sm:p-8 ${className}`}
+      className={`rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_20px_60px_rgba(16,24,40,0.08)] sm:p-8 ${className}`}
       onSubmit={handleSubmit}
       data-testid="inquiry-form"
     >
