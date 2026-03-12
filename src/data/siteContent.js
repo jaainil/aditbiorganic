@@ -1,9 +1,16 @@
 export const company = {
   name: "Adit Biorganic",
+  tagline: "The Future of Sustainable Agriculture",
+  subTagline: "Nurturing Farms, Preserving Nature",
+  missionTagline: "EVERY CROP COUNTS. EVERY FARMER MATTERS.",
   legalTagline: "ISO 9001:2015 certified manufacturer of organic and mineral-based granular fertilizers.",
-  heroTitle: "Precision granule manufacturing for sustainable growth.",
+  heroTitle: "The Future of Sustainable Agriculture",
   heroSubtitle:
-    "Adit Biorganic helps fertilizer brands, distributors, and agricultural businesses scale with custom organic and mineral-based granules engineered for consistency, soil health, and dependable B2B supply.",
+    "As pioneers in organic fertilizers, we provide nutrient-rich, sustainable solutions to enhance your crop yield and protect the land for generations to come.",
+  aboutIntro: "We are a leading manufacturer in providing high-quality, customized organic fertilizer solutions that enhance soil health and ensure farm sustainability.",
+  aboutDetails: "At Adit Biorganic, we are dedicated to sustainability by providing the agriculture industry with efficient and effective organic granular fertilizer solutions. As a leading ISO 9001:2015 certified manufacturer, we specialize in high-quality, customized nutrient base and coating granules. We partner with companies across India to produce the innovative, eco-friendly products that enhance soil health and maximize crop yield.",
+  mission: "Our mission is to empower farmers and fertilizer brands with high-quality organic solutions that enhance soil health, improve crop yield, and promote environmental sustainability. We strive to be at the forefront of agricultural innovation, making a positive impact on the planet.",
+  chairmanMessage: "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to create a sustainable future for agriculture",
   phoneDisplay: "+91 98250 45894",
   phoneRaw: "+919825045894",
   emails: ["info@aditbiorganic.com", "sales@aditbiorganic.com"],
@@ -22,10 +29,10 @@ export const navigation = [
 ];
 
 export const heroStats = [
-  { value: "ISO 9001:2015", label: "Certified manufacturing discipline" },
-  { value: "180+ MT / day", label: "Scalable daily production capacity" },
-  { value: "10+ years", label: "Focused fertilizer manufacturing experience" },
-  { value: "24 / 7", label: "Production support for high-volume partners" },
+  { value: "190+ MT", label: "Daily Production Capacity" },
+  { value: "50+", label: "Trusted B2B Partners" },
+  { value: "10+", label: "Bio-Pesticide-Granules" },
+  { value: "ISO 9001:2015", label: "Certified" },
 ];
 
 export const trustBadges = [
@@ -37,50 +44,50 @@ export const trustBadges = [
 export const expertiseCards = [
   {
     icon: "leaf",
-    title: "Custom organic solutions",
+    title: "Customized Organic Solutions",
     description:
-      "We develop recipe granules tailored to nutrient, coating, and handling requirements for your specific fertilizer program.",
+      "We specialize in 'Recipe Granules,' creating unique organic and mineral-based formulas tailored to your specific nutrient and coating requirements.",
   },
   {
     icon: "shield",
-    title: "Absolute quality assurance",
+    title: "Absolute Quality",
     description:
-      "Every batch is supported by in-house quality controls and process discipline built around repeatable industrial standards.",
+      "Our state-of-the-art testing laboratory and ISO 9001:2015 certification ensure every batch meets the highest standards for consistency and purity.",
   },
   {
     icon: "factory",
-    title: "High-volume manufacturing",
+    title: "Environmentally Friendly",
     description:
-      "Our production model is designed for dependable throughput, stable lead times, and long-term B2B supply continuity.",
+      "Our products are designed to enhance long-term soil health, support beneficial microbial life, and promote sustainable agriculture, all while preserving the environment.",
   },
   {
     icon: "flask",
-    title: "Science-backed formulation",
+    title: "Reliable B2B Partnership",
     description:
-      "We combine practical field understanding with formulation know-how to create granules that perform reliably across applications.",
+      "With a massive 190+ MT/day capacity and over a decade of experience, we deliver high-volume, cost-effective manufacturing solutions on time, every time.",
   },
 ];
 
 export const companyPillars = [
   {
-    title: "Soil-first thinking",
+    title: "Manufacturing Advanced Granular Fertilizers",
     description:
-      "We prioritize granules that support soil health, nutrient delivery, and long-term sustainable agriculture outcomes.",
+      "Adit Biorganic specializes in manufacturing nutrient base and coating granular fertilizers. We provide customized 'Recipe Granules' using mineral and organic bases as a superior alternative to standard bentonite.",
   },
   {
-    title: "Manufacturing reliability",
+    title: "Custom Recipe Granules",
     description:
-      "From raw material handling to coating and dispatch, we build predictable systems that B2B buyers can trust.",
+      "We create unique organic and mineral-based formulas tailored to your specific nutrient and coating requirements.",
   },
   {
-    title: "Customization at scale",
+    title: "Superior Quality Standards",
     description:
-      "We can support niche formulations, private requirements, and large production commitments without compromising consistency.",
+      "Our state-of-the-art testing laboratory and ISO 9001:2015 certification ensure every batch meets the highest standards.",
   },
   {
-    title: "Partnership mindset",
+    title: "Sustainable Agriculture Focus",
     description:
-      "Our approach is consultative: understand your product goal, protect your brand quality, and manufacture for long-term growth.",
+      "Our products enhance long-term soil health, support beneficial microbial life, and promote sustainable farming practices.",
   },
 ];
 
@@ -136,25 +143,32 @@ export const productHighlights = [
 
 export const services = [
   {
+    title: "Custom Formulation & Manufacturing",
+    concept: "End-to-end B2B solutions.",
+    description:
+      "We provide comprehensive solutions for the fertilizer industry, from custom formulation and manufacturing to precision coating and quality assurance.",
+    icon: "factory",
+  },
+  {
     title: "Job Work / Contract Manufacturing",
     concept: "Your brand, our facility.",
     description:
       "We handle production for fertilizer brands that need a dependable manufacturing partner with process discipline and capacity.",
-    icon: "factory",
+    icon: "leaf",
   },
   {
     title: "Organic & Coated Granule Manufacturing",
     concept: "Beyond standard fillers.",
     description:
       "We manufacture custom recipe granules using mineral and organic bases tailored to coating, nutrient, and handling requirements.",
-    icon: "leaf",
+    icon: "flask",
   },
   {
     title: "Laboratory & Testing Services",
     concept: "Science-backed quality confidence.",
     description:
       "In-house process checks and quality verification help protect batch consistency, purity, and buyer confidence.",
-    icon: "flask",
+    icon: "shield",
   },
   {
     title: "Custom Packaging & Private Labeling",
@@ -169,13 +183,6 @@ export const services = [
     description:
       "Spacious storage and dispatch support help reduce pressure on your downstream supply chain and distribution planning.",
     icon: "warehouse",
-  },
-  {
-    title: "Infrastructure Leasing",
-    concept: "Strategic plant access.",
-    description:
-      "For select partners, we offer operational flexibility through access to infrastructure suited to proprietary formulations.",
-    icon: "truck",
   },
 ];
 
@@ -220,11 +227,19 @@ export const insightPosts = [
 ];
 
 export const partnerBenefits = [
-  "Strong positioning for distributors and fertilizer brands",
-  "Process-led production instead of generic farm-site messaging",
-  "Cleaner conversion focus around calls, inquiries, and partnerships",
-  "Professional copy built from the real business details you provided",
+  "Over a decade of manufacturing experience",
+  "24/7 operations for advanced organic granular fertilizers",
+  "State-of-the-art facilities and robust R&D",
+  "Customized, eco-friendly solutions that improve soil health",
+  "Boost farm productivity nationwide",
 ];
+
+export const whyChooseUs = {
+  eyebrow: "Why Choose Us",
+  title: "At Adit Biorganic, We Are Your Partner In Sustainable Agriculture.",
+  description:
+    "With over a decade of manufacturing experience, we operate 24/7 to produce advanced organic granular fertilizers. Our state-of-the-art facilities and robust R&D allow us to create customized, eco-friendly solutions that improve soil health and boost farm productivity nationwide.",
+};
 
 export const images = {
   hero: "/images/hero.jpg",

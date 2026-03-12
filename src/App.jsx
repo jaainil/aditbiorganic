@@ -36,6 +36,7 @@ import {
   products,
   services,
   trustBadges,
+  whyChooseUs,
 } from "@/data/siteContent";
 
 const iconMap = {
@@ -212,22 +213,20 @@ const HomePage = () => (
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-8 lg:py-24">
         <div className="space-y-8" data-testid="home-hero-content">
           <div className="inline-flex rounded-full border border-border bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary" data-testid="home-hero-eyebrow">
-            India’s performance-focused B2B fertilizer manufacturer
+            {company.tagline}
           </div>
           <div className="space-y-5">
             <h1 className="max-w-4xl font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-7xl" data-testid="home-hero-title">
-              {company.heroTitle}
+              {company.subTagline}
             </h1>
             <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg" data-testid="home-hero-description">
               {company.heroSubtitle}
             </p>
           </div>
           <div className="flex flex-wrap gap-3" data-testid="home-hero-badges">
-            {trustBadges.map((badge) => (
-              <span key={badge} className="rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-primary" data-testid={`home-badge-${badge.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
-                {badge}
-              </span>
-            ))}
+            <span className="rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-primary" data-testid={`home-badge-${company.missionTagline.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+              {company.missionTagline}
+            </span>
           </div>
           <div className="flex flex-wrap gap-4">
             <Button asChild className="h-12 rounded-full bg-primary px-6 text-white hover:bg-primary/90" data-testid="home-primary-cta-button">
@@ -278,8 +277,8 @@ const HomePage = () => (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <SectionIntro
         eyebrow="Core strengths"
-        title="Every section of the business now says one thing clearly: dependable B2B performance."
-        description="The site is positioned to reassure procurement teams, distributors, and fertilizer brands that Adit Biorganic is not a generic farm business—it is a process-led manufacturing partner built for long-term supply relationships."
+        title="The Foundation for Sustainable Farming"
+        description="We believe superior crops start with superior soil. Our high-quality granular fertilizers are the key."
       />
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {expertiseCards.map((card, index) => (
@@ -310,10 +309,10 @@ const HomePage = () => (
             About Adit Biorganic
           </div>
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Built in Anand, Gujarat to support better soil outcomes and stronger B2B partnerships.
+            {company.aboutIntro}
           </h2>
           <p className="text-base leading-8 text-muted-foreground sm:text-lg">
-            Adit Biorganic manufactures customized nutrient base and coating granules for fertilizer companies that need more than commodity supply. The business combines sustainable agriculture intent with disciplined production systems so buyers can trust both product quality and operational reliability.
+            {company.aboutDetails}
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             {companyPillars.map((pillar, index) => (
@@ -396,13 +395,13 @@ const HomePage = () => (
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:items-start">
         <div className="space-y-6" data-testid="home-cta-content">
           <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/80">
-            Final conversion section
+            {whyChooseUs.eyebrow}
           </div>
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Make it easy for distributors and fertilizer brands to take action.
+            {whyChooseUs.title}
           </h2>
           <p className="max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
-            The site now gives equal importance to direct calls and inquiry forms—exactly as requested—so visitors can move quickly whether they prefer a conversation or a structured submission.
+            {whyChooseUs.description}
           </p>
           <div className="grid gap-4">
             {partnerBenefits.map((benefit, index) => (
@@ -478,15 +477,12 @@ const AboutPage = () => (
       <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <article className="rounded-[32px] border border-border bg-white p-8 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid="about-mission-card">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Our mission</p>
-          <h3 className="mt-4 font-heading text-3xl font-semibold text-foreground">Empower farmers and fertilizer brands with high-quality organic solutions.</h3>
-          <p className="mt-5 text-sm leading-7 text-muted-foreground">
-            We want to improve soil health, support crop productivity, and promote environmental responsibility through better manufacturing decisions and reliable product execution.
-          </p>
+          <h3 className="mt-4 font-heading text-3xl font-semibold text-foreground">{company.mission}</h3>
         </article>
         <article className="rounded-[32px] border border-border bg-primary p-8 text-white shadow-[0_16px_50px_rgba(16,24,40,0.08)]" data-testid="about-founder-card">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">A message from our chairman</p>
           <p className="mt-4 font-accent text-2xl leading-10 text-white">
-            “I am proud to lead a team committed to excellence in organic agriculture and to building a sustainable future for the sector.”
+            "{company.chairmanMessage}"
           </p>
           <p className="mt-6 text-sm font-medium text-white/75">{company.founder}, {company.founderTitle}</p>
         </article>
