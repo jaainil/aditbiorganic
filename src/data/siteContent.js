@@ -1,16 +1,17 @@
 export const company = {
   name: "Adit Biorganic",
-  tagline: "The Future of Sustainable Agriculture",
+  tagline: "Organic Naturally",
   subTagline: "Nurturing Farms, Preserving Nature",
   missionTagline: "EVERY CROP COUNTS. EVERY FARMER MATTERS.",
-  legalTagline: "ISO 9001:2015 certified manufacturer of organic and mineral-based granular fertilizers.",
+  legalTagline: "India's Leading B2B Fertilizer Manufacturer - ISO 9001:2015 Certified",
   heroTitle: "The Future of Sustainable Agriculture",
   heroSubtitle:
     "As pioneers in organic fertilizers, we provide nutrient-rich, sustainable solutions to enhance your crop yield and protect the land for generations to come.",
   aboutIntro: "We are a leading manufacturer in providing high-quality, customized organic fertilizer solutions that enhance soil health and ensure farm sustainability.",
   aboutDetails: "At Adit Biorganic, we are dedicated to sustainability by providing the agriculture industry with efficient and effective organic granular fertilizer solutions. As a leading ISO 9001:2015 certified manufacturer, we specialize in high-quality, customized nutrient base and coating granules. We partner with companies across India to produce the innovative, eco-friendly products that enhance soil health and maximize crop yield.",
   mission: "Our mission is to empower farmers and fertilizer brands with high-quality organic solutions that enhance soil health, improve crop yield, and promote environmental sustainability. We strive to be at the forefront of agricultural innovation, making a positive impact on the planet.",
-  chairmanMessage: "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to create a sustainable future for agriculture",
+  chairmanMessage: "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to make a meaningful impact.",
+  philosophy: "Quality You Can Trust, Results You Can See - Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.",
   phoneDisplay: "+91 98250 45894",
   phoneRaw: "+919825045894",
   emails: ["info@aditbiorganic.com", "sales@aditbiorganic.com"],
@@ -30,8 +31,8 @@ export const navigation = [
 
 export const heroStats = [
   { value: "190+ MT", label: "Daily Production Capacity" },
-  { value: "50+", label: "Trusted B2B Partners" },
-  { value: "10+", label: "Bio-Pesticide-Granules" },
+  { value: "480+", label: "Trusted B2B Partners" },
+  { value: "10+ Years", label: "Industry Experience" },
   { value: "ISO 9001:2015", label: "Certified" },
 ];
 
@@ -44,144 +45,144 @@ export const trustBadges = [
 export const expertiseCards = [
   {
     icon: "leaf",
-    title: "Customized Organic Solutions",
+    title: "Customized Formulations",
     description:
-      "We specialize in 'Recipe Granules,' creating unique organic and mineral-based formulas tailored to your specific nutrient and coating requirements.",
+      "Goes beyond standard bentonite to create unique mineral and organic 'Recipe Granules' tailored to specific requirements.",
   },
   {
     icon: "shield",
-    title: "Absolute Quality",
+    title: "Consistent Quality",
     description:
-      "Our state-of-the-art testing laboratory and ISO 9001:2015 certification ensure every batch meets the highest standards for consistency and purity.",
+      "Every granule is manufactured to exact client specifications with guaranteed purity. In-house ISO-certified testing laboratory.",
   },
   {
     icon: "factory",
-    title: "Environmentally Friendly",
+    title: "High Capacity",
     description:
-      "Our products are designed to enhance long-term soil health, support beneficial microbial life, and promote sustainable agriculture, all while preserving the environment.",
+      "190+ MT/day capacity with 24/7 operations ensures bulk orders are met even during peak seasons.",
   },
   {
     icon: "flask",
     title: "Reliable B2B Partnership",
     description:
-      "With a massive 190+ MT/day capacity and over a decade of experience, we deliver high-volume, cost-effective manufacturing solutions on time, every time.",
+      "Over a decade of experience delivering high-volume, cost-effective solutions to 480+ trusted B2B partners across India.",
   },
 ];
 
 export const companyPillars = [
   {
-    title: "Manufacturing Advanced Granular Fertilizers",
+    title: "Sustainability First",
     description:
-      "Adit Biorganic specializes in manufacturing nutrient base and coating granular fertilizers. We provide customized 'Recipe Granules' using mineral and organic bases as a superior alternative to standard bentonite.",
+      "Committed to eco-friendly, organic agriculture solutions that preserve natural ecosystems and promote sustainable farming practices.",
   },
   {
-    title: "Custom Recipe Granules",
+    title: "Innovation-Driven",
     description:
-      "We create unique organic and mineral-based formulas tailored to your specific nutrient and coating requirements.",
+      "Robust in-house R&D to continuously develop better, customized granule formulations for diverse agricultural needs.",
   },
   {
-    title: "Superior Quality Standards",
+    title: "Recipe Granules",
     description:
-      "Our state-of-the-art testing laboratory and ISO 9001:2015 certification ensure every batch meets the highest standards.",
+      "Superior alternative to standard bentonite - uniquely formulated mineral and organic bases tailored to your specific requirements.",
   },
   {
-    title: "Sustainable Agriculture Focus",
+    title: "Farmer-Centric",
     description:
-      "Our products enhance long-term soil health, support beneficial microbial life, and promote sustainable farming practices.",
+      "Every crop counts; every farmer matters. Empowering farmers and fertilizer brands with high-quality organic solutions.",
   },
 ];
 
 export const products = [
   {
     title: "Mineral Base Granules",
-    summary: "Stable mineral carriers built for nutrient loading, coating, and high-volume fertilizer programs.",
-    fit: ["Bulk supply", "Custom density", "Coating support"],
+    summary: "Slow-release fertilizers that supply essential minerals and trace elements for sustainable plant growth. Improve soil fertility and nutrient availability with sustained, long-term nutrient delivery.",
+    fit: ["Soil fertility", "Long-term nutrients", "Sustainable growth"],
   },
   {
     title: "Bio-Fertilizer Base Granules",
-    summary: "Engineered bases designed to support bio-fertilizer product lines with dependable granule quality.",
-    fit: ["Bio inputs", "Uniformity", "Distributor-ready"],
+    summary: "Innovative agricultural inputs that improve soil fertility and support healthy plant growth through biological activity. Eco-friendly enhancement of soil microbiome and plant nutrition.",
+    fit: ["Bio inputs", "Organic certified", "Soil microbiome"],
   },
   {
     title: "Bio-Stimulant Base Granules",
-    summary: "Granule systems suited for high-value crop support products where consistency and handling matter.",
-    fit: ["Value-added blends", "Performance focus", "Flexible recipes"],
+    summary: "Plant growth stimulants that enhance plant biological processes beyond standard nutrition. Improves crop resilience, productivity, and natural stress tolerance.",
+    fit: ["Crop resilience", "Stress tolerance", "Value-added blends"],
   },
   {
     title: "Mix Micro Base Granules",
-    summary: "Balanced carrier granules designed for micro-nutrient combinations and controlled application profiles.",
-    fit: ["Micro nutrient blends", "Uniform spread", "Custom specification"],
+    summary: "Customizable micronutrient solution to correct deficiencies and boost soil fertility. Contains Calcium, Magnesium, Potash, Zinc and more for vegetables, fruits, and grains.",
+    fit: ["Micronutrient blends", "Custom specification", "Multi-crop"],
   },
   {
     title: "Bio-Pesticide Base Granules",
-    summary: "Granule platforms prepared for bio-pesticide applications where product integrity and precision matter.",
-    fit: ["Eco-friendly programs", "Precision handling", "Brand-ready manufacturing"],
+    summary: "Eco-friendly crop protection granules that protect plant health while preserving biodiversity. Custom-manufactured or applied using existing bio-pesticide liquids/powders.",
+    fit: ["Eco-friendly", "IPM compatible", "Residue-free"],
   },
   {
     title: "Pesticide Base Granules",
-    summary: "Dependable base granules created for efficient loading, coating compatibility, and large-scale B2B supply.",
-    fit: ["Industrial output", "Reliable flow", "Strong process control"],
+    summary: "Multi-functional crop protection foundation that acts as both carrier for pesticide active ingredients AND provider of essential nutrients and organic matter.",
+    fit: ["Dual-action", "Pest control + soil health", "Customizable"],
   },
   {
     title: "Base Granules",
-    summary: "Versatile foundational granules manufactured to suit multiple fertilizer and allied application needs.",
-    fit: ["Flexible use", "Cost-conscious", "Fast deployment"],
+    summary: "Fundamental product component and carrier granule - a customizable platform beyond traditional bentonite fillers. Made from Gypsum, Dolomite, and mineral/organic inputs.",
+    fit: ["190 MT/day capacity", "Flexible use", "Recipe granules"],
   },
   {
     title: "Organic Base Granules",
-    summary: "Organic carrier granules developed for brands that want soil-friendly performance with premium positioning.",
-    fit: ["Sustainable inputs", "Premium organic lines", "Private label support"],
+    summary: "Certified organic carrier granules - a sustainable, nutrient-rich foundation for organic-certified fertilizers. Actively enhances soil health and feeds soil microbes.",
+    fit: ["Organic certified", "Soil health", "Premium positioning"],
   },
 ];
 
 export const productHighlights = [
-  "Granule recipe customization based on nutrient and coating needs",
-  "Alternative base development beyond standard bentonite dependence",
-  "Packaging and dispatch support for distribution-ready output",
-  "Manufacturing compatibility for organic, mineral, and blended product lines",
+  "Customized 'Recipe Granules' - superior alternative to standard bentonite",
+  "Unique nutrient profiles using Gypsum, Dolomite, organic compost, and mineral blends",
+  "Supports diverse crop types and agricultural requirements",
+  "Every product manufactured under ISO 9001:2015 certified processes",
 ];
 
 export const services = [
   {
-    title: "Custom Formulation & Manufacturing",
-    concept: "End-to-end B2B solutions.",
+    title: "Granule Manufacturing",
+    concept: "190+ MT/day capacity",
     description:
-      "We provide comprehensive solutions for the fertilizer industry, from custom formulation and manufacturing to precision coating and quality assurance.",
+      "Production of high-quality organic and mineral 'Recipe Granules' - superior, customizable alternative to standard bentonite. Tailored to client-specific formulation requirements with 24/7 operations.",
     icon: "factory",
   },
   {
-    title: "Job Work / Contract Manufacturing",
-    concept: "Your brand, our facility.",
+    title: "Custom Formulation",
+    concept: "Client-specific recipe development",
     description:
-      "We handle production for fertilizer brands that need a dependable manufacturing partner with process discipline and capacity.",
-    icon: "leaf",
-  },
-  {
-    title: "Organic & Coated Granule Manufacturing",
-    concept: "Beyond standard fillers.",
-    description:
-      "We manufacture custom recipe granules using mineral and organic bases tailored to coating, nutrient, and handling requirements.",
+      "Unique nutrient profiles using materials like Gypsum, Dolomite, organic compost, and mineral blends. Supports diverse crop types and agricultural requirements.",
     icon: "flask",
   },
   {
-    title: "Laboratory & Testing Services",
-    concept: "Science-backed quality confidence.",
+    title: "Contract Manufacturing",
+    concept: "Your brand, our facility",
     description:
-      "In-house process checks and quality verification help protect batch consistency, purity, and buyer confidence.",
+      "Full-scale white-label/contract manufacturing for B2B fertilizer brands. Cost-effective, high-volume production with consistent batch-to-batch quality assurance.",
+    icon: "leaf",
+  },
+  {
+    title: "Precision Coating Services",
+    concept: "Active ingredient application",
+    description:
+      "Application of active ingredients, liquids, or powders onto base granules. Used for bio-pesticide and pesticide product lines. Ensures uniform coating and reliable field performance.",
     icon: "shield",
   },
   {
-    title: "Custom Packaging & Private Labeling",
-    concept: "Market-ready finishing.",
+    title: "Laboratory & Testing",
+    concept: "ISO 9001:2015 certified",
     description:
-      "We support filling, packing, and brand-forward presentation so your finished output is easier to launch and distribute.",
+      "In-house testing for purity, consistency, and performance on every batch. Strict quality assurance at every stage guarantees every product meets exact client specifications before dispatch.",
     icon: "package",
   },
   {
-    title: "Warehouse & Go-Down Facilities",
-    concept: "Secure supply chain storage.",
+    title: "Packaging & Dispatch",
+    concept: "Market-ready finishing",
     description:
-      "Spacious storage and dispatch support help reduce pressure on your downstream supply chain and distribution planning.",
+      "We support filling, packing, and brand-forward presentation so your finished output is easier to launch and distribute. Comprehensive logistics support for Pan-India delivery.",
     icon: "warehouse",
   },
 ];
@@ -236,9 +237,9 @@ export const partnerBenefits = [
 
 export const whyChooseUs = {
   eyebrow: "Why Choose Us",
-  title: "At Adit Biorganic, We Are Your Partner In Sustainable Agriculture.",
+  title: "Quality You Can Trust, Results You Can See",
   description:
-    "With over a decade of manufacturing experience, we operate 24/7 to produce advanced organic granular fertilizers. Our state-of-the-art facilities and robust R&D allow us to create customized, eco-friendly solutions that improve soil health and boost farm productivity nationwide.",
+    "Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes. With over a decade of experience, 480+ B2B partners, and 24/7 operations, we deliver high-volume, cost-effective solutions that empower farmers and fertilizer brands across India.",
 };
 
 export const images = {
