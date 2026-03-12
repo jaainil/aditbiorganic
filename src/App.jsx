@@ -6,6 +6,7 @@ import { SiteShell } from "@/components/SiteShell";
 import { Toaster } from "@/components/ui/sonner";
 import { AboutPage } from "@/pages/AboutPage";
 import { ProductsPage } from "@/pages/ProductsPage";
+import { ProductDetailPage } from "@/pages/ProductDetailPage";
 import { ServicesPage } from "@/pages/ServicesPage";
 import { BlogPage } from "@/pages/BlogPage";
 import { ContactPage } from "@/pages/ContactPage";
@@ -28,6 +29,7 @@ const AppRoutes = () => (
       <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/products" element={<ProductsPage />} />
+      <Route path="/products/:slug" element={<ProductDetailPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/contact" element={<ContactPage />} />

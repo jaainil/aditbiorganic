@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { products } from "@/data/products";
 
 const company = {
   name: "Adit Biorganic",
@@ -35,56 +36,7 @@ const navigation = [
   { label: "Contact", path: "/contact" },
 ];
 
-const products = [
-  {
-    title: "Mineral Base Granules",
-    imageUrl: "/images/products/mineral-base-granules.png",
-    summary: "Slow-release fertilizers that supply essential minerals and trace elements for sustainable plant growth.",
-    fit: ["Soil fertility", "Long-term nutrients", "Sustainable growth"],
-  },
-  {
-    title: "Bio-Fertilizer Base Granules",
-    imageUrl: "/images/products/bio-fertilizer-base-granules.png",
-    summary: "Innovative agricultural inputs that improve soil fertility and support healthy plant growth through biological activity.",
-    fit: ["Bio inputs", "Organic certified", "Soil microbiome"],
-  },
-  {
-    title: "Bio-Stimulant Base Granules",
-    imageUrl: "/images/products/bio-stimulant-base-granules.png",
-    summary: "Plant growth stimulants that enhance plant biological processes beyond standard nutrition.",
-    fit: ["Crop resilience", "Stress tolerance", "Value-added blends"],
-  },
-  {
-    title: "Mix Micro Base Granules",
-    imageUrl: "/images/products/mix-micro-base-granules.png",
-    summary: "Customizable micronutrient solution to correct deficiencies and boost soil fertility.",
-    fit: ["Micronutrient blends", "Custom specification", "Multi-crop"],
-  },
-  {
-    title: "Bio-Pesticide Base Granules",
-    imageUrl: "/images/products/bio-pesticide-base-granules.png",
-    summary: "Eco-friendly crop protection granules that protect plant health while preserving biodiversity.",
-    fit: ["Eco-friendly", "IPM compatible", "Residue-free"],
-  },
-  {
-    title: "Pesticide Base Granules",
-    imageUrl: "/images/products/pesticide-base-granules.png",
-    summary: "Multi-functional crop protection foundation that acts as both carrier for pesticide active ingredients.",
-    fit: ["Dual-action", "Pest control + soil health", "Customizable"],
-  },
-  {
-    title: "Base Granules",
-    imageUrl: "/images/products/base-granules.png",
-    summary: "Fundamental product component and carrier granule - a customizable platform beyond traditional bentonite fillers.",
-    fit: ["190 MT/day capacity", "Flexible use", "Recipe granules"],
-  },
-  {
-    title: "Organic Base Granules",
-    imageUrl: "/images/products/organic-base-granules.png",
-    summary: "Certified organic carrier granules - a sustainable, nutrient-rich foundation for organic-certified fertilizers.",
-    fit: ["Organic certified", "Soil health", "Premium positioning"],
-  },
-];
+
 
 const linkClassName = ({ isActive }) =>
   `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? "bg-primary/10 text-primary" : "text-secondary hover:bg-primary/5"
@@ -227,10 +179,10 @@ export const SiteShell = ({ children }) => {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">Featured product groups</p>
             <div className="grid gap-3">
               {products.slice(0, 4).map((product, index) => (
-                <div key={product.title} className="rounded-[24px] border border-white/10 bg-white/5 p-4" data-testid={`footer-product-card-${index}`}>
+                <Link key={product.title} to={`/products/${product.slug}`} className="rounded-[24px] border border-white/10 bg-white/5 p-4 block transition hover:bg-white/10" data-testid={`footer-product-card-${index}`}>
                   <p className="text-sm font-semibold text-white">{product.title}</p>
                   <p className="mt-2 text-sm leading-6 text-white/70">{product.summary}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

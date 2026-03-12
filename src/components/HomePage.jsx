@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, PhoneCall, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowRight, PhoneCall, CheckCircle2, ChevronRight, MoveRight } from "lucide-react";
+import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { ImagePanel } from "@/components/ImagePanel";
 import { ExpertiseCard } from "@/components/ExpertiseCard";
@@ -68,64 +69,7 @@ const expertiseCards = [
   },
 ];
 
-const products = [
-  {
-    title: "Mineral Base Granules",
-    imageUrl: "/images/products/mineral-base-granules.png",
-    summary:
-      "Slow-release fertilizers that supply essential minerals and trace elements for sustainable plant growth. Improve soil fertility and nutrient availability.",
-    fit: ["Soil fertility", "Long-term nutrients", "Sustainable growth"],
-  },
-  {
-    title: "Bio-Fertilizer Base Granules",
-    imageUrl: "/images/products/bio-fertilizer-base-granules.png",
-    summary:
-      "Innovative agricultural inputs that improve soil fertility and support healthy plant growth through biological activity.",
-    fit: ["Bio inputs", "Organic certified", "Soil microbiome"],
-  },
-  {
-    title: "Bio-Stimulant Base Granules",
-    imageUrl: "/images/products/bio-stimulant-base-granules.png",
-    summary:
-      "Plant growth stimulants that enhance plant biological processes beyond standard nutrition. Improves crop resilience and natural stress tolerance.",
-    fit: ["Crop resilience", "Stress tolerance", "Value-added blends"],
-  },
-  {
-    title: "Mix Micro Base Granules",
-    imageUrl: "/images/products/mix-micro-base-granules.png",
-    summary:
-      "Customizable micronutrient solution to correct deficiencies and boost soil fertility. Contains Calcium, Magnesium, Potash, Zinc and more.",
-    fit: ["Micronutrient blends", "Custom specification", "Multi-crop"],
-  },
-  {
-    title: "Bio-Pesticide Base Granules",
-    imageUrl: "/images/products/bio-pesticide-base-granules.png",
-    summary:
-      "Eco-friendly crop protection granules that protect plant health while preserving biodiversity and soil ecosystem.",
-    fit: ["Eco-friendly", "IPM compatible", "Residue-free"],
-  },
-  {
-    title: "Pesticide Base Granules",
-    imageUrl: "/images/products/pesticide-base-granules.png",
-    summary:
-      "Multi-functional crop protection foundation that acts as both carrier for pesticide active ingredients AND provider of essential nutrients.",
-    fit: ["Dual-action", "Pest control + soil health", "Customizable"],
-  },
-  {
-    title: "Base Granules",
-    imageUrl: "/images/products/base-granules.png",
-    summary:
-      "Fundamental product component and carrier granule — a customizable platform beyond traditional bentonite fillers.",
-    fit: ["190 MT/day capacity", "Flexible use", "Recipe granules"],
-  },
-  {
-    title: "Organic Base Granules",
-    imageUrl: "/images/products/organic-base-granules.png",
-    summary:
-      "Certified organic carrier granules — a sustainable, nutrient-rich foundation for organic-certified fertilizers.",
-    fit: ["Organic certified", "Soil health", "Premium positioning"],
-  },
-];
+
 
 // Services with real bg images from the old site
 const services = [
@@ -544,14 +488,18 @@ const HomePage = () => (
           <CarouselContent className="-ml-6 items-stretch">
             {products.map((product, index) => (
               <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
-                <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]">
-                  <div className="flex h-56 w-full shrink-0 items-center justify-center bg-white p-8">
+                <Link
+                  to={`/products/${product.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
+                >
+                  <div className="relative h-56 w-full shrink-0 overflow-hidden">
                     <img
                       src={product.imageUrl}
                       alt={product.title}
-                      className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="font-heading text-lg font-semibold text-foreground">{product.title}</h3>
@@ -563,8 +511,12 @@ const HomePage = () => (
                         </span>
                       ))}
                     </div>
+                    <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                      Read more
+                      <MoveRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
                   </div>
-                </div>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
