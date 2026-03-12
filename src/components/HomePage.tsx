@@ -7,7 +7,7 @@ import { ExpertiseCard } from "@/components/ExpertiseCard";
 import { ServiceCard } from "@/components/ServiceCard";
 import { InsightCard } from "@/components/InsightCard";
 import { InquiryForm } from "@/components/InquiryForm";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { SEOHead } from "@/components/SEOHead";
 import { organizationSchema, websiteSchema, homeFaqSchema } from "@/data/seoSchemas";
@@ -512,8 +512,7 @@ const HomePage = () => (
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4 top-1/2 -translate-y-1/2" />
-          <CarouselNext className="hidden md:flex -right-4 top-1/2 -translate-y-1/2" />
+
         </Carousel>
       </div>
     </section>
