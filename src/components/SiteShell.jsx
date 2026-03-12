@@ -3,7 +3,88 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { company, navigation, products } from "@/data/siteContent";
+
+const company = {
+  name: "Adit Biorganic",
+  tagline: "Organic Naturally",
+  subTagline: "Nurturing Farms, Preserving Nature",
+  missionTagline: "EVERY CROP COUNTS. EVERY FARMER MATTERS.",
+  legalTagline: "India's Leading B2B Fertilizer Manufacturer - ISO 9001:2015 Certified",
+  heroTitle: "The Future of Sustainable Agriculture",
+  heroSubtitle:
+    "As pioneers in organic fertilizers, we provide nutrient-rich, sustainable solutions to enhance your crop yield and protect the land for generations to come.",
+  aboutIntro: "Leading manufacturer of premium organic fertilizer granules",
+  aboutDetails: "At Adit Biorganic, we are dedicated to sustainability by providing the agriculture industry with efficient and effective organic granular fertilizer solutions. As a leading ISO 9001:2015 certified manufacturer, we specialize in high-quality, customized nutrient base and coating granules. We partner with companies across India to produce the innovative, eco-friendly products that enhance soil health and maximize crop yield.",
+  mission: "Our mission is to empower farmers and fertilizer brands with high-quality organic solutions that enhance soil health, improve crop yield, and promote environmental sustainability. We strive to be at the forefront of agricultural innovation, making a positive impact on the planet.",
+  chairmanMessage: "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to make a meaningful impact.",
+  philosophy: "Quality You Can Trust, Results You Can See - Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.",
+  phoneDisplay: "+91 98250 45894",
+  phoneRaw: "+919825045894",
+  emails: ["info@aditbiorganic.com", "sales@aditbiorganic.com"],
+  address: "S. No. 1152, Kanatalavdi Road, Adas, Anand, Gujarat - 388305",
+  founder: "Akash Dadhania",
+  founderTitle: "Founder & Director",
+};
+
+const navigation = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Products", path: "/products" },
+  { label: "Services", path: "/services" },
+  { label: "Insights", path: "/blog" },
+  { label: "Contact", path: "/contact" },
+];
+
+const products = [
+  {
+    title: "Mineral Base Granules",
+    imageUrl: "/images/products/mineral-base-granules.png",
+    summary: "Slow-release fertilizers that supply essential minerals and trace elements for sustainable plant growth.",
+    fit: ["Soil fertility", "Long-term nutrients", "Sustainable growth"],
+  },
+  {
+    title: "Bio-Fertilizer Base Granules",
+    imageUrl: "/images/products/bio-fertilizer-base-granules.png",
+    summary: "Innovative agricultural inputs that improve soil fertility and support healthy plant growth through biological activity.",
+    fit: ["Bio inputs", "Organic certified", "Soil microbiome"],
+  },
+  {
+    title: "Bio-Stimulant Base Granules",
+    imageUrl: "/images/products/bio-stimulant-base-granules.png",
+    summary: "Plant growth stimulants that enhance plant biological processes beyond standard nutrition.",
+    fit: ["Crop resilience", "Stress tolerance", "Value-added blends"],
+  },
+  {
+    title: "Mix Micro Base Granules",
+    imageUrl: "/images/products/mix-micro-base-granules.png",
+    summary: "Customizable micronutrient solution to correct deficiencies and boost soil fertility.",
+    fit: ["Micronutrient blends", "Custom specification", "Multi-crop"],
+  },
+  {
+    title: "Bio-Pesticide Base Granules",
+    imageUrl: "/images/products/bio-pesticide-base-granules.png",
+    summary: "Eco-friendly crop protection granules that protect plant health while preserving biodiversity.",
+    fit: ["Eco-friendly", "IPM compatible", "Residue-free"],
+  },
+  {
+    title: "Pesticide Base Granules",
+    imageUrl: "/images/products/pesticide-base-granules.png",
+    summary: "Multi-functional crop protection foundation that acts as both carrier for pesticide active ingredients.",
+    fit: ["Dual-action", "Pest control + soil health", "Customizable"],
+  },
+  {
+    title: "Base Granules",
+    imageUrl: "/images/products/base-granules.png",
+    summary: "Fundamental product component and carrier granule - a customizable platform beyond traditional bentonite fillers.",
+    fit: ["190 MT/day capacity", "Flexible use", "Recipe granules"],
+  },
+  {
+    title: "Organic Base Granules",
+    imageUrl: "/images/products/organic-base-granules.png",
+    summary: "Certified organic carrier granules - a sustainable, nutrient-rich foundation for organic-certified fertilizers.",
+    fit: ["Organic certified", "Soil health", "Premium positioning"],
+  },
+];
 
 const linkClassName = ({ isActive }) =>
   `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? "bg-primary/10 text-primary" : "text-secondary hover:bg-primary/5"
