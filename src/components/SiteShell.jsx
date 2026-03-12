@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 import { company, navigation, products } from "@/data/siteContent";
 
 const linkClassName = ({ isActive }) =>
-  `rounded-full px-4 py-2 text-sm font-medium transition ${
-    isActive ? "bg-primary/10 text-primary" : "text-secondary hover:bg-primary/5"
+  `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? "bg-primary/10 text-primary" : "text-secondary hover:bg-primary/5"
   }`;
 
 export const SiteShell = ({ children }) => {
@@ -37,8 +36,7 @@ export const SiteShell = ({ children }) => {
             </div>
           </div>
           <div className="rounded-full border border-white/15 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white/85" data-testid="topbar-tagline">
-            B2B Organic & Mineral Granule Manufacturing
-          </div>
+            WELCOME TO ADIT BIORGANIC          </div>
         </div>
       </div>
 
