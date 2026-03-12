@@ -1,0 +1,94 @@
+# robots.txt for Adit Biorganic
+# Last updated: 2026-03-12
+# Website: https://aditbiorganic.com
+
+# Allow all search engines and AI bots
+User-agent: *
+Allow: /
+
+# Google bots
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-Video
+Allow: /
+User-agent: Googlebot-News
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# AI search engines (GEO optimization)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Gemini-Web
+Allow: /
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+User-agent: FacebookBot
+Allow: /
+User-agent: LinkedInBot
+Allow: /
+User-agent: Twitterbot
+Allow: /
+User-agent: WhatsApp
+Allow: /
+User-agent: TelegramBot
+Allow: /
+
+# Search engine bots
+User-agent: Bingbot
+Allow: /
+User-agent: msnbot
+Allow: /
+User-agent: msnbot-media
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Brave Bot
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: YandexBot
+Allow: /
+User-agent: YandexImages
+Allow: /
+User-agent: Baiduspider
+Allow: /
+
+# Additional AI crawlers
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+User-agent: xAI-Bot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: ia_archiver
+Allow: /
+
+# Block admin and private paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://aditbiorganic.com/sitemap.xml
