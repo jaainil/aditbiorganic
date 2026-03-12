@@ -102,36 +102,37 @@
 
 @layer base {
   :root {
-    --background: 60 13% 97%;
+    --background: 0 0% 100%;
     --foreground: 0 0% 10%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
-    --primary: 156 48% 20%;
-    --primary-foreground: 60 9% 98%;
-    --secondary: 35 16% 49%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 60 14% 94%;
+    --primary: 200 85% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 100% 19%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 175 20% 96%;
     --muted-foreground: 0 0% 35%;
-    --accent: 35 86% 45%;
-    --accent-foreground: 60 9% 98%;
+    --accent: 76 72% 51%;
+    --accent-foreground: 0 0% 10%;
     --destructive: 0 68% 42%;
     --destructive-foreground: 60 9% 98%;
-    --border: 48 11% 87%;
-    --input: 48 11% 87%;
-    --ring: 156 48% 20%;
-    --chart-1: 156 48% 20%;
-    --chart-2: 35 86% 45%;
-    --chart-3: 35 16% 49%;
-    --chart-4: 146 31% 44%;
+    --border: 175 10% 90%;
+    --input: 175 10% 90%;
+    --ring: 200 85% 44%;
+    --chart-1: 200 85% 44%;
+    --chart-2: 76 72% 51%;
+    --chart-3: 210 100% 19%;
+    --chart-4: 175 45% 72%;
     --chart-5: 31 58% 42%;
     --radius: 0.9rem;
-    --brand-forest: #1b4d3e;
-    --brand-earth: #8d7f71;
-    --brand-gold: #d97706;
-    --surface-soft: #f1f1ec;
-    --surface-base: #f9f9f7;
+    --brand-blue: #0577C2;
+    --brand-dark-blue: #0F3752;
+    --brand-green: #9ECD2E;
+    --brand-teal: #9AC5C2;
+    --surface-soft: #f7fafa;
+    --surface-base: #fafafa;
     --text-main: #1a1a1a;
     --text-muted: #4a4a4a;
   }
@@ -151,8 +152,8 @@
     font-family: "Manrope", sans-serif;
     color: var(--text-main);
     background:
-      radial-gradient(circle at top left, rgba(27, 77, 62, 0.06), transparent 24%),
-      linear-gradient(180deg, #fafaf8 0%, #f7f7f4 100%);
+      radial-gradient(circle at top left, rgba(5, 119, 194, 0.06), transparent 24%),
+      linear-gradient(180deg, #ffffff 0%, #f7fafa 100%);
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -170,7 +171,7 @@
   }
 
   ::selection {
-    background: rgba(217, 119, 6, 0.22);
+    background: rgba(158, 205, 46, 0.25);
     color: var(--text-main);
   }
 }
@@ -212,14 +213,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #ebece6;
+  background: #e8f4f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a29a8f;
+  background: #9AC5C2;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7f766b;
+  background: #7aa8a5;
 }
