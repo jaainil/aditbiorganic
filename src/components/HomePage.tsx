@@ -213,17 +213,17 @@ const HomePage = () => (
         <ImagePanel
           src={images.hero}
           alt="Aerial sustainable agriculture field"
-          className="aspect-[4/4.6] min-h-90 lg:min-h-155"
+          className="aspect-[4/3] min-h-64 lg:aspect-[4/4.6] lg:min-h-155"
           overlay={
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-3xl border border-white/30 bg-surface-overlay/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
+            <div className="grid gap-3 grid-cols-1 xs:grid-cols-2 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/30 bg-surface-overlay/92 p-4 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Our promise</p>
-                <p className="mt-3 font-heading text-2xl font-semibold text-foreground">Consistency at scale</p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">Granules engineered for repeatability, handling, and dependable supply.</p>
+                <p className="mt-2 font-heading text-lg font-semibold text-foreground">Consistency at scale</p>
+                <p className="mt-1 text-xs leading-5 text-muted-foreground">Granules engineered for repeatability, handling, and dependable supply.</p>
               </div>
-              <div className="rounded-3xl border border-white/30 bg-primary p-5 text-white shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
+              <div className="rounded-2xl border border-white/30 bg-primary p-4 text-white shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">Why Adit Biorganic</p>
-                <p className="mt-3 font-heading text-2xl font-semibold">Industrial discipline, organic intent</p>
+                <p className="mt-2 font-heading text-lg font-semibold">Industrial discipline, organic intent</p>
               </div>
             </div>
           }
@@ -232,8 +232,8 @@ const HomePage = () => (
     </section>
 
     {/* ── Stats Bar (floating) ── */}
-    <section className="relative z-10 -mt-10 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-4">
+    <section className="relative z-10 -mt-10 overflow-hidden px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-4 grid-cols-2 xl:grid-cols-4">
         {heroStats.map((item) => (
           <div
             key={item.label}
@@ -255,7 +255,7 @@ const HomePage = () => (
         <ImagePanel
           src={images.facilityOverview}
           alt="Adit Biorganic facility overview"
-          className="aspect-4/3.5 min-h-75"
+          className="aspect-[4/3] min-h-64 lg:aspect-[4/3.5] lg:min-h-75"
           overlay={
             <div className="rounded-3xl border border-white/30 bg-secondary/90 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.18)]">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">ISO 9001:2015 Certified</p>
@@ -348,7 +348,7 @@ const HomePage = () => (
         <ImagePanel
           src={images.factory}
           alt="Manufacturing facility"
-          className="aspect-[4/4.6] min-h-90"
+          className="aspect-[4/3] min-h-64 lg:aspect-[4/4.6] lg:min-h-90"
           overlay={
             <div className="rounded-3xl border border-white/30 bg-surface-overlay/94 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Chairman's message</p>
@@ -438,7 +438,7 @@ const HomePage = () => (
               <Link to="/about">Read More</Link>
             </Button>
             <Button asChild variant="outline" className="h-12 rounded-full border-white/30 bg-transparent px-6 text-white hover:bg-white hover:text-secondary">
-              <a href={`tel:${company.phoneRaw}`}>Call {company.phoneDisplay}</a>
+              <a href={`tel:${company.phoneRaw}`} className="whitespace-nowrap">Call Us</a>
             </Button>
           </div>
         </div>
@@ -446,7 +446,7 @@ const HomePage = () => (
         <ImagePanel
           src={images.biopestGranulesHero}
           alt="Bio-Pesticide Granules — Adit Biorganic product"
-          className="aspect-[4/4.6] min-h-100"
+          className="aspect-[4/3] min-h-64 lg:aspect-[4/4.6] lg:min-h-100"
           overlay={
             <div className="rounded-3xl border border-white/25 bg-white/10 p-4 backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">India's Leading B2B Fertilizer Manufacturer</p>

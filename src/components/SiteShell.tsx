@@ -13,7 +13,7 @@ export const SiteShell = ({ children }: { children: React.ReactNode }) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <SiteNavbar
         mobileOpen={mobileMenuOpen}
         onMobileToggle={() => setMobileMenuOpen((v) => !v)}
