@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
@@ -5,9 +6,9 @@ import { SEOHead } from "@/components/SEOHead";
 import { organizationSchema } from "@/data/seoSchemas";
 import { getAllBlogs } from "@/lib/content";
 
-const posts = getAllBlogs();
+const allPosts = getAllBlogs();
 
-const categories = ["All", ...Array.from(new Set(posts.map((p) => p.topic)))];
+const categories = ["All", ...Array.from(new Set(allPosts.map((p) => p.topic).filter(Boolean)))];
 
 const audienceCards = [
   {
@@ -30,7 +31,14 @@ const audienceCards = [
   },
 ];
 
-export const BlogPage = () => (
+export const BlogPage = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const posts = activeCategory === "All"
+    ? allPosts
+    : allPosts.filter((p) => p.topic === activeCategory);
+
+  return (
   <>
     <SEOHead
       title="Agriculture & Fertilizer Industry Blog — Insights for B2B Brands | Adit Biorganic"
@@ -66,22 +74,22 @@ export const BlogPage = () => (
           </div>
           {/* Featured post preview */}
           <Link
-            to={`/blog/${posts[0].slug}`}
+            to={`/blog/${allPosts[0].slug}`}
             className="group relative overflow-hidden rounded-[32px] border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]"
             style={{ minHeight: "360px" }}
           >
             <img
-              src={posts[0].img}
-              alt={posts[0].title}
+              src={allPosts[0].img}
+              alt={allPosts[0].title}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <span className="inline-flex rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold text-secondary">
-                {posts[0].topic}
+                {allPosts[0].topic}
               </span>
-              <h3 className="mt-3 font-heading text-2xl font-semibold text-white">{posts[0].title}</h3>
-              <p className="mt-2 text-sm text-white/70">{posts[0].dateDisplay} · {posts[0].author}</p>
+              <h3 className="mt-3 font-heading text-2xl font-semibold text-white">{allPosts[0].title}</h3>
+              <p className="mt-2 text-sm text-white/70">{allPosts[0].dateDisplay} · {allPosts[0].author}</p>
             </div>
           </Link>
         </div>
@@ -92,17 +100,19 @@ export const BlogPage = () => (
     <section className="border-b border-border bg-surface-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex gap-2 overflow-x-auto py-4 scrollbar-none">
-          {categories.map((cat, i) => (
-            <span
+          {categories.map((cat) => (
+            <button
               key={cat}
+              type="button"
+              onClick={() => setActiveCategory(cat)}
               className={`shrink-0 cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                i === 0
+                activeCategory === cat
                   ? "bg-primary text-white"
                   : "border border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
               }`}
             >
               {cat}
-            </span>
+            </button>
           ))}
         </div>
       </div>
@@ -111,7 +121,9 @@ export const BlogPage = () => (
     {/* ── All Posts Grid ── */}
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mb-10 flex items-center justify-between">
-        <h2 className="font-heading text-2xl font-semibold text-foreground">All Articles</h2>
+        <h2 className="font-heading text-2xl font-semibold text-foreground">
+          {activeCategory === "All" ? "All Articles" : activeCategory}
+        </h2>
         <p className="text-sm text-muted-foreground">{posts.length} articles</p>
       </div>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -231,4 +243,5 @@ export const BlogPage = () => (
       </div>
     </section>
   </>
-);
+  );
+};
