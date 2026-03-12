@@ -20,6 +20,7 @@ import {
 
 import { SiteShell } from "@/components/SiteShell";
 import { InquiryForm } from "@/components/InquiryForm";
+import { AboutPage } from "@/pages/AboutPage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Toaster } from "@/components/ui/sonner";
@@ -474,96 +475,6 @@ const HomePage = () => (
           description="Share your requirement and the Adit Biorganic team will follow up with the right commercial or technical conversation."
           submitLabel="Send B2B inquiry"
         />
-      </div>
-    </section>
-  </>
-);
-
-const AboutPage = () => (
-  <>
-    <PageHero
-      eyebrow="About us"
-      title="A cleaner, more credible story about who Adit Biorganic is and why buyers can trust the business."
-      description="This page reframes the company as a dependable, disciplined manufacturer with a sustainability mission—balancing premium B2B credibility with organic warmth."
-      imageSrc={images.factory}
-      imageAlt="Adit Biorganic factory and operations"
-      badges={["Sustainable agriculture", "Customized manufacturing", "Anand, Gujarat"]}
-      testId="about-page-hero"
-      primaryCta={
-        <Button asChild className="h-12 rounded-full bg-primary px-6 text-white hover:bg-primary/90" data-testid="about-hero-primary-button">
-          <Link to="/contact">Talk to our team</Link>
-        </Button>
-      }
-      secondaryCta={
-        <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white" data-testid="about-hero-secondary-button">
-          <Link to="/products">Review products</Link>
-        </Button>
-      }
-    />
-
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="grid gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
-        <div className="space-y-6" data-testid="about-story-content">
-          <SectionIntro
-            eyebrow="Who we are"
-            title="A manufacturer built to support brands, not just sell commodity supply."
-            description="Adit Biorganic positions itself as a partner to fertilizer companies that need consistent custom granules, dependable production support, and a supplier whose sustainability focus strengthens—not weakens—commercial performance."
-          />
-          <div className="grid gap-4 sm:grid-cols-2">
-            {companyPillars.map((pillar, index) => (
-              <div key={pillar.title} className="rounded-[26px] border border-border bg-muted p-5" data-testid={`about-pillar-card-${index}`}>
-                <p className="font-heading text-xl font-semibold text-foreground">{pillar.title}</p>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{pillar.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <ImagePanel src={images.soil} alt="Hands holding healthy soil" testId="about-story-image-panel" className="aspect-[4/4.7] min-h-[360px]" />
-      </div>
-    </section>
-
-    <section className="bg-muted py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <article className="rounded-[32px] border border-border bg-surface-card p-8 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid="about-mission-card">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Our mission</p>
-          <h3 className="mt-4 font-heading text-3xl font-semibold text-foreground">{company.mission}</h3>
-        </article>
-        <article className="rounded-[32px] border border-border bg-primary p-8 text-white shadow-[0_16px_50px_rgba(16,24,40,0.08)]" data-testid="about-founder-card">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">A message from our chairman</p>
-          <p className="mt-4 font-accent text-2xl leading-10 text-white">
-            "{company.chairmanMessage}"
-          </p>
-          <p className="mt-6 text-sm font-medium text-white/75">{company.founder}, {company.founderTitle}</p>
-        </article>
-      </div>
-    </section>
-
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <SectionIntro
-        eyebrow="Infrastructure edge"
-        title="The physical and process capability behind the brand promise."
-        description="The old site mentioned production, testing, and warehousing, but it was scattered. This redesign puts those strengths into a clear operational story."
-      />
-      <div className="grid gap-6 lg:grid-cols-3">
-        {[
-          {
-            title: "Advanced plant and machinery",
-            description: "Granulation, coating, and handling systems aligned for efficient output and dependable repeatability.",
-          },
-          {
-            title: "In-house quality checks",
-            description: "Batch discipline and product confidence supported by a process-led quality culture.",
-          },
-          {
-            title: "Warehouse and dispatch readiness",
-            description: "Finished goods can move faster into distribution workflows with better storage and planning support.",
-          },
-        ].map((item, index) => (
-          <div key={item.title} className="rounded-[28px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]" data-testid={`about-infrastructure-card-${index}`}>
-            <p className="font-heading text-2xl font-semibold text-foreground">{item.title}</p>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">{item.description}</p>
-          </div>
-        ))}
       </div>
     </section>
   </>
