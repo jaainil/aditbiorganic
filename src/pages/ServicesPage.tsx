@@ -91,7 +91,7 @@ export const ServicesPage = () => (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-center">
         {/* Left: real image */}
-        <div className="relative overflow-hidden rounded-[32px] border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
+        <div className="relative overflow-hidden rounded-4xl border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
           <img
             src={images.customizedGranules}
             alt="Advanced Custom Granule Manufacturing — Adit Biorganic"
@@ -100,7 +100,7 @@ export const ServicesPage = () => (
           />
           <div className="absolute inset-0 bg-linear-to-t from-secondary/60 via-transparent to-transparent" />
           <div className="absolute bottom-5 left-5 right-5">
-            <div className="rounded-[24px] border border-white/25 bg-white/10 p-5 backdrop-blur-sm">
+            <div className="rounded-3xl border border-white/25 bg-white/10 p-5 backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">Our core expertise</p>
               <p className="mt-1 font-heading text-lg font-semibold text-white">Custom "Recipe" Granule Manufacturing</p>
             </div>

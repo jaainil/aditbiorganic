@@ -75,7 +75,7 @@ export const BlogPage = () => {
           {/* Featured post preview */}
           <Link
             to={`/blog/${allPosts[0].slug}`}
-            className="group relative overflow-hidden rounded-[32px] border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]"
+            className="group relative overflow-hidden rounded-4xl border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]"
             style={{ minHeight: "360px" }}
           >
             <img

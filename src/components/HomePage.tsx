@@ -212,15 +212,15 @@ const HomePage = () => (
         <ImagePanel
           src={images.hero}
           alt="Aerial sustainable agriculture field"
-          className="aspect-[4/4.6] min-h-[360px] lg:min-h-[620px]"
+          className="aspect-[4/4.6] min-h-90 lg:min-h-155"
           overlay={
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[24px] border border-white/30 bg-surface-overlay/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
+              <div className="rounded-3xl border border-white/30 bg-surface-overlay/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Our promise</p>
                 <p className="mt-3 font-heading text-2xl font-semibold text-foreground">Consistency at scale</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">Granules engineered for repeatability, handling, and dependable supply.</p>
               </div>
-              <div className="rounded-[24px] border border-white/30 bg-primary p-5 text-white shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
+              <div className="rounded-3xl border border-white/30 bg-primary p-5 text-white shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">Why Adit Biorganic</p>
                 <p className="mt-3 font-heading text-2xl font-semibold">Industrial discipline, organic intent</p>
               </div>
@@ -254,9 +254,9 @@ const HomePage = () => (
         <ImagePanel
           src={images.facilityOverview}
           alt="Adit Biorganic facility overview"
-          className="aspect-4/3.5 min-h-[300px]"
+          className="aspect-4/3.5 min-h-75"
           overlay={
-            <div className="rounded-[24px] border border-white/30 bg-secondary/90 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.18)]">
+            <div className="rounded-3xl border border-white/30 bg-secondary/90 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.18)]">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">ISO 9001:2015 Certified</p>
               <p className="mt-2 font-heading text-lg font-semibold text-white">"Quality You Can Trust. Results You Can See."</p>
             </div>
@@ -347,9 +347,9 @@ const HomePage = () => (
         <ImagePanel
           src={images.factory}
           alt="Manufacturing facility"
-          className="aspect-[4/4.6] min-h-[360px]"
+          className="aspect-[4/4.6] min-h-90"
           overlay={
-            <div className="rounded-[26px] border border-white/30 bg-surface-overlay/94 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
+            <div className="rounded-3xl border border-white/30 bg-surface-overlay/94 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Chairman's message</p>
               <p className="mt-3 font-accent text-xl text-primary">
                 "Our mission is not just about business but about contributing positively to the environment."
@@ -370,13 +370,13 @@ const HomePage = () => (
           </p>
           {/* Mission + Chairman side by side */}
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-[24px] border border-border bg-surface-card p-5">
+            <div className="rounded-3xl border border-border bg-surface-card p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Our Mission</p>
               <p className="mt-3 font-accent text-base leading-7 text-foreground italic">
                 "{company.mission.slice(0, 120)}…"
               </p>
             </div>
-            <div className="rounded-[24px] bg-secondary p-5 text-white">
+            <div className="rounded-3xl bg-secondary p-5 text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Chairman's Note</p>
               <p className="mt-3 font-accent text-base leading-7 text-white italic">
                 "{company.chairmanMessage.slice(0, 120)}…"
@@ -445,9 +445,9 @@ const HomePage = () => (
         <ImagePanel
           src={images.biopestGranulesHero}
           alt="Bio-Pesticide Granules — Adit Biorganic product"
-          className="aspect-[4/4.6] min-h-[400px]"
+          className="aspect-[4/4.6] min-h-100"
           overlay={
-            <div className="rounded-[24px] border border-white/25 bg-white/10 p-4 backdrop-blur-sm">
+            <div className="rounded-3xl border border-white/25 bg-white/10 p-4 backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">India's Leading B2B Fertilizer Manufacturer</p>
               <p className="mt-1 font-heading text-lg font-semibold text-white">ISO 9001:2015 Certified</p>
             </div>
@@ -582,7 +582,7 @@ const HomePage = () => (
           </p>
           <div className="grid gap-4">
             {partnerBenefits.map((benefit) => (
-              <div key={benefit} className="flex items-start gap-3 rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div key={benefit} className="flex items-start gap-3 rounded-3xl border border-white/10 bg-white/5 p-5">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <p className="text-sm leading-7 text-white/80">{benefit}</p>
               </div>

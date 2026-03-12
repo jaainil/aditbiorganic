@@ -116,7 +116,7 @@ export const ProductDetailPage = () => {
 
           {/* Right: image */}
           <div className="mt-12 lg:mt-0">
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.4)]">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.4)]">
               <img
                 src={product.imageUrl}
                 alt={product.title}
@@ -162,7 +162,7 @@ export const ProductDetailPage = () => {
             <p className="text-sm leading-8 text-muted-foreground">
               Manufactured by Adit Biorganic under ISO 9001:2015 certified processes.
             </p>
-            <div className="rounded-[24px] border border-border bg-surface-card p-6 space-y-3">
+            <div className="rounded-3xl border border-border bg-surface-card p-6 space-y-3">
               {product.specs.map((spec) => (
                 <div key={spec.label} className="flex items-center justify-between gap-4 text-sm">
                   <span className="text-muted-foreground">{spec.label}</span>
