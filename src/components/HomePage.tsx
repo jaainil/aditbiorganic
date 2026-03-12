@@ -254,7 +254,7 @@ const HomePage = () => (
         <ImagePanel
           src={images.facilityOverview}
           alt="Adit Biorganic facility overview"
-          className="aspect-[4/3.5] min-h-[300px]"
+          className="aspect-4/3.5 min-h-[300px]"
           overlay={
             <div className="rounded-[24px] border border-white/30 bg-secondary/90 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.18)]">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">ISO 9001:2015 Certified</p>
@@ -490,7 +490,7 @@ const HomePage = () => (
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="font-heading text-lg font-semibold text-foreground">{product.title}</h3>

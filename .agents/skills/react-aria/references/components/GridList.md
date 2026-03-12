@@ -321,7 +321,7 @@ export function GridListLoadMoreItem(props: GridListLoadMoreItemProps) {
     padding-bottom: var(--spacing-2);
     -webkit-user-drag: none;
     -webkit-touch-callout: none;
-    flex-shrink: 0;
+    shrink: 0;
   }
 
   .react-aria-Text {

@@ -117,7 +117,7 @@ Some components provide CSS variables that you can use in your styling code. For
 When using Tailwind, use [data attributes](https://tailwindcss.com/docs/hover-focus-and-other-states#data-attributes) as modifiers:
 
 ```jsx
-<ListBoxItem className="data-[selected]:bg-blue-400 data-[disabled]:bg-gray-100">
+<ListBoxItem className="data-selected:bg-blue-400 data-disabled:bg-gray-100">
   Item
 </ListBoxItem>
 ```
@@ -320,7 +320,7 @@ Note that unlike CSS transitions, keyframe animations are not interruptible. If 
 If you are using Tailwind, we recommend using the [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate) plugin. This includes utilities for building common animations such as fading, sliding, and zooming.
 
 ```jsx
-<Popover className="data-[entering]:animate-in data-[entering]:fade-in data-[exiting]:animate-out data-[exiting]:fade-out">
+<Popover className="data-entering:animate-in data-entering:fade-in data-exiting:animate-out data-exiting:fade-out">
   {/* ... */}
 </Popover>
 ```

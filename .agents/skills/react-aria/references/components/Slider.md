@@ -247,7 +247,7 @@ const fillStyles = tv({
   base: 'absolute rounded-full',
   variants: {
     orientation: {
-      horizontal: 'w-(--size) h-[6px] start-(--start,0)',
+      horizontal: 'w-(--size) h-[6px] inset-s-(--start,0)',
       vertical: 'h-(--size) w-[6px] bottom-(--start,0) ml-[50%] -translate-x-[50%]'
     },
     isDisabled: {

@@ -151,7 +151,7 @@ const handle = tv({
   variants: {
     isSelected: {
       false: 'translate-x-0 bg-neutral-900 dark:bg-neutral-300',
-      true: 'translate-x-[100%] bg-white dark:bg-neutral-900'
+      true: 'translate-x-full bg-white dark:bg-neutral-900'
     },
     isDisabled: {
       true: 'forced-colors:outline-[GrayText]'

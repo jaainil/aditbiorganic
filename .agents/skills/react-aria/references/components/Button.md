@@ -66,7 +66,7 @@ export function Button(props: ButtonProps) {
 
   &:has(> svg:only-child) {
     width: var(--spacing-8);
-    flex-shrink: 0;
+    shrink: 0;
     padding: 0;
     border-radius: 9999px;
   }

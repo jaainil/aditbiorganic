@@ -56,9 +56,9 @@ export const ProductDetailPage = () => {
       <div className="border-b border-border bg-muted/60">
         <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 text-sm text-muted-foreground sm:px-6 lg:px-8">
           <Link to="/" className="transition hover:text-foreground">Home</Link>
-          <ChevronRight className="h-4 w-4 flex-shrink-0" />
+          <ChevronRight className="h-4 w-4 shrink-0" />
           <Link to="/products" className="transition hover:text-foreground">Products</Link>
-          <ChevronRight className="h-4 w-4 flex-shrink-0" />
+          <ChevronRight className="h-4 w-4 shrink-0" />
           <span className="text-foreground font-medium">{product.title}</span>
         </div>
       </div>
@@ -123,7 +123,7 @@ export const ProductDetailPage = () => {
                 className="h-full w-full object-cover"
                 style={{ aspectRatio: "4/3" }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-secondary/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="rounded-[20px] border border-white/20 bg-secondary/70 p-4 backdrop-blur-md">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">Product line</p>
@@ -236,7 +236,7 @@ export const ProductDetailPage = () => {
               key={benefit.title}
               className="flex gap-5 rounded-[28px] border border-border bg-surface-card p-7 transition hover:shadow-[0_16px_48px_rgba(16,24,40,0.06)]"
             >
-              <div className="mt-1 flex-shrink-0">
+              <div className="mt-1 shrink-0">
                 <CheckCircle2 className="h-6 w-6 text-accent" />
               </div>
               <div>
@@ -260,7 +260,7 @@ export const ProductDetailPage = () => {
               Talk to our team about quantities, custom formulations, and supply agreements.
             </p>
           </div>
-          <div className="mt-8 flex flex-wrap gap-4 lg:mt-0 lg:flex-shrink-0">
+          <div className="mt-8 flex flex-wrap gap-4 lg:mt-0 lg:shrink-0">
             <Button asChild className="h-12 rounded-full bg-white px-6 font-semibold text-primary hover:bg-white/90">
               <Link to="/contact">Request a Discussion</Link>
             </Button>
@@ -313,7 +313,7 @@ export const ProductDetailPage = () => {
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                         <div className="absolute left-4 top-4">
                           <span className="inline-flex rounded-full border border-white/30 bg-black/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
                             {relProduct.category}

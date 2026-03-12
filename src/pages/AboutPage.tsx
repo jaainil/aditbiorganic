@@ -322,7 +322,7 @@ export const AboutPage = () => (
     {/* ── Sustainability Pillars Ticker ── */}
     <section className="overflow-hidden border-y border-border bg-secondary py-6">
       <div className="flex gap-0 animate-none">
-        <div className="flex shrink-0 animate-[marquee_28s_linear_infinite] items-center gap-0">
+        <div className="flex shrink-0 animate-marquee items-center gap-0">
           {[...pillars, ...pillars].map((p) => (
             <span key={`marquee-p1-${p.replace(/\s/g, '-')}-${Math.random().toString(36).slice(2)}`} className="flex items-center gap-4 px-6 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -330,7 +330,7 @@ export const AboutPage = () => (
             </span>
           ))}
         </div>
-        <div aria-hidden className="flex shrink-0 animate-[marquee_28s_linear_infinite] items-center gap-0">
+        <div aria-hidden className="flex shrink-0 animate-marquee items-center gap-0">
           {[...pillars, ...pillars].map((p) => (
             <span key={`marquee-p2-${p.replace(/\s/g, '-')}-${Math.random().toString(36).slice(2)}`} className="flex items-center gap-4 px-6 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -360,7 +360,7 @@ export const AboutPage = () => (
             </div>
             {/* Timeline */}
             <div className="relative space-y-0 pl-6">
-              <div className="absolute left-[11px] top-2 h-[calc(100%-1rem)] w-0.5 bg-gradient-to-b from-primary/60 via-primary/20 to-transparent" />
+              <div className="absolute left-[11px] top-2 h-[calc(100%-1rem)] w-0.5 bg-linear-to-b from-primary/60 via-primary/20 to-transparent" />
               {milestones.map((m) => (
                 <div key={m.title} className="relative flex gap-6 pb-8 last:pb-0">
                   <div className="absolute -left-6 flex h-6 w-6 items-center justify-center rounded-full border-2 border-primary bg-surface-card shadow-sm">
@@ -382,7 +382,7 @@ export const AboutPage = () => (
             src={images.factory}
             alt="Adit Biorganic manufacturing facility — a decade of growth"
             testId="about-history-image-panel"
-            className="aspect-[4/5] min-h-[400px] lg:sticky lg:top-24"
+            className="aspect-4/5 min-h-[400px] lg:sticky lg:top-24"
             overlay={
               <div className="rounded-[24px] border border-white/30 bg-secondary/90 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.18)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">Where we operate</p>
@@ -418,7 +418,7 @@ export const AboutPage = () => (
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-foreground/30 via-transparent to-transparent" />
             </div>
             <div className="p-6">
               <h3 className="font-heading text-lg font-semibold text-foreground">{item.title}</h3>
@@ -475,7 +475,7 @@ export const AboutPage = () => (
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-foreground/40 via-transparent to-transparent" />
                 <span className="absolute left-4 top-4 rounded-full bg-secondary/90 px-3 py-1 text-xs font-semibold text-white">
                   {item.badge}
                 </span>
@@ -500,7 +500,7 @@ export const AboutPage = () => (
           src={images.granules}
           alt="Premium organic granular fertilizer granules — our core product"
           testId="about-granules-image-panel"
-          className="aspect-[4/4.5] min-h-[360px]"
+          className="aspect-4/4.5 min-h-[360px]"
           overlay={
             <div className="rounded-[24px] border border-white/30 bg-primary/90 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.18)]">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">Production capacity</p>

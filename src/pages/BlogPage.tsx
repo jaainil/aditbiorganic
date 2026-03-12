@@ -83,7 +83,7 @@ export const BlogPage = () => {
               alt={allPosts[0].title}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-secondary/90 via-secondary/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <span className="inline-flex rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold text-secondary">
                 {allPosts[0].topic}
@@ -141,7 +141,7 @@ export const BlogPage = () => {
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-foreground/20 to-transparent" />
               {/* Date badge */}
               <div className="absolute left-4 top-4 rounded-[14px] bg-secondary/90 px-3 py-2 text-center backdrop-blur-sm">
                 <p className="font-heading text-xl font-bold leading-none text-white">
@@ -205,7 +205,7 @@ export const BlogPage = () => {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-foreground/50 to-transparent" />
                 <h3 className="absolute bottom-4 left-5 font-heading text-xl font-semibold text-white">{card.title}</h3>
               </div>
               <div className="p-6">

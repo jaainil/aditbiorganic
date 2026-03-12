@@ -27,7 +27,7 @@ export const ServiceCard = ({ service }) => {
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/60 to-secondary/10" />
+          <div className="absolute inset-0 bg-linear-to-t from-secondary/95 via-secondary/60 to-secondary/10" />
           <div className="relative flex h-full flex-col justify-end p-7">
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-2">

@@ -13,7 +13,7 @@ export const ProductCard = ({ product }) => (
         alt={product.title}
         className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
       <div className="absolute left-4 top-4">
         <span className="inline-flex rounded-full border border-white/30 bg-black/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
           {product.category ?? "Product line"}

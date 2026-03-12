@@ -98,7 +98,7 @@ export const ServicesPage = () => (
             className="h-full w-full object-cover"
             style={{ minHeight: "480px" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-secondary/60 via-transparent to-transparent" />
           <div className="absolute bottom-5 left-5 right-5">
             <div className="rounded-[24px] border border-white/25 bg-white/10 p-5 backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">Our core expertise</p>

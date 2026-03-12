@@ -37,7 +37,7 @@ export function ColorArea(props: ColorAreaProps) {
   max-width: calc(var(--spacing) * 56);
   aspect-ratio: 1/1;
   border-radius: var(--radius);
-  flex-shrink: 0;
+  shrink: 0;
 }
 
 .react-aria-ColorArea {
