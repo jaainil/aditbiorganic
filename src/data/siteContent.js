@@ -227,10 +227,10 @@ export const partnerBenefits = [
 ];
 
 export const images = {
-  hero: "https://images.unsplash.com/photo-1758873115221-9a27e7090614?crop=entropy&cs=srgb&fm=jpg&q=85",
-  factory: "https://images.unsplash.com/photo-1678984239754-75191344a9ce?crop=entropy&cs=srgb&fm=jpg&q=85",
-  granules: "https://images.unsplash.com/photo-1581625458995-7989d049a1b3?crop=entropy&cs=srgb&fm=jpg&q=85",
-  soil: "https://images.unsplash.com/photo-1581625458990-343ee0613bb8?crop=entropy&cs=srgb&fm=jpg&q=85",
-  lab: "https://images.unsplash.com/photo-1707944745880-5c8a64617458?crop=entropy&cs=srgb&fm=jpg&q=85",
-  partnership: "https://images.unsplash.com/photo-1758518730384-be3d205838e8?crop=entropy&cs=srgb&fm=jpg&q=85",
+  hero: "/images/hero.jpg",
+  factory: "/images/factory.jpg",
+  granules: "/images/granules.jpg",
+  soil: "/images/soil.jpg",
+  lab: "/images/lab.jpg",
+  partnership: "/images/partnership.jpg",
 };
