@@ -122,7 +122,7 @@ interface ProductSource {
   slug: string;
 }
 
-const productsFile = path.resolve(ROOT_DIR, 'src/data/products.js');
+const productsFile = path.resolve(ROOT_DIR, 'src/data/products.ts');
 const blogDir = path.resolve(ROOT_DIR, 'src/content/blog');
 const servicesDir = path.resolve(ROOT_DIR, 'src/content/services');
 
