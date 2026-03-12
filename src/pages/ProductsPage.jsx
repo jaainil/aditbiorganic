@@ -6,7 +6,7 @@ import { SectionIntro } from "@/components/SectionIntro";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { SEOHead } from "@/components/SEOHead";
-import { organizationSchema, productsPageSchema } from "@/data/seoSchemas";
+import { organizationSchema, productsPageSchema, productsItemListSchema } from "@/data/seoSchemas";
 
 const company = {
   phoneDisplay: "+91 98250 45894",
@@ -37,7 +37,7 @@ export const ProductsPage = () => (
       canonical="/products"
       ogImage="/images/products-overview.png"
       keywords="organic fertilizer granules india, mineral base granules manufacturer, bio fertilizer base granules, bio stimulant granules, mix micro base granules, bio pesticide base granules, organic base granules gujarat, fertilizer granule manufacturer india, b2b fertilizer products"
-      schema={[organizationSchema, productsPageSchema]}
+      schema={[organizationSchema, productsPageSchema, productsItemListSchema]}
     />
     <PageHero
       eyebrow="Products"

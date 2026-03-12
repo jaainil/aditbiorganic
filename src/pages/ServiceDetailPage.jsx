@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { getServiceBySlug, getAllServices } from "@/lib/content";
-import { organizationSchema } from "@/data/seoSchemas";
+import { organizationSchema, buildServiceSchema } from "@/data/seoSchemas";
 
 /** Prose component map for service MDX content */
 const mdxComponents = {
@@ -65,6 +65,13 @@ export const ServiceDetailPage = () => {
   // Other services for the sidebar nav
   const otherServices = getAllServices().filter((s) => s.slug !== slug);
 
+  const serviceDetailSchema = buildServiceSchema({
+    slug,
+    name: seoTitle || title,
+    description: seoDescription || description,
+    image: imageSrc,
+  });
+
   return (
     <>
       <SEOHead
@@ -72,7 +79,8 @@ export const ServiceDetailPage = () => {
         description={seoDescription || description}
         canonical={`/services/${slug}`}
         ogImage={imageSrc}
-        schema={[organizationSchema]}
+        keywords={`${title}, fertilizer manufacturing services India, B2B fertilizer service Gujarat, contract manufacturing India`}
+        schema={[organizationSchema, serviceDetailSchema]}
       />
 
       {/* ── Hero ── */}

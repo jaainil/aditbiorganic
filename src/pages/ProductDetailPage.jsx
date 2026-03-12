@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { getProductBySlug, getRelatedProducts } from "@/data/products";
 import { SEOHead } from "@/components/SEOHead";
-import { organizationSchema, buildProductSchema, buildProductFaqSchema, breadcrumbSchema } from "@/data/seoSchemas";
+import { organizationSchema, buildProductSchema, buildProductFaqSchema, buildProductHowToSchema, breadcrumbSchema } from "@/data/seoSchemas";
 
 const company = {
   phoneDisplay: "+91 98250 45894",
@@ -36,16 +36,21 @@ export const ProductDetailPage = () => {
         ogImage={product.imageUrl}
         ogType="product"
         keywords={`${product.title}, ${product.title} manufacturer india, ${product.title} gujarat, ${product.category} fertilizer granules manufacturer, organic fertilizer manufacturer india, b2b fertilizer manufacturer gujarat, buy ${product.title} bulk, adit biorganic`}
+        product={{
+          availability: "in stock",
+          currency: "INR",
+        }}
         schema={[
           organizationSchema,
           buildProductSchema(product),
           buildProductFaqSchema(product),
+          buildProductHowToSchema(product),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Products", path: "/products" },
             { name: product.title, path: `/products/${product.slug}` },
           ]),
-        ]}
+        ].filter(Boolean)}
       />
       {/* Breadcrumb */}
       <div className="border-b border-border bg-muted/60">

@@ -4,7 +4,7 @@ import { ArrowLeft, Calendar, Tag, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { getBlogBySlug, getAllBlogs } from "@/lib/content";
-import { organizationSchema } from "@/data/seoSchemas";
+import { organizationSchema, buildBlogPostingSchema } from "@/data/seoSchemas";
 
 /** Prose component map — styles raw MDX output to match site design */
 const mdxComponents = {
@@ -67,12 +67,22 @@ export const BlogPostPage = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
-  const { Component, title, excerpt, topic, dateDisplay, author, img } = post;
+  const { Component, title, excerpt, topic, dateDisplay, author, img, date, tags } = post;
 
   // Related posts — exclude current
   const related = getAllBlogs()
     .filter((b) => b.slug !== slug)
     .slice(0, 3);
+
+  const blogPostingSchema = buildBlogPostingSchema({
+    slug,
+    title,
+    excerpt,
+    date: date || dateDisplay,
+    author: author || "Akash Dadhania",
+    image: img,
+    tags: tags || [topic, "organic fertilizer", "agriculture India", "Gujarat farming"],
+  });
 
   return (
     <>
@@ -81,7 +91,16 @@ export const BlogPostPage = () => {
         description={excerpt}
         canonical={`/blog/${slug}`}
         ogImage={img}
-        schema={[organizationSchema]}
+        ogType="article"
+        keywords={`${topic}, organic fertilizer blog, agriculture India, fertilizer manufacturing insights`}
+        article={{
+          publishedTime: date || dateDisplay,
+          modifiedTime: date || dateDisplay,
+          author: author || "Akash Dadhania",
+          section: topic || "Agriculture",
+          tags: tags || [topic, "organic fertilizer", "agriculture"],
+        }}
+        schema={[organizationSchema, blogPostingSchema]}
       />
 
       {/* ── Hero ── */}

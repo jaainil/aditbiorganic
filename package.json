@@ -1,7 +1,12 @@
 {
-  "name": "frontend",
+  "name": "aditbiorganic",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.8",
     "@fontsource-variable/outfit": "^5.2.8",
@@ -61,24 +66,6 @@
     "vaul": "^1.1.2",
     "zod": "^3.25.76"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "bun scripts/generate-sitemap.js && vite build",
-    "preview": "vite preview",
-    "sitemap": "bun scripts/generate-sitemap.js"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@tailwindcss/vite": "^4.2.1",
@@ -86,7 +73,7 @@
     "eslint": "9.23.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1",
-    "vite": "^6.2.0"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "vite": "^6.2.0",
+    "vite-plugin-sitemap": "^0.8.2"
+  }
 }
