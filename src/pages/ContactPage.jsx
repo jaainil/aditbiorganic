@@ -1,24 +1,9 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { PageHero } from "@/components/PageHero";
-import { SectionIntro } from "@/components/SectionIntro";
 import { InquiryForm } from "@/components/InquiryForm";
-import { PhoneCall, Mail, MapPin, Clock3 } from "lucide-react";
+import { PhoneCall, Mail, MapPin, Clock3, ArrowRight } from "lucide-react";
 
 const company = {
   name: "Adit Biorganic",
-  tagline: "Organic Naturally",
-  subTagline: "Nurturing Farms, Preserving Nature",
-  missionTagline: "EVERY CROP COUNTS. EVERY FARMER MATTERS.",
-  legalTagline: "India's Leading B2B Fertilizer Manufacturer - ISO 9001:2015 Certified",
-  heroTitle: "The Future of Sustainable Agriculture",
-  heroSubtitle:
-    "As pioneers in organic fertilizers, we provide nutrient-rich, sustainable solutions to enhance your crop yield and protect the land for generations to come.",
-  aboutIntro: "Leading manufacturer of premium organic fertilizer granules",
-  aboutDetails: "At Adit Biorganic, we are dedicated to sustainability by providing the agriculture industry with efficient and effective organic granular fertilizer solutions. As a leading ISO 9001:2015 certified manufacturer, we specialize in high-quality, customized nutrient base and coating granules. We partner with companies across India to produce the innovative, eco-friendly products that enhance soil health and maximize crop yield.",
-  mission: "Our mission is to empower farmers and fertilizer brands with high-quality organic solutions that enhance soil health, improve crop yield, and promote environmental sustainability. We strive to be at the forefront of agricultural innovation, making a positive impact on the planet.",
-  chairmanMessage: "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to make a meaningful impact.",
-  philosophy: "Quality You Can Trust, Results You Can See - Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.",
   phoneDisplay: "+91 98250 45894",
   phoneRaw: "+919825045894",
   emails: ["info@aditbiorganic.com", "sales@aditbiorganic.com"],
@@ -27,92 +12,272 @@ const company = {
   founderTitle: "Founder & Director",
 };
 
-const images = {
-  hero: "/images/hero.jpg",
-  factory: "/images/factory.jpg",
-  granules: "/images/granules.jpg",
-  soil: "/images/soil.jpg",
-  lab: "/images/lab.jpg",
-  partnership: "/images/partnership.jpg",
-};
+const contactCards = [
+  {
+    icon: PhoneCall,
+    label: "Call and Order",
+    value: company.phoneDisplay,
+    sub: "Mon – Sat, 9 AM – 6 PM IST",
+    href: `tel:${company.phoneRaw}`,
+    accent: true,
+  },
+  {
+    icon: Mail,
+    label: "General Inquiries",
+    value: company.emails[0],
+    sub: "We reply within 24 hours",
+    href: `mailto:${company.emails[0]}`,
+  },
+  {
+    icon: Mail,
+    label: "Sales Inquiries",
+    value: company.emails[1],
+    sub: "For B2B orders & partnerships",
+    href: `mailto:${company.emails[1]}`,
+  },
+  {
+    icon: MapPin,
+    label: "Visit Our Facility",
+    value: company.address,
+    sub: "Adas, Anand, Gujarat – 388305",
+    href: "https://maps.google.com/?q=Adas,Anand,Gujarat",
+  },
+];
+
+const faqs = [
+  {
+    q: "What is your minimum order quantity?",
+    a: "We cater to bulk B2B orders. Please get in touch with our sales team to discuss volume requirements and pricing.",
+  },
+  {
+    q: "Can you create custom formulations?",
+    a: "Yes — custom 'Recipe Granule' formulations are our core expertise. We work with your specifications to develop the exact nutrient and coating profile you need.",
+  },
+  {
+    q: "How long does it take to fulfill an order?",
+    a: "With 190+ MT/day capacity running 24/7, we can accommodate even large, urgent orders. Lead times depend on formulation complexity and volume — contact us for a specific timeline.",
+  },
+  {
+    q: "Do you offer contract / white-label manufacturing?",
+    a: "Absolutely. We offer full contract manufacturing — your brand, our facility. From raw materials to packaged finished goods.",
+  },
+];
 
 export const ContactPage = () => (
   <>
-    <PageHero
-      eyebrow="Contact"
-      title="Get In Touch With Us"
-      description="We'd love to hear from you. Contact us for product inquiries, partnerships, or any questions about our services."
-      imageSrc={images.partnership}
-      imageAlt="Business partnership and collaboration"
-      badges={["Phone-first CTAs", "Form-driven leads", "B2B partnership focus"]}
-      primaryCta={
-        <Button asChild className="h-12 rounded-full bg-accent px-6 text-white hover:bg-accent/80">
-          <a href={`tel:${company.phoneRaw}`}>Call {company.phoneDisplay}</a>
-        </Button>
-      }
-      secondaryCta={
-        <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white">
-          <a href={`mailto:${company.emails[0]}`}>Email sales</a>
-        </Button>
-      }
-    />
-
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="space-y-6">
-          <SectionIntro
-            eyebrow="Direct contact"
-            title="Reach The Team Your Way"
-            description="Choose how you'd like to connect - call us directly, send an email, or fill out the inquiry form."
-          />
-          {[
-            {
-              label: "Call and order",
-              value: company.phoneDisplay,
-              link: `tel:${company.phoneRaw}`,
-              icon: PhoneCall,
-            },
-            {
-              label: "General inquiries",
-              value: company.emails[0],
-              link: `mailto:${company.emails[0]}`,
-              icon: Mail,
-            },
-            {
-              label: "Sales inquiries",
-              value: company.emails[1],
-              link: `mailto:${company.emails[1]}`,
-              icon: Mail,
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-            return (
-              <a key={item.label} href={item.link} className="flex items-start gap-4 rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition hover:-translate-y-1">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">{item.label}</p>
-                  <p className="mt-3 text-lg font-semibold text-foreground">{item.value}</p>
-                </div>
+    {/* ── Hero — no PageHero, custom full-bleed ── */}
+    <section className="relative overflow-hidden bg-secondary">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(158,205,46,0.12),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(5,119,194,0.15),transparent_40%)]" />
+      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="max-w-3xl space-y-6">
+          <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/80">
+            Contact Us
+          </div>
+          <h1 className="font-heading text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Let's Cooperate Together
+          </h1>
+          <p className="max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
+            We will reply within <strong className="text-white">24 hours</strong> via email. Reach out for product inquiries, B2B partnerships, custom formulation requests, or manufacturing discussions.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Button asChild className="h-12 rounded-full bg-accent px-7 text-secondary font-semibold hover:bg-accent/80">
+              <a href={`tel:${company.phoneRaw}`}>
+                <PhoneCall className="h-4 w-4" />
+                Call {company.phoneDisplay}
               </a>
-            );
-          })}
+            </Button>
+            <Button asChild variant="outline" className="h-12 rounded-full border-white/30 bg-transparent px-7 text-white hover:bg-white hover:text-secondary">
+              <a href={`mailto:${company.emails[1]}`}>
+                <Mail className="h-4 w-4" />
+                Email Sales Team
+              </a>
+            </Button>
+          </div>
+        </div>
 
-          <div className="rounded-[32px] border border-border bg-primary p-8 text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">Visit the facility</p>
-            <p className="mt-4 text-lg font-semibold">{company.address}</p>
-            <div className="mt-6 flex items-center gap-3 text-sm text-white/75">
-              <Clock3 className="h-4 w-4" />
-              Response goal: within 24 hours for qualified inquiries.
+        {/* Floating contact pills */}
+        <div className="mt-12 flex flex-wrap gap-4">
+          {[
+            { label: "ISO 9001:2015 Certified", },
+            { label: "190+ MT/Day Capacity" },
+            { label: "24/7 Operations" },
+            { label: "Anand, Gujarat — India" },
+          ].map((tag) => (
+            <span key={tag.label} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/80">
+              {tag.label}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── Contact Cards + Form ── */}
+    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-start">
+
+        {/* Left — contact info */}
+        <div className="space-y-5">
+          <div className="space-y-2">
+            <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+              Direct Contact
+            </div>
+            <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              Reach the Team Your Way
+            </h2>
+            <p className="text-base leading-7 text-muted-foreground">
+              Choose how you'd like to connect — call, email, or visit us.
+            </p>
+          </div>
+
+          <div className="grid gap-4">
+            {contactCards.map((card) => {
+              const Icon = card.icon;
+              return (
+                <a
+                  key={card.label}
+                  href={card.href}
+                  target={card.href.startsWith("http") ? "_blank" : undefined}
+                  rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className={`group flex items-start gap-4 rounded-[24px] border p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${
+                    card.accent
+                      ? "border-primary/30 bg-primary text-white"
+                      : "border-border bg-surface-card"
+                  }`}
+                >
+                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${
+                    card.accent ? "bg-white/15 text-white" : "bg-primary/10 text-primary"
+                  }`}>
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${card.accent ? "text-white/70" : "text-muted-foreground"}`}>
+                      {card.label}
+                    </p>
+                    <p className={`mt-1 font-heading text-base font-semibold break-all leading-6 ${card.accent ? "text-white" : "text-foreground"}`}>
+                      {card.value}
+                    </p>
+                    <p className={`mt-0.5 text-xs ${card.accent ? "text-white/65" : "text-muted-foreground"}`}>
+                      {card.sub}
+                    </p>
+                  </div>
+                  <ArrowRight className={`mt-1 h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1 ${card.accent ? "text-white/60" : "text-muted-foreground"}`} />
+                </a>
+              );
+            })}
+          </div>
+
+          {/* Response time promise */}
+          <div className="flex items-center gap-4 rounded-[24px] border border-border bg-muted p-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/20">
+              <Clock3 className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Response time</p>
+              <p className="mt-0.5 text-sm font-medium text-foreground">We reply within 24 hours for all qualified B2B inquiries.</p>
             </div>
           </div>
         </div>
+
+        {/* Right — inquiry form */}
         <InquiryForm
-          title="Let's Discuss Your Requirement"
-          description="Use this form for distributor partnerships, custom formulation discussions, manufacturing capacity conversations, or packaging support requirements."
-          submitLabel="Submit inquiry"
+          title="Send Us a Message"
+          description="Fill in your details below. Our team will follow up with the right commercial or technical conversation within 24 hours."
+          submitLabel="Send Message"
         />
+      </div>
+    </section>
+
+    {/* ── Map + Address banner ── */}
+    <section className="bg-muted py-0 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2">
+          {/* Address card */}
+          <div className="flex flex-col justify-center space-y-6 py-16 lg:pr-14">
+            <div className="inline-flex w-fit rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+              Our Location
+            </div>
+            <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              Visit Our Manufacturing Facility
+            </h2>
+            <p className="text-base leading-8 text-muted-foreground">
+              Located in the heart of Gujarat's agricultural hub, our state-of-the-art manufacturing plant is open for B2B visits by appointment.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 rounded-[20px] border border-border bg-surface-card p-4">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Factory Address</p>
+                  <p className="mt-1 text-sm font-medium text-foreground">{company.address}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 rounded-[20px] border border-border bg-surface-card p-4">
+                <Clock3 className="h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Working Hours</p>
+                  <p className="mt-1 text-sm font-medium text-foreground">Mon – Sat, 9:00 AM – 6:00 PM IST · Factory: 24/7</p>
+                </div>
+              </div>
+            </div>
+            <Button asChild className="w-fit h-11 rounded-full bg-primary px-6 text-white hover:bg-primary/90">
+              <a href="https://maps.google.com/?q=Adas,Anand,Gujarat,388305" target="_blank" rel="noopener noreferrer">
+                Open in Google Maps
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+
+          {/* Embedded map */}
+          <div className="relative min-h-[340px] lg:min-h-0">
+            <iframe
+              title="Adit Biorganic Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.2!2d72.9!3d22.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e0b0b0b0b0b%3A0x0!2sAdas%2C%20Anand%2C%20Gujarat%20388305!5e0!3m2!1sen!2sin!4v1"
+              className="absolute inset-0 h-full w-full border-0"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ── */}
+    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mb-12 text-center">
+        <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+          Common Questions
+        </div>
+        <h2 className="mt-5 font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          Frequently Asked Questions
+        </h2>
+      </div>
+      <div className="mx-auto max-w-4xl grid gap-4">
+        {faqs.map((faq, i) => (
+          <div key={i} className="rounded-[24px] border border-border bg-surface-card p-7 shadow-[0_8px_30px_rgba(16,24,40,0.04)]">
+            <p className="font-heading text-lg font-semibold text-foreground">{faq.q}</p>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* ── Bottom CTA band ── */}
+    <section className="bg-secondary py-16 lg:py-20">
+      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          Ready to become a B2B partner?
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-white/78">
+          India's most trusted organic granule manufacturer. ISO 9001:2015 certified. 190+ MT/day. 50+ partners across India.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Button asChild className="h-12 rounded-full bg-accent px-8 text-secondary font-semibold hover:bg-accent/80">
+            <a href={`tel:${company.phoneRaw}`}>Call {company.phoneDisplay}</a>
+          </Button>
+          <Button asChild variant="outline" className="h-12 rounded-full border-white/30 bg-transparent px-8 text-white hover:bg-white hover:text-secondary">
+            <a href={`mailto:${company.emails[1]}`}>Email Sales Team</a>
+          </Button>
+        </div>
       </div>
     </section>
   </>

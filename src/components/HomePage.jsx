@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight, PhoneCall, CheckCircle2, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PageHero } from "@/components/PageHero";
 import { ImagePanel } from "@/components/ImagePanel";
-import { SectionIntro } from "@/components/SectionIntro";
-import { MetricCard } from "@/components/MetricCard";
 import { ExpertiseCard } from "@/components/ExpertiseCard";
-import { ProductCard } from "@/components/ProductCard";
 import { ServiceCard } from "@/components/ServiceCard";
 import { InsightCard } from "@/components/InsightCard";
 import { InquiryForm } from "@/components/InquiryForm";
@@ -22,10 +18,14 @@ const company = {
   heroSubtitle:
     "As pioneers in organic fertilizers, we provide nutrient-rich, sustainable solutions to enhance your crop yield and protect the land for generations to come.",
   aboutIntro: "Leading manufacturer of premium organic fertilizer granules",
-  aboutDetails: "At Adit Biorganic, we are dedicated to sustainability by providing the agriculture industry with efficient and effective organic granular fertilizer solutions. As a leading ISO 9001:2015 certified manufacturer, we specialize in high-quality, customized nutrient base and coating granules. We partner with companies across India to produce the innovative, eco-friendly products that enhance soil health and maximize crop yield.",
-  mission: "Our mission is to empower farmers and fertilizer brands with high-quality organic solutions that enhance soil health, improve crop yield, and promote environmental sustainability. We strive to be at the forefront of agricultural innovation, making a positive impact on the planet.",
-  chairmanMessage: "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to make a meaningful impact.",
-  philosophy: "Quality You Can Trust, Results You Can See - Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.",
+  aboutDetails:
+    "At Adit Biorganic, we are dedicated to sustainability by providing the agriculture industry with efficient and effective organic granular fertilizer solutions. As a leading ISO 9001:2015 certified manufacturer, we specialize in high-quality, customized nutrient base and coating granules. We partner with companies across India to produce the innovative, eco-friendly products that enhance soil health and maximize crop yield.",
+  mission:
+    "Our mission is to empower farmers and fertilizer brands with high-quality organic solutions that enhance soil health, improve crop yield, and promote environmental sustainability. We strive to be at the forefront of agricultural innovation, making a positive impact on the planet.",
+  chairmanMessage:
+    "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to create a sustainable future for agriculture.",
+  philosophy:
+    "Quality You Can Trust, Results You Can See - Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.",
   phoneDisplay: "+91 98250 45894",
   phoneRaw: "+919825045894",
   emails: ["info@aditbiorganic.com", "sales@aditbiorganic.com"],
@@ -35,36 +35,36 @@ const company = {
 };
 
 const heroStats = [
-  { value: "190+ MT", label: "Daily Production Capacity" },
-  { value: "480+", label: "Trusted B2B Partners" },
-  { value: "10+ Years", label: "Industry Experience" },
-  { value: "ISO 9001:2015", label: "Certified" },
+  { value: "190+", unit: "MT", label: "Daily Production Capacity" },
+  { value: "50+", unit: "", label: "Trusted B2B Partners" },
+  { value: "10+", unit: "Yrs", label: "Industry Experience" },
+  { value: "ISO", unit: "", label: "9001:2015 Certified" },
 ];
 
 const expertiseCards = [
   {
     icon: "leaf",
-    title: "Customized Formulations",
+    title: "Customized Organic Solutions",
     description:
-      "Goes beyond standard bentonite to create unique mineral and organic 'Recipe Granules' tailored to specific requirements.",
+      'We specialize in "Recipe Granules," creating unique organic and mineral-based formulas tailored to your specific nutrient and coating requirements.',
   },
   {
     icon: "shield",
-    title: "Consistent Quality",
+    title: "Absolute Quality",
     description:
-      "Every granule is manufactured to exact client specifications with guaranteed purity. In-house ISO-certified testing laboratory.",
+      "Our state-of-the-art testing laboratory and ISO 9001:2015 certification ensure every batch meets the highest standards for consistency and purity.",
   },
   {
     icon: "factory",
-    title: "High Capacity",
+    title: "Environmentally Friendly",
     description:
-      "190+ MT/day capacity with 24/7 operations ensures bulk orders are met even during peak seasons.",
+      "Our products are designed to enhance long-term soil health, support beneficial microbial life, and promote sustainable agriculture.",
   },
   {
     icon: "flask",
     title: "Reliable B2B Partnership",
     description:
-      "Over a decade of experience delivering high-volume, cost-effective solutions to 480+ trusted B2B partners across India.",
+      "With a massive 190+ MT/day capacity and over a decade of experience, we deliver high-volume, cost-effective manufacturing solutions on time, every time.",
   },
 ];
 
@@ -72,60 +72,70 @@ const products = [
   {
     title: "Mineral Base Granules",
     imageUrl: "/images/products/mineral-base-granules.png",
-    summary: "Slow-release fertilizers that supply essential minerals and trace elements for sustainable plant growth. Improve soil fertility and nutrient availability with sustained, long-term nutrient delivery.",
+    summary:
+      "Slow-release fertilizers that supply essential minerals and trace elements for sustainable plant growth. Improve soil fertility and nutrient availability.",
     fit: ["Soil fertility", "Long-term nutrients", "Sustainable growth"],
   },
   {
     title: "Bio-Fertilizer Base Granules",
     imageUrl: "/images/products/bio-fertilizer-base-granules.png",
-    summary: "Innovative agricultural inputs that improve soil fertility and support healthy plant growth through biological activity. Eco-friendly enhancement of soil microbiome and plant nutrition.",
+    summary:
+      "Innovative agricultural inputs that improve soil fertility and support healthy plant growth through biological activity.",
     fit: ["Bio inputs", "Organic certified", "Soil microbiome"],
   },
   {
     title: "Bio-Stimulant Base Granules",
     imageUrl: "/images/products/bio-stimulant-base-granules.png",
-    summary: "Plant growth stimulants that enhance plant biological processes beyond standard nutrition. Improves crop resilience, productivity, and natural stress tolerance.",
+    summary:
+      "Plant growth stimulants that enhance plant biological processes beyond standard nutrition. Improves crop resilience and natural stress tolerance.",
     fit: ["Crop resilience", "Stress tolerance", "Value-added blends"],
   },
   {
     title: "Mix Micro Base Granules",
     imageUrl: "/images/products/mix-micro-base-granules.png",
-    summary: "Customizable micronutrient solution to correct deficiencies and boost soil fertility. Contains Calcium, Magnesium, Potash, Zinc and more for vegetables, fruits, and grains.",
+    summary:
+      "Customizable micronutrient solution to correct deficiencies and boost soil fertility. Contains Calcium, Magnesium, Potash, Zinc and more.",
     fit: ["Micronutrient blends", "Custom specification", "Multi-crop"],
   },
   {
     title: "Bio-Pesticide Base Granules",
     imageUrl: "/images/products/bio-pesticide-base-granules.png",
-    summary: "Eco-friendly crop protection granules that protect plant health while preserving biodiversity. Custom-manufactured or applied using existing bio-pesticide liquids/powders.",
+    summary:
+      "Eco-friendly crop protection granules that protect plant health while preserving biodiversity and soil ecosystem.",
     fit: ["Eco-friendly", "IPM compatible", "Residue-free"],
   },
   {
     title: "Pesticide Base Granules",
     imageUrl: "/images/products/pesticide-base-granules.png",
-    summary: "Multi-functional crop protection foundation that acts as both carrier for pesticide active ingredients AND provider of essential nutrients and organic matter.",
+    summary:
+      "Multi-functional crop protection foundation that acts as both carrier for pesticide active ingredients AND provider of essential nutrients.",
     fit: ["Dual-action", "Pest control + soil health", "Customizable"],
   },
   {
     title: "Base Granules",
     imageUrl: "/images/products/base-granules.png",
-    summary: "Fundamental product component and carrier granule - a customizable platform beyond traditional bentonite fillers. Made from Gypsum, Dolomite, and mineral/organic inputs.",
+    summary:
+      "Fundamental product component and carrier granule — a customizable platform beyond traditional bentonite fillers.",
     fit: ["190 MT/day capacity", "Flexible use", "Recipe granules"],
   },
   {
     title: "Organic Base Granules",
     imageUrl: "/images/products/organic-base-granules.png",
-    summary: "Certified organic carrier granules - a sustainable, nutrient-rich foundation for organic-certified fertilizers. Actively enhances soil health and feeds soil microbes.",
+    summary:
+      "Certified organic carrier granules — a sustainable, nutrient-rich foundation for organic-certified fertilizers.",
     fit: ["Organic certified", "Soil health", "Premium positioning"],
   },
 ];
 
+// Services with real bg images from the old site
 const services = [
   {
     title: "Granule Manufacturing",
     concept: "190+ MT/day capacity",
     description:
-      "Production of high-quality organic and mineral 'Recipe Granules' - superior, customizable alternative to standard bentonite. Tailored to client-specific formulation requirements with 24/7 operations.",
+      "Production of high-quality organic and mineral 'Recipe Granules' — a superior, customizable alternative to standard bentonite. Tailored to client-specific formulation requirements with 24/7 operations.",
     icon: "factory",
+    imageSrc: "/images/service-bg-1.jpg",
   },
   {
     title: "Custom Formulation",
@@ -133,6 +143,7 @@ const services = [
     description:
       "Unique nutrient profiles using materials like Gypsum, Dolomite, organic compost, and mineral blends. Supports diverse crop types and agricultural requirements.",
     icon: "flask",
+    imageSrc: "/images/service-bg-2.jpg",
   },
   {
     title: "Contract Manufacturing",
@@ -140,13 +151,15 @@ const services = [
     description:
       "Full-scale white-label/contract manufacturing for B2B fertilizer brands. Cost-effective, high-volume production with consistent batch-to-batch quality assurance.",
     icon: "leaf",
+    imageSrc: "/images/service-bg-3.jpg",
   },
   {
     title: "Precision Coating Services",
     concept: "Active ingredient application",
     description:
-      "Application of active ingredients, liquids, or powders onto base granules. Used for bio-pesticide and pesticide product lines. Ensures uniform coating and reliable field performance.",
+      "Application of active ingredients, liquids, or powders onto base granules. Ensures uniform coating and reliable field performance.",
     icon: "shield",
+    imageSrc: "/images/service-bg-4.jpg",
   },
   {
     title: "Laboratory & Testing",
@@ -154,6 +167,7 @@ const services = [
     description:
       "In-house testing for purity, consistency, and performance on every batch. Strict quality assurance at every stage guarantees every product meets exact client specifications before dispatch.",
     icon: "package",
+    imageSrc: "/images/service-bg-5.jpg",
   },
   {
     title: "Packaging & Dispatch",
@@ -161,25 +175,7 @@ const services = [
     description:
       "We support filling, packing, and brand-forward presentation so your finished output is easier to launch and distribute. Comprehensive logistics support for Pan-India delivery.",
     icon: "warehouse",
-  },
-];
-
-const processSteps = [
-  {
-    title: "Requirement alignment",
-    description: "We understand the formulation goal, target application, packaging needs, and dispatch expectations.",
-  },
-  {
-    title: "Granule design and validation",
-    description: "Base selection, recipe development, and production checks are aligned before scale manufacturing begins.",
-  },
-  {
-    title: "Controlled production",
-    description: "Granulation, coating, drying, and handling follow a disciplined production workflow built for repeatability.",
-  },
-  {
-    title: "Packing and dispatch readiness",
-    description: "Finished goods are prepared for warehouse movement, partner pickup, or onward distribution support.",
+    imageSrc: "/images/service-bg-6.jpg",
   },
 ];
 
@@ -189,18 +185,21 @@ const insightPosts = [
     excerpt:
       "A stronger base granule can improve consistency, reduce compromise in formulation strategy, and sharpen your brand promise in the market.",
     topic: "Custom manufacturing",
+    date: "23 May 2024",
   },
   {
     title: "What procurement teams should check before choosing a granule partner",
     excerpt:
       "Capacity, testing discipline, dispatch capability, and formulation flexibility are the non-negotiables for dependable B2B supply.",
     topic: "B2B procurement",
+    date: "23 May 2024",
   },
   {
     title: "How quality assurance protects distributor confidence",
     excerpt:
       "Repeatable batches, controlled handling, and clear process discipline reduce downstream risk for large distribution networks.",
     topic: "Quality systems",
+    date: "08 May 2024",
   },
 ];
 
@@ -219,17 +218,26 @@ const images = {
   soil: "/images/soil.jpg",
   lab: "/images/lab.jpg",
   partnership: "/images/partnership.jpg",
+  facilityOverview: "/images/facility-overview.jpg",
+  biopestGranulesHero: "/images/bio-pesticide-granules-hero.jpg",
+  productsOverview: "/images/products-overview.png",
 };
 
-const MetricCardComponent = ({ item, index }) => (
-  <div className="rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_12px_40px_rgba(16,24,40,0.05)]">
-    <p className="font-heading text-3xl font-semibold text-primary">{item.value}</p>
-    <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.label}</p>
-  </div>
-);
+// Scrolling product ticker items (from old site)
+const productTicker = [
+  { name: "Pesticide Base Granules", img: "/images/products/pesticide-base-granules.png" },
+  { name: "Base Granules", img: "/images/products/base-granules.png" },
+  { name: "Organic Base Granules", img: "/images/products/organic-base-granules.png" },
+  { name: "Mineral Base Granules", img: "/images/products/mineral-base-granules.png" },
+  { name: "Bio-Fertilizer Base Granules", img: "/images/products/bio-fertilizer-base-granules.png" },
+  { name: "Bio-Stimulant Base Granules", img: "/images/products/bio-stimulant-base-granules.png" },
+  { name: "Mix Micro Base Granules", img: "/images/products/mix-micro-base-granules.png" },
+  { name: "Bio-Pesticide Base Granules", img: "/images/products/bio-pesticide-base-granules.png" },
+];
 
 const HomePage = () => (
   <>
+    {/* ── Hero ── */}
     <section className="relative overflow-hidden bg-background">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(27,77,62,0.1),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(217,119,6,0.08),transparent_28%)]" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-8 lg:py-24">
@@ -252,8 +260,8 @@ const HomePage = () => (
           </div>
           <div className="flex flex-wrap gap-4">
             <Button asChild className="h-12 rounded-full bg-primary px-6 text-white hover:bg-primary/90">
-              <Link to="/contact">
-                Become a B2B partner
+              <Link to="/services">
+                Explore Our Services
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -273,7 +281,7 @@ const HomePage = () => (
           overlay={
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-[24px] border border-white/30 bg-surface-overlay/92 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.12)]">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">What clients need</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Our promise</p>
                 <p className="mt-3 font-heading text-2xl font-semibold text-foreground">Consistency at scale</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">Granules engineered for repeatability, handling, and dependable supply.</p>
               </div>
@@ -287,64 +295,118 @@ const HomePage = () => (
       </div>
     </section>
 
+    {/* ── Stats Bar (floating) ── */}
     <section className="relative z-10 -mt-10 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-4">
-        {heroStats.map((item, index) => (
-          <MetricCardComponent key={item.value} item={item} index={index} />
+        {heroStats.map((item) => (
+          <div
+            key={item.label}
+            className="rounded-[28px] border border-border bg-surface-card p-6 shadow-[0_12px_40px_rgba(16,24,40,0.05)]"
+          >
+            <p className="font-heading text-3xl font-semibold text-primary">
+              {item.value}
+              {item.unit && <span className="ml-1 text-xl text-muted-foreground">{item.unit}</span>}
+            </p>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.label}</p>
+          </div>
         ))}
       </div>
     </section>
 
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-      <div className="mb-10 flex flex-col gap-5 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
-        <div className="max-w-3xl space-y-4">
-          <div className="inline-flex rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-            Our Products
+    {/* ── Second Hero Panel — "The Future of Sustainable Agriculture" ── */}
+    <section className="mx-auto max-w-7xl px-4 pt-24 pb-12 sm:px-6 lg:px-8 lg:pt-32 lg:pb-16">
+      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <ImagePanel
+          src={images.facilityOverview}
+          alt="Adit Biorganic facility overview"
+          className="aspect-[4/3.5] min-h-[300px]"
+          overlay={
+            <div className="rounded-[24px] border border-white/30 bg-secondary/90 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.18)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">ISO 9001:2015 Certified</p>
+              <p className="mt-2 font-heading text-lg font-semibold text-white">"Quality You Can Trust. Results You Can See."</p>
+            </div>
+          }
+        />
+        <div className="space-y-6">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+            {company.heroTitle}
           </div>
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Premium Granular Products
+            Quality You Can Trust.<br />Results You Can See.
           </h2>
-          <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-            High-quality base granules engineered for consistent performance and sustainable agriculture.
+          <p className="text-base leading-8 text-muted-foreground sm:text-lg">
+            Leveraging state-of-the-art technology and ISO 9001:2015 certified processes, we deliver high-performance, eco-friendly fertilizers you can depend on.
+          </p>
+          <p className="text-base leading-8 text-muted-foreground sm:text-lg">
+            We are a leading manufacturer providing high-quality, customized organic fertilizer solutions that enhance soil health and ensure farm sustainability.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Button asChild className="h-12 rounded-full bg-primary px-6 text-white hover:bg-primary/90">
+              <Link to="/about">
+                Learn More About Us
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Products Ticker / Marquee — like old site ── */}
+    <section className="py-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="text-center">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+            What Is Our Expertise?
+          </div>
+          <h2 className="mt-5 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            Manufacturing Advanced Granular Fertilizers
+          </h2>
+          <p className="mx-auto mt-3 max-w-3xl text-base leading-8 text-muted-foreground">
+            Adit Biorganic specializes in manufacturing nutrient base and coating granular fertilizers. We provide customized 'Recipe Granules' using mineral and organic bases as a superior alternative to standard bentonite.
           </p>
         </div>
-        <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white shrink-0">
+      </div>
+
+      {/* Scrolling product image strip */}
+      <div className="relative overflow-hidden border-y border-border bg-muted py-6">
+        <div className="flex gap-0">
+          {/* First copy */}
+          <div className="flex shrink-0 animate-[marquee_35s_linear_infinite] items-center gap-0">
+            {[...productTicker, ...productTicker].map((p, i) => (
+              <div key={i} className="flex shrink-0 items-center gap-4 px-6">
+                <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-border bg-surface-card p-2 shadow-sm">
+                  <img src={p.img} alt={p.name} className="h-full w-full object-contain" loading="lazy" />
+                </div>
+                <span className="whitespace-nowrap font-heading text-sm font-semibold text-foreground">{p.name}</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent/60 ml-2" />
+              </div>
+            ))}
+          </div>
+          {/* Duplicate for seamless loop */}
+          <div aria-hidden className="flex shrink-0 animate-[marquee_35s_linear_infinite] items-center gap-0">
+            {[...productTicker, ...productTicker].map((p, i) => (
+              <div key={i} className="flex shrink-0 items-center gap-4 px-6">
+                <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-border bg-surface-card p-2 shadow-sm">
+                  <img src={p.img} alt={p.name} className="h-full w-full object-contain" loading="lazy" />
+                </div>
+                <span className="whitespace-nowrap font-heading text-sm font-semibold text-foreground">{p.name}</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent/60 ml-2" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* View all products CTA */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8 flex justify-center">
+        <Button asChild variant="outline" className="h-12 rounded-full border-primary px-8 text-primary hover:bg-primary hover:text-white">
           <Link to="/products">View All Products</Link>
         </Button>
       </div>
-      
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        className="w-full"
-      >
-        <CarouselContent className="-ml-6">
-          {products.map((product, index) => (
-            <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
-              <ProductCard product={product} index={index} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="-left-6 top-1/2 -translate-y-1/2" />
-        <CarouselNext className="-right-6 top-1/2 -translate-y-1/2" />
-      </Carousel>
     </section>
 
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <SectionIntro
-        eyebrow="Core strengths"
-        title="The Foundation for Sustainable Farming"
-        description="We believe superior crops start with superior soil. Our high-quality granular fertilizers are the key."
-      />
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {expertiseCards.map((card, index) => (
-          <ExpertiseCard key={card.title} card={card} index={index} />
-        ))}
-      </div>
-    </section>
-
+    {/* ── About / Foundation section ── */}
     <section className="bg-muted py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:items-center">
         <ImagePanel
@@ -361,29 +423,175 @@ const HomePage = () => (
             </div>
           }
         />
-        <div className="space-y-6">
+        <div className="space-y-7">
           <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-            About Adit Biorganic
+            {company.subTagline}
           </div>
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            {company.aboutIntro}
+            The Foundation of Your Harvest is Built on Quality
           </h2>
           <p className="text-base leading-8 text-muted-foreground sm:text-lg">
             {company.aboutDetails}
           </p>
+          {/* Mission + Chairman side by side */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[24px] border border-border bg-surface-card p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Our Mission</p>
+              <p className="mt-3 font-accent text-base leading-7 text-foreground italic">
+                "{company.mission.slice(0, 120)}…"
+              </p>
+            </div>
+            <div className="rounded-[24px] bg-secondary p-5 text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Chairman's Note</p>
+              <p className="mt-3 font-accent text-base leading-7 text-white italic">
+                "{company.chairmanMessage.slice(0, 120)}…"
+              </p>
+              <p className="mt-3 text-xs font-medium text-white/65">— {company.founder}</p>
+            </div>
+          </div>
           <Button asChild className="h-12 rounded-full bg-primary px-6 text-white hover:bg-primary/90">
-            <Link to="/about">Explore our story</Link>
+            <Link to="/about">More About Us</Link>
           </Button>
         </div>
       </div>
     </section>
 
+    {/* ── Core Expertise Cards ── */}
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <SectionIntro
-        eyebrow="What we offer"
-        title="Comprehensive Manufacturing Services"
-        description="From contract manufacturing to quality assurance, we provide end-to-end solutions for fertilizer brands."
-      />
+      <div className="mb-12 text-center">
+        <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+          Core strengths
+        </div>
+        <h2 className="mt-6 font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          The Foundation for Sustainable Farming
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+          We believe superior crops start with superior soil. Our high-quality granular fertilizers are the key.
+        </p>
+      </div>
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {expertiseCards.map((card, index) => (
+          <ExpertiseCard key={card.title} card={card} index={index} />
+        ))}
+      </div>
+    </section>
+
+    {/* ── Why Choose Us ── */}
+    <section className="bg-secondary py-20 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8 lg:items-center">
+        <div className="space-y-6">
+          <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/80">
+            Why Choose Us
+          </div>
+          <h2 className="font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            At Adit Biorganic, We Are Your Partner In Sustainable Agriculture.
+          </h2>
+          <p className="max-w-xl text-base leading-8 text-white/80 sm:text-lg">
+            With over a decade of manufacturing experience, we operate 24/7 to produce advanced organic granular fertilizers. Our state-of-the-art facilities and robust R&D allow us to create customized, eco-friendly solutions that improve soil health and boost farm productivity nationwide.
+          </p>
+          <div className="grid gap-3">
+            {partnerBenefits.map((benefit, index) => (
+              <div key={index} className="flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/5 p-4">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                <p className="text-sm leading-7 text-white/85">{benefit}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Button asChild className="h-12 rounded-full bg-accent px-6 text-secondary font-semibold hover:bg-accent/80">
+              <Link to="/about">Read More</Link>
+            </Button>
+            <Button asChild variant="outline" className="h-12 rounded-full border-white/30 bg-transparent px-6 text-white hover:bg-white hover:text-secondary">
+              <a href={`tel:${company.phoneRaw}`}>Call {company.phoneDisplay}</a>
+            </Button>
+          </div>
+        </div>
+        {/* Right: real factory image */}
+        <ImagePanel
+          src={images.biopestGranulesHero}
+          alt="Bio-Pesticide Granules — Adit Biorganic product"
+          className="aspect-[4/4.6] min-h-[400px]"
+          overlay={
+            <div className="rounded-[24px] border border-white/25 bg-white/10 p-4 backdrop-blur-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">India's Leading B2B Fertilizer Manufacturer</p>
+              <p className="mt-1 font-heading text-lg font-semibold text-white">ISO 9001:2015 Certified</p>
+            </div>
+          }
+        />
+      </div>
+    </section>
+
+    {/* ── Products Carousel ── */}
+    <section className="bg-muted py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex flex-col gap-5 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl space-y-4">
+            <div className="inline-flex rounded-full border border-border bg-surface-overlay px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+              Our Products
+            </div>
+            <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+              Premium Granular Products
+            </h2>
+            <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+              High-quality base granules engineered for consistent performance and sustainable agriculture.
+            </p>
+          </div>
+          <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white shrink-0">
+            <Link to="/products">View All Products</Link>
+          </Button>
+        </div>
+        <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <CarouselContent className="-ml-6 items-stretch">
+            {products.map((product, index) => (
+              <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
+                <div className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]">
+                  <div className="flex h-56 w-full shrink-0 items-center justify-center bg-white p-8">
+                    <img
+                      src={product.imageUrl}
+                      alt={product.title}
+                      className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-heading text-lg font-semibold text-foreground">{product.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-6 text-muted-foreground">{product.summary}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {product.fit.map((tag) => (
+                        <span key={tag} className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-primary">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="-left-4 top-1/2 -translate-y-1/2" />
+          <CarouselNext className="-right-4 top-1/2 -translate-y-1/2" />
+        </Carousel>
+      </div>
+    </section>
+
+    {/* ── Services with Real Images ── */}
+    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mb-12 flex flex-col gap-5 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            Our Services
+          </div>
+          <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            What We Offer
+          </h2>
+          <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+            We provide comprehensive, end-to-end B2B solutions for the fertilizer industry, from custom formulation and manufacturing to precision coating and quality assurance.
+          </p>
+        </div>
+        <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white shrink-0">
+          <Link to="/services">View All Services</Link>
+        </Button>
+      </div>
       <div className="grid gap-6 lg:grid-cols-3">
         {services.slice(0, 6).map((service, index) => (
           <ServiceCard key={service.title} service={service} index={index} />
@@ -391,6 +599,32 @@ const HomePage = () => (
       </div>
     </section>
 
+    {/* ── Blog / Insights ── */}
+    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mb-12 flex flex-col gap-5 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            From The Blog Post
+          </div>
+          <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            Latest News &amp; Articles
+          </h2>
+          <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+            Explore our latest insights on sustainable agriculture, organic fertilizer technology, and manufacturing innovations for our B2B partners.
+          </p>
+        </div>
+        <Button asChild variant="outline" className="h-12 rounded-full border-primary px-6 text-primary hover:bg-primary hover:text-white shrink-0">
+          <Link to="/blog">View All Articles</Link>
+        </Button>
+      </div>
+      <div className="grid gap-6 lg:grid-cols-3">
+        {insightPosts.map((post, index) => (
+          <InsightCard key={index} post={post} index={index} />
+        ))}
+      </div>
+    </section>
+
+    {/* ── Contact / Inquiry ── */}
     <section className="bg-secondary py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:items-start">
         <div className="space-y-6">
@@ -400,26 +634,37 @@ const HomePage = () => (
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Quality You Can Trust, Results You Can See
           </h2>
-          <p className="max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
+          <p className="max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
             Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.
           </p>
           <div className="grid gap-4">
             {partnerBenefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-3 rounded-[24px] border border-white/10 bg-white/5 p-5">
-                <svg className="mt-1 h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <p className="text-sm leading-7 text-white/80">{benefit}</p>
               </div>
             ))}
           </div>
           <div className="flex flex-wrap gap-4">
-            <Button asChild className="h-12 rounded-full bg-accent px-6 text-white hover:bg-accent/80">
+            <Button asChild className="h-12 rounded-full bg-accent px-6 text-secondary font-semibold hover:bg-accent/80">
               <a href={`tel:${company.phoneRaw}`}>Call {company.phoneDisplay}</a>
             </Button>
             <Button asChild variant="outline" className="h-12 rounded-full border-white/30 bg-transparent px-6 text-white hover:bg-white hover:text-secondary">
               <Link to="/contact">Open contact page</Link>
             </Button>
+          </div>
+          {/* Contact details */}
+          <div className="grid gap-3 pt-2 text-sm text-white/70">
+            <div className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-accent" />
+              <span>{company.address}</span>
+            </div>
+            {company.emails.map((email) => (
+              <div key={email} className="flex items-center gap-2">
+                <ChevronRight className="h-4 w-4 text-accent" />
+                <a href={`mailto:${email}`} className="hover:text-white transition-colors">{email}</a>
+              </div>
+            ))}
           </div>
         </div>
         <InquiryForm

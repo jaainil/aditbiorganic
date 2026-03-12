@@ -1,91 +1,104 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
-import { SectionIntro } from "@/components/SectionIntro";
 import { ServiceCard } from "@/components/ServiceCard";
+import { InquiryForm } from "@/components/InquiryForm";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const company = {
   name: "Adit Biorganic",
-  tagline: "Organic Naturally",
-  subTagline: "Nurturing Farms, Preserving Nature",
-  missionTagline: "EVERY CROP COUNTS. EVERY FARMER MATTERS.",
-  legalTagline: "India's Leading B2B Fertilizer Manufacturer - ISO 9001:2015 Certified",
-  heroTitle: "The Future of Sustainable Agriculture",
-  heroSubtitle:
-    "As pioneers in organic fertilizers, we provide nutrient-rich, sustainable solutions to enhance your crop yield and protect the land for generations to come.",
-  aboutIntro: "Leading manufacturer of premium organic fertilizer granules",
-  aboutDetails: "At Adit Biorganic, we are dedicated to sustainability by providing the agriculture industry with efficient and effective organic granular fertilizer solutions. As a leading ISO 9001:2015 certified manufacturer, we specialize in high-quality, customized nutrient base and coating granules. We partner with companies across India to produce the innovative, eco-friendly products that enhance soil health and maximize crop yield.",
-  mission: "Our mission is to empower farmers and fertilizer brands with high-quality organic solutions that enhance soil health, improve crop yield, and promote environmental sustainability. We strive to be at the forefront of agricultural innovation, making a positive impact on the planet.",
-  chairmanMessage: "I am proud to lead a team that is committed to excellence in organic agriculture. Our mission is not just about business but about contributing positively to the environment. With our innovative products and dedicated team, we aim to make a meaningful impact.",
-  philosophy: "Quality You Can Trust, Results You Can See - Every product is manufactured using state-of-the-art technology under ISO 9001:2015 certified processes.",
   phoneDisplay: "+91 98250 45894",
   phoneRaw: "+919825045894",
   emails: ["info@aditbiorganic.com", "sales@aditbiorganic.com"],
   address: "S. No. 1152, Kanatalavdi Road, Adas, Anand, Gujarat - 388305",
-  founder: "Akash Dadhania",
-  founderTitle: "Founder & Director",
 };
+
+const coreFeatures = [
+  "Custom \"Recipe\" Formulations",
+  "Mineral & Organic Base Materials",
+  "Superior Alternative to Bentonite",
+  "High-Volume 190+ MT/Day Capacity",
+  "Promotes Long-Term Soil Health",
+];
 
 const services = [
   {
-    title: "Granule Manufacturing",
-    concept: "190+ MT/day capacity",
+    title: "Organic & Coated Granule Manufacturing",
+    concept: "Beyond standard fillers",
     description:
-      "Production of high-quality organic and mineral 'Recipe Granules' - superior, customizable alternative to standard bentonite. Tailored to client-specific formulation requirements with 24/7 operations.",
+      "Unlike competitors who use plain bentonite, we manufacture custom 'Recipe Granules.' We create bases from Gypsum, Dolomite, or organic compost — perfectly tailored to your specific nutrient and coating needs.",
     icon: "factory",
+    imageSrc: "/images/service-bg-1.jpg",
   },
   {
-    title: "Custom Formulation",
-    concept: "Client-specific recipe development",
-    description:
-      "Unique nutrient profiles using materials like Gypsum, Dolomite, organic compost, and mineral blends. Supports diverse crop types and agricultural requirements.",
-    icon: "flask",
-  },
-  {
-    title: "Contract Manufacturing",
+    title: "Job Work / Contract Manufacturing",
     concept: "Your brand, our facility",
     description:
-      "Full-scale white-label/contract manufacturing for B2B fertilizer brands. Cost-effective, high-volume production with consistent batch-to-batch quality assurance.",
+      "We offer a 'plug-and-play' manufacturing solution for fertilizer brands. We handle the entire production cycle — from raw material sourcing to finished goods — so you can focus on your brand and market.",
     icon: "leaf",
+    imageSrc: "/images/service-bg-2.jpg",
   },
   {
-    title: "Precision Coating Services",
-    concept: "Active ingredient application",
+    title: "Advanced Coating Services",
+    concept: "Precision, scale & quality",
     description:
-      "Application of active ingredients, liquids, or powders onto base granules. Used for bio-pesticide and pesticide product lines. Ensures uniform coating and reliable field performance.",
+      "Leverage our state-of-the-art coating infrastructure. Apply bio-pesticide liquids, powders, or active ingredients onto base granules with uniform coverage and reliable field performance at scale.",
     icon: "shield",
+    imageSrc: "/images/service-bg-3.jpg",
   },
   {
-    title: "Laboratory & Testing",
-    concept: "ISO 9001:2015 certified",
+    title: "Laboratory & Testing Services",
+    concept: "Science-backed quality assurance",
     description:
-      "In-house testing for purity, consistency, and performance on every batch. Strict quality assurance at every stage guarantees every product meets exact client specifications before dispatch.",
+      "Our ISO 9001:2015 certified in-house lab performs Raw Material Inspection, In-Process Quality Control (IPQC), and finished goods testing — so every batch that leaves meets exact client specifications.",
     icon: "package",
+    imageSrc: "/images/service-bg-4.jpg",
   },
   {
-    title: "Packaging & Dispatch",
+    title: "Custom Packaging & Private Labeling",
     concept: "Market-ready finishing",
     description:
-      "We support filling, packing, and brand-forward presentation so your finished output is easier to launch and distribute. Comprehensive logistics support for Pan-India delivery.",
+      "We provide semi-automated weighing, filling, and sealing services. Package your product in branded PP woven bags, HDPE containers, or any custom format required for your market.",
     icon: "warehouse",
+    imageSrc: "/images/service-bg-5.jpg",
+  },
+  {
+    title: "Warehouse & Go-Down Facilities",
+    concept: "Secure supply chain storage",
+    description:
+      "Spacious, all-weather storage for both raw materials and finished goods. Our facility includes dedicated truck bays, organised stock management, and flexible access for partner logistics.",
+    icon: "truck",
+    imageSrc: "/images/service-bg-6.jpg",
+  },
+  {
+    title: "Infrastructure Leasing",
+    concept: "Strategic plant access",
+    description:
+      "A unique B2B service where you lease our production lines to run your proprietary formulas with your own teams. Ideal for brands that need capacity without capital expenditure.",
+    icon: "flask",
+    imageSrc: "/images/facility-overview.jpg",
   },
 ];
 
 const processSteps = [
   {
-    title: "Requirement alignment",
-    description: "We understand the formulation goal, target application, packaging needs, and dispatch expectations.",
+    step: "01",
+    title: "Requirement Alignment",
+    description: "We understand your formulation goal, target application, packaging needs, and dispatch expectations.",
   },
   {
-    title: "Granule design and validation",
+    step: "02",
+    title: "Granule Design & Validation",
     description: "Base selection, recipe development, and production checks are aligned before scale manufacturing begins.",
   },
   {
-    title: "Controlled production",
-    description: "Granulation, coating, drying, and handling follow a disciplined production workflow built for repeatability.",
+    step: "03",
+    title: "Controlled Production",
+    description: "Granulation, coating, drying, and handling follow a disciplined workflow built for repeatability and consistency.",
   },
   {
-    title: "Packing and dispatch readiness",
+    step: "04",
+    title: "Packing & Dispatch",
     description: "Finished goods are prepared for warehouse movement, partner pickup, or onward distribution support.",
   },
 ];
@@ -94,23 +107,23 @@ const images = {
   hero: "/images/hero.jpg",
   factory: "/images/factory.jpg",
   granules: "/images/granules.jpg",
-  soil: "/images/soil.jpg",
   lab: "/images/lab.jpg",
-  partnership: "/images/partnership.jpg",
+  customizedGranules: "/images/customized-granules.jpg",
 };
 
 export const ServicesPage = () => (
   <>
+    {/* ── Hero ── */}
     <PageHero
-      eyebrow="Services"
-      title="End-to-End Fertilizer Manufacturing Services"
-      description="We support clients with contract manufacturing, coating, testing, packaging, warehousing, and infrastructure flexibility."
+      eyebrow="Our Services"
+      title="What Services Do We Provide?"
+      description="Comprehensive, end-to-end B2B manufacturing solutions — from custom recipe formulation and granule production to precision coating, quality testing, packaging, and warehousing."
       imageSrc={images.lab}
-      imageAlt="Laboratory and testing operations"
-      badges={["Contract manufacturing", "Quality controls", "Private label support"]}
+      imageAlt="Adit Biorganic laboratory and testing operations"
+      badges={["Contract Manufacturing", "ISO 9001:2015 Certified", "190+ MT/Day"]}
       primaryCta={
         <Button asChild className="h-12 rounded-full bg-primary px-6 text-white hover:bg-primary/90">
-          <Link to="/contact">Discuss a service requirement</Link>
+          <Link to="/contact">Discuss a requirement</Link>
         </Button>
       }
       secondaryCta={
@@ -120,37 +133,197 @@ export const ServicesPage = () => (
       }
     />
 
+    {/* ── Core Manufacturing Feature — big split section ── */}
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <SectionIntro
-        eyebrow="Service architecture"
-        title="Comprehensive Manufacturing Solutions"
-        description="From custom formulation to final packaging, we provide end-to-end services that help your business grow."
-      />
-      <div className="grid gap-6 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} service={service} index={index} />
+      <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-center">
+        {/* Left: real image */}
+        <div className="relative overflow-hidden rounded-[32px] border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
+          <img
+            src={images.customizedGranules}
+            alt="Advanced Custom Granule Manufacturing — Adit Biorganic"
+            className="h-full w-full object-cover"
+            style={{ minHeight: "480px" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
+          <div className="absolute bottom-5 left-5 right-5">
+            <div className="rounded-[24px] border border-white/25 bg-white/10 p-5 backdrop-blur-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">Our core expertise</p>
+              <p className="mt-1 font-heading text-lg font-semibold text-white">Custom "Recipe" Granule Manufacturing</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: content */}
+        <div className="space-y-7">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+            Our Core Manufacturing Service
+          </div>
+          <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            Advanced Custom Granule Manufacturing
+          </h2>
+          <p className="text-base leading-8 text-muted-foreground sm:text-lg">
+            We are specialists in manufacturing high-quality organic and mineral base granules. We move beyond standard bentonite to create custom <strong className="text-foreground">"Recipe Granules"</strong> from materials like Gypsum, Dolomite, and more — perfectly tailored to your specific nutrient and coating needs.
+          </p>
+          <div className="space-y-3">
+            {coreFeatures.map((f) => (
+              <div key={f} className="flex items-center gap-3">
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
+                <span className="text-sm font-medium text-foreground">{f}</span>
+              </div>
+            ))}
+          </div>
+          <Button asChild className="h-12 rounded-full bg-primary px-6 text-white hover:bg-primary/90">
+            <Link to="/products">
+              View Products
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    {/* ── "One Stop Solutions" label + all 7 service cards ── */}
+    <section className="bg-muted py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-14 text-center">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+            What Is Our Expertise?
+          </div>
+          <h2 className="mt-5 font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            "One Stop Solutions"
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+            From granulation to dispatch, every step of your fertilizer manufacturing journey is handled under one roof.
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} service={service} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── Process Steps ── */}
+    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="mb-14 text-center">
+        <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+          How We Work
+        </div>
+        <h2 className="mt-5 font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          Our Operating Process
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+          A simple, transparent flow — from your first requirement to final dispatch.
+        </p>
+      </div>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {processSteps.map((step, index) => (
+          <div
+            key={step.title}
+            className="group relative overflow-hidden rounded-[28px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
+          >
+            {/* Large faded step number in background */}
+            <p className="absolute -right-2 -top-4 font-heading text-8xl font-bold text-primary/5 select-none">
+              {step.step}
+            </p>
+            <div className="relative">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white font-heading text-base font-bold">
+                {step.step}
+              </div>
+              <h3 className="mt-5 font-heading text-xl font-semibold text-foreground">{step.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{step.description}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>
 
-    <section className="bg-muted py-20 lg:py-28">
+    {/* ── Infrastructure highlight band ── */}
+    <section className="bg-secondary py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionIntro
-          eyebrow="How we work"
-          title="Our Operating Process"
-          description="A simple flow that makes the partnership easy to understand, from requirement to dispatch."
-        />
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {processSteps.map((step, index) => (
-            <div key={step.title} className="rounded-[28px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.05)]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 font-heading text-lg font-semibold text-primary">
-                0{index + 1}
-              </div>
-              <p className="mt-5 font-heading text-2xl font-semibold text-foreground">{step.title}</p>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">{step.description}</p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { value: "190+ MT", label: "Daily Production Capacity" },
+            { value: "24/7", label: "Round-the-Clock Operations" },
+            { value: "ISO", label: "9001:2015 Certified Lab" },
+            { value: "7+", label: "End-to-End Services" },
+          ].map((stat, i) => (
+            <div key={i} className="group text-center">
+              <p className="font-heading text-5xl font-bold text-white">{stat.value}</p>
+              <p className="mt-2 text-base text-white/80">{stat.label}</p>
+              <div className="mx-auto mt-3 h-0.5 w-10 rounded-full bg-accent/60 transition-all duration-300 group-hover:w-16" />
             </div>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* ── Contact CTA + Form ── */}
+    <section className="bg-muted py-20 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8 lg:items-start">
+        <div className="space-y-7">
+          <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+            Let's Cooperate Together
+          </div>
+          <h2 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            Contact Us Today!
+          </h2>
+          <p className="text-base leading-8 text-muted-foreground sm:text-lg">
+            We will reply within 24 hours via email. Share your requirement and our team will follow up with the right commercial or technical conversation.
+          </p>
+          {/* Contact info cards */}
+          <div className="grid gap-4">
+            <a
+              href={`tel:${company.phoneRaw}`}
+              className="flex items-center gap-4 rounded-[20px] border border-border bg-surface-card p-5 shadow-sm transition hover:border-primary/30 hover:shadow-md"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Phone</p>
+                <p className="mt-0.5 font-heading text-lg font-semibold text-foreground">{company.phoneDisplay}</p>
+              </div>
+            </a>
+            {company.emails.map((email) => (
+              <a
+                key={email}
+                href={`mailto:${email}`}
+                className="flex items-center gap-4 rounded-[20px] border border-border bg-surface-card p-5 shadow-sm transition hover:border-primary/30 hover:shadow-md"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Email</p>
+                  <p className="mt-0.5 font-heading text-base font-semibold text-foreground">{email}</p>
+                </div>
+              </a>
+            ))}
+            <div className="flex items-start gap-4 rounded-[20px] border border-border bg-surface-card p-5 shadow-sm">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Address</p>
+                <p className="mt-0.5 text-sm leading-6 text-foreground">{company.address}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <InquiryForm
+          title="Send us a message"
+          description="Fill in your details and we'll get back to you within 24 hours."
+          submitLabel="Send Message"
+        />
       </div>
     </section>
   </>
