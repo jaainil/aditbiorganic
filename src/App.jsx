@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "next-themes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -9,6 +10,8 @@ import { ProductsPage } from "@/pages/ProductsPage";
 import { ProductDetailPage } from "@/pages/ProductDetailPage";
 import { ServicesPage } from "@/pages/ServicesPage";
 import { BlogPage } from "@/pages/BlogPage";
+import { BlogPostPage } from "@/pages/BlogPostPage";
+import { ServiceDetailPage } from "@/pages/ServiceDetailPage";
 import { ContactPage } from "@/pages/ContactPage";
 import { HomePage } from "@/components/HomePage";
 
@@ -31,7 +34,9 @@ const AppRoutes = () => (
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/products/:slug" element={<ProductDetailPage />} />
       <Route path="/services" element={<ServicesPage />} />
+      <Route path="/services/:slug" element={<ServiceDetailPage />} />
       <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<HomePage />} />
     </Routes>
@@ -40,11 +45,13 @@ const AppRoutes = () => (
 
 export default function App() {
   return (
-    <ThemeProvider attribute="class" forcedTheme="light">
-      <BrowserRouter>
-        <AppRoutes />
-        <Toaster position="top-right" />
-      </BrowserRouter>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider attribute="class" forcedTheme="light">
+        <BrowserRouter>
+          <AppRoutes />
+          <Toaster position="top-right" />
+        </BrowserRouter>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }

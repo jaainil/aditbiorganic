@@ -14,10 +14,12 @@ const iconMap = {
 export const ServiceCard = ({ service, index }) => {
   const Icon = iconMap[service.icon] || FileText;
 
+  const href = service.slug ? `/services/${service.slug}` : "/services";
+
   // Image-backed card
   if (service.imageSrc) {
     return (
-      <Link to="/services" className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-[30px]">
+      <Link to={href} className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-[30px]">
         <article className="relative overflow-hidden rounded-[30px] border border-border shadow-[0_16px_50px_rgba(16,24,40,0.08)]" style={{ minHeight: "320px" }}>
           <img
             src={service.imageSrc}
@@ -51,7 +53,7 @@ export const ServiceCard = ({ service, index }) => {
 
   // Default text-only card
   return (
-    <Link to="/services" className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-[30px]">
+    <Link to={href} className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-[30px]">
       <article className="h-full rounded-[30px] border border-border bg-surface-card p-7 shadow-[0_16px_50px_rgba(16,24,40,0.06)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_24px_60px_rgba(16,24,40,0.09)]">
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-3">

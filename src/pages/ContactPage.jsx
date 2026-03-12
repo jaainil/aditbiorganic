@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PhoneCall, Mail, MapPin, Clock3, ArrowRight } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
+import { organizationSchema, contactPageSchema } from "@/data/seoSchemas";
 
 const company = {
   name: "Adit Biorganic",
@@ -65,6 +67,14 @@ const faqs = [
 
 export const ContactPage = () => (
   <>
+    <SEOHead
+      title="Contact Us — B2B Fertilizer Granule Inquiry, Bulk Order & Export | Anand Gujarat"
+      description="Contact Adit Biorganic for bulk fertilizer granule orders, custom formulation quotes, contract manufacturing, and export partnerships. Call +91 98250 45894 or email sales@aditbiorganic.com. Located in Anand, Gujarat — 388305, India."
+      canonical="/contact"
+      ogImage="/images/factory.jpg"
+      keywords="contact adit biorganic, fertilizer bulk order india, b2b fertilizer inquiry gujarat, organic fertilizer export inquiry, fertilizer manufacturer contact anand gujarat, get fertilizer quote india"
+      schema={[organizationSchema, contactPageSchema]}
+    />
     {/* ── Hero — no PageHero, custom full-bleed ── */}
     <section className="relative overflow-hidden bg-secondary">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(158,205,46,0.12),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(5,119,194,0.15),transparent_40%)]" />

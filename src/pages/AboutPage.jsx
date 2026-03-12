@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import { ImagePanel } from "@/components/ImagePanel";
+import { SEOHead } from "@/components/SEOHead";
+import { organizationSchema, aboutPageSchema } from "@/data/seoSchemas";
 
 const company = {
   name: "Adit Biorganic",
@@ -138,6 +140,14 @@ const infrastructureItems = [
 
 export const AboutPage = () => (
   <>
+    <SEOHead
+      title="About Us — ISO Certified Organic Fertilizer Manufacturer, Anand Gujarat"
+      description="Learn about Adit Biorganic — India's leading ISO 9001:2015 certified B2B organic fertilizer granule manufacturer. Founded by Akash Dadhania in Anand, Gujarat. 190+ MT/day, 50+ B2B partners, 10+ years experience."
+      canonical="/about"
+      ogImage="/images/factory.jpg"
+      keywords="about adit biorganic, organic fertilizer manufacturer gujarat, ISO 9001 fertilizer manufacturer india, fertilizer company anand gujarat, Akash Dadhania, b2b fertilizer manufacturer gujarat"
+      schema={[organizationSchema, aboutPageSchema]}
+    />
     {/* ── Hero ── */}
     <PageHero
       eyebrow="About us"

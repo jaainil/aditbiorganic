@@ -8,6 +8,8 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { InsightCard } from "@/components/InsightCard";
 import { InquiryForm } from "@/components/InquiryForm";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { SEOHead } from "@/components/SEOHead";
+import { organizationSchema, websiteSchema, homeFaqSchema } from "@/data/seoSchemas";
 
 const company = {
   name: "Adit Biorganic",
@@ -181,6 +183,14 @@ const productTicker = [
 
 const HomePage = () => (
   <>
+    <SEOHead
+      title="India's #1 B2B Organic Fertilizer Granule Manufacturer | Anand, Gujarat"
+      description="Adit Biorganic — ISO 9001:2015 certified organic fertilizer granule manufacturer in Anand, Gujarat. 190+ MT/day capacity. Mineral, Bio-Fertilizer, Bio-Stimulant, Organic Base Granules. Custom formulation, contract manufacturing & worldwide export."
+      canonical="/"
+      ogImage="/images/hero.jpg"
+      keywords="organic fertilizer manufacturer india, granule fertilizer manufacturer gujarat, b2b fertilizer manufacturer, bio fertilizer manufacturer, organic base granules manufacturer, mineral base granules, fertilizer exporter india, anand gujarat fertilizer, ISO certified fertilizer manufacturer, custom fertilizer formulation"
+      schema={[organizationSchema, websiteSchema, homeFaqSchema]}
+    />
     {/* ── Hero ── */}
     <section className="relative overflow-hidden bg-background">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(27,77,62,0.1),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(217,119,6,0.08),transparent_28%)]" />

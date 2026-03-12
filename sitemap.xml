@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>https://aditbiorganic.com/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://aditbiorganic.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://aditbiorganic.com/"/>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/hero.jpg</image:loc>
+      <image:title>Adit Biorganic - Organic Fertilizer Manufacturer</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://aditbiorganic.com/about</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://aditbiorganic.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://aditbiorganic.com/about"/>
+  </url>
+
+  <!-- Products Page -->
+  <url>
+    <loc>https://aditbiorganic.com/products</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://aditbiorganic.com/products"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://aditbiorganic.com/products"/>
+  </url>
+
+  <!-- Product Detail Pages -->
+  <url>
+    <loc>https://aditbiorganic.com/products/mineral-base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/mineral-base-granules.png</image:loc>
+      <image:title>Mineral Base Granules</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aditbiorganic.com/products/bio-fertilizer-base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/bio-fertilizer-base-granules.png</image:loc>
+      <image:title>Bio-Fertilizer Base Granules</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aditbiorganic.com/products/bio-stimulant-base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/bio-stimulant-base-granules.png</image:loc>
+      <image:title>Bio-Stimulant Base Granules</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aditbiorganic.com/products/mix-micro-base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/mix-micro-base-granules.png</image:loc>
+      <image:title>Mix Micro Base Granules</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aditbiorganic.com/products/bio-pesticide-base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/bio-pesticide-base-granules.png</image:loc>
+      <image:title>Bio-Pesticide Base Granules</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aditbiorganic.com/products/pesticide-base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/pesticide-base-granules.png</image:loc>
+      <image:title>Pesticide Base Granules</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aditbiorganic.com/products/base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/base-granules.png</image:loc>
+      <image:title>Base Granules</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aditbiorganic.com/products/organic-base-granules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aditbiorganic.com/images/products/organic-base-granules.png</image:loc>
+      <image:title>Organic Base Granules</image:title>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://aditbiorganic.com/services</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://aditbiorganic.com/services"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://aditbiorganic.com/services"/>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://aditbiorganic.com/blog</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://aditbiorganic.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://aditbiorganic.com/blog"/>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://aditbiorganic.com/contact</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://aditbiorganic.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://aditbiorganic.com/contact"/>
+  </url>
+</urlset>

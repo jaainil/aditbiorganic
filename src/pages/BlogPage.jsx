@@ -1,79 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
+import { organizationSchema } from "@/data/seoSchemas";
+import { getAllBlogs } from "@/lib/content";
 
-const posts = [
-  {
-    title: "FPAC Business Center Continues to Deliver",
-    excerpt:
-      "A stronger base granule can improve consistency, reduce compromise in formulation strategy, and sharpen your brand promise in the market.",
-    topic: "Custom manufacturing",
-    date: "23 May 2024",
-    author: "Aditbiorganic",
-    img: "/images/granules.jpg",
-    featured: true,
-  },
-  {
-    title: "Breaking Down Barriers to Crop Insurance",
-    excerpt:
-      "Capacity, testing discipline, dispatch capability, and formulation flexibility are the non-negotiables for dependable B2B supply.",
-    topic: "B2B procurement",
-    date: "23 May 2024",
-    author: "Aditbiorganic",
-    img: "/images/soil.jpg",
-    featured: true,
-  },
-  {
-    title: "The Potential of Virtual Reality in Agrifood",
-    excerpt:
-      "Repeatable batches, controlled handling, and clear process discipline reduce downstream risk for large distribution networks.",
-    topic: "Quality systems",
-    date: "23 May 2024",
-    author: "Aditbiorganic",
-    img: "/images/lab.jpg",
-    featured: false,
-  },
-  {
-    title: "How to Care for Cows to Have the Best Quality Meat",
-    excerpt:
-      "Understanding the link between animal nutrition and output quality — lessons that apply equally well to crop nutrition and soil health.",
-    topic: "Agriculture",
-    date: "08 May 2024",
-    author: "Aditbiorganic",
-    img: "/images/factory.jpg",
-    featured: false,
-  },
-  {
-    title: "The Best Time to Harvest Corn Without Wilting",
-    excerpt:
-      "Timing and soil conditions are everything. How granular fertilizer application windows impact final yield quality and shelf life.",
-    topic: "Farming",
-    date: "08 May 2024",
-    author: "Aditbiorganic",
-    img: "/images/hero.jpg",
-    featured: false,
-  },
-  {
-    title: "The Joy of Working Every Day on a Sheep Farm",
-    excerpt:
-      "From livestock nutrition to soil regeneration — how organic farming philosophy drives our approach to granular fertilizer design.",
-    topic: "Organic farming",
-    date: "08 May 2024",
-    author: "Aditbiorganic",
-    img: "/images/partnership.jpg",
-    featured: false,
-  },
-];
+const posts = getAllBlogs();
 
-const categories = [
-  "All",
-  "Custom manufacturing",
-  "B2B procurement",
-  "Quality systems",
-  "Agriculture",
-  "Farming",
-  "Organic farming",
-];
+const categories = ["All", ...Array.from(new Set(posts.map((p) => p.topic)))];
 
 const audienceCards = [
   {
@@ -98,6 +32,14 @@ const audienceCards = [
 
 export const BlogPage = () => (
   <>
+    <SEOHead
+      title="Agriculture & Fertilizer Industry Blog — Insights for B2B Brands | Adit Biorganic"
+      description="Expert insights on organic fertilizer manufacturing, custom granule formulation, B2B procurement tips, sustainable agriculture, and quality assurance. From Adit Biorganic — ISO 9001:2015 certified manufacturer, Anand, Gujarat."
+      canonical="/blog"
+      ogImage="/images/granules.jpg"
+      keywords="fertilizer industry blog, organic agriculture insights, b2b fertilizer procurement, granule fertilizer trends, sustainable agriculture india, fertilizer manufacturing blog gujarat, custom formulation insights"
+      schema={[organizationSchema]}
+    />
     {/* ── Hero ── */}
     <section className="relative overflow-hidden border-b border-border bg-background">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(27,77,62,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(217,119,6,0.07),transparent_30%)]" />
@@ -123,7 +65,11 @@ export const BlogPage = () => (
             </div>
           </div>
           {/* Featured post preview */}
-          <div className="group relative overflow-hidden rounded-[32px] border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]" style={{ minHeight: "360px" }}>
+          <Link
+            to={`/blog/${posts[0].slug}`}
+            className="group relative overflow-hidden rounded-[32px] border border-border shadow-[0_24px_70px_rgba(15,23,42,0.08)]"
+            style={{ minHeight: "360px" }}
+          >
             <img
               src={posts[0].img}
               alt={posts[0].title}
@@ -135,9 +81,9 @@ export const BlogPage = () => (
                 {posts[0].topic}
               </span>
               <h3 className="mt-3 font-heading text-2xl font-semibold text-white">{posts[0].title}</h3>
-              <p className="mt-2 text-sm text-white/70">{posts[0].date} · {posts[0].author}</p>
+              <p className="mt-2 text-sm text-white/70">{posts[0].dateDisplay} · {posts[0].author}</p>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
@@ -169,9 +115,10 @@ export const BlogPage = () => (
         <p className="text-sm text-muted-foreground">{posts.length} articles</p>
       </div>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post, i) => (
-          <article
-            key={i}
+        {posts.map((post) => (
+          <Link
+            key={post.slug}
+            to={`/blog/${post.slug}`}
             className="group flex flex-col overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
           >
             {/* Image */}
@@ -186,10 +133,10 @@ export const BlogPage = () => (
               {/* Date badge */}
               <div className="absolute left-4 top-4 rounded-[14px] bg-secondary/90 px-3 py-2 text-center backdrop-blur-sm">
                 <p className="font-heading text-xl font-bold leading-none text-white">
-                  {post.date.split(" ")[0]}
+                  {post.dateDisplay.split(" ")[0]}
                 </p>
                 <p className="mt-0.5 text-xs font-semibold uppercase text-white/70">
-                  {post.date.split(" ")[1]} {post.date.split(" ")[2]}
+                  {post.dateDisplay.split(" ")[1]} {post.dateDisplay.split(" ")[2]}
                 </p>
               </div>
             </div>
@@ -202,7 +149,7 @@ export const BlogPage = () => (
                 </span>
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">
                   <Calendar className="h-3 w-3" />
-                  {post.date}
+                  {post.dateDisplay}
                 </span>
               </div>
               <h3 className="mt-4 font-heading text-lg font-semibold leading-7 text-foreground">
@@ -217,7 +164,7 @@ export const BlogPage = () => (
                 </span>
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </section>

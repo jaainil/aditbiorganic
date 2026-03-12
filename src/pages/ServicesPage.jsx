@@ -4,6 +4,9 @@ import { PageHero } from "@/components/PageHero";
 import { ServiceCard } from "@/components/ServiceCard";
 import { InquiryForm } from "@/components/InquiryForm";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
+import { organizationSchema, servicesSchema } from "@/data/seoSchemas";
+import { getAllServices } from "@/lib/content";
 
 const company = {
   name: "Adit Biorganic",
@@ -21,64 +24,7 @@ const coreFeatures = [
   "Promotes Long-Term Soil Health",
 ];
 
-const services = [
-  {
-    title: "Organic & Coated Granule Manufacturing",
-    concept: "Beyond standard fillers",
-    description:
-      "Unlike competitors who use plain bentonite, we manufacture custom 'Recipe Granules.' We create bases from Gypsum, Dolomite, or organic compost — perfectly tailored to your specific nutrient and coating needs.",
-    icon: "factory",
-    imageSrc: "/images/service-bg-1.jpg",
-  },
-  {
-    title: "Job Work / Contract Manufacturing",
-    concept: "Your brand, our facility",
-    description:
-      "We offer a 'plug-and-play' manufacturing solution for fertilizer brands. We handle the entire production cycle — from raw material sourcing to finished goods — so you can focus on your brand and market.",
-    icon: "leaf",
-    imageSrc: "/images/service-bg-2.jpg",
-  },
-  {
-    title: "Advanced Coating Services",
-    concept: "Precision, scale & quality",
-    description:
-      "Leverage our state-of-the-art coating infrastructure. Apply bio-pesticide liquids, powders, or active ingredients onto base granules with uniform coverage and reliable field performance at scale.",
-    icon: "shield",
-    imageSrc: "/images/service-bg-3.jpg",
-  },
-  {
-    title: "Laboratory & Testing Services",
-    concept: "Science-backed quality assurance",
-    description:
-      "Our ISO 9001:2015 certified in-house lab performs Raw Material Inspection, In-Process Quality Control (IPQC), and finished goods testing — so every batch that leaves meets exact client specifications.",
-    icon: "package",
-    imageSrc: "/images/service-bg-4.jpg",
-  },
-  {
-    title: "Custom Packaging & Private Labeling",
-    concept: "Market-ready finishing",
-    description:
-      "We provide semi-automated weighing, filling, and sealing services. Package your product in branded PP woven bags, HDPE containers, or any custom format required for your market.",
-    icon: "warehouse",
-    imageSrc: "/images/service-bg-5.jpg",
-  },
-  {
-    title: "Warehouse & Go-Down Facilities",
-    concept: "Secure supply chain storage",
-    description:
-      "Spacious, all-weather storage for both raw materials and finished goods. Our facility includes dedicated truck bays, organised stock management, and flexible access for partner logistics.",
-    icon: "truck",
-    imageSrc: "/images/service-bg-6.jpg",
-  },
-  {
-    title: "Infrastructure Leasing",
-    concept: "Strategic plant access",
-    description:
-      "A unique B2B service where you lease our production lines to run your proprietary formulas with your own teams. Ideal for brands that need capacity without capital expenditure.",
-    icon: "flask",
-    imageSrc: "/images/facility-overview.jpg",
-  },
-];
+const services = getAllServices();
 
 const processSteps = [
   {
@@ -113,6 +59,14 @@ const images = {
 
 export const ServicesPage = () => (
   <>
+    <SEOHead
+      title="B2B Fertilizer Manufacturing Services — Custom Formulation, Contract Mfg, Gujarat"
+      description="Adit Biorganic offers 7 B2B fertilizer manufacturing services: organic granule production (190+ MT/day), custom formulation, job work/contract manufacturing, coating services, ISO lab testing, private label packaging & warehouse facilities. Anand, Gujarat, India."
+      canonical="/services"
+      ogImage="/images/service-bg-1.jpg"
+      keywords="fertilizer contract manufacturing india, custom fertilizer formulation gujarat, b2b fertilizer manufacturing services, job work fertilizer manufacturer, private label fertilizer india, fertilizer coating services, granule manufacturing services gujarat"
+      schema={[organizationSchema, servicesSchema]}
+    />
     {/* ── Hero ── */}
     <PageHero
       eyebrow="Our Services"

@@ -1,0 +1,45 @@
+# Adit Biorganic Robots.txt
+# Optimized for Google, Bing, and AI Search Engines (ChatGPT, Perplexity, Claude)
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aditbiorganic.com/sitemap.xml
+
+# AI Search Engine Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1
+
+# Block unnecessary paths (if any)
+# Disallow: /api/
+# Disallow: /admin/
+# Disallow: /private/
+
+Host: https://aditbiorganic.com

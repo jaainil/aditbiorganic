@@ -4,6 +4,8 @@ import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, MoveRight, Phone } f
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { getProductBySlug, getRelatedProducts } from "@/data/products";
+import { SEOHead } from "@/components/SEOHead";
+import { organizationSchema, buildProductSchema, buildProductFaqSchema, breadcrumbSchema } from "@/data/seoSchemas";
 
 const company = {
   phoneDisplay: "+91 98250 45894",
@@ -27,6 +29,24 @@ export const ProductDetailPage = () => {
 
   return (
     <>
+      <SEOHead
+        title={`${product.title} — B2B Organic Fertilizer Granules | Adit Biorganic Gujarat`}
+        description={`Buy ${product.title} in bulk from Adit Biorganic — ISO 9001:2015 certified ${product.category} fertilizer manufacturer in Anand, Gujarat, India. ${product.summary} B2B supply & worldwide export available.`}
+        canonical={`/products/${product.slug}`}
+        ogImage={product.imageUrl}
+        ogType="product"
+        keywords={`${product.title}, ${product.title} manufacturer india, ${product.title} gujarat, ${product.category} fertilizer granules manufacturer, organic fertilizer manufacturer india, b2b fertilizer manufacturer gujarat, buy ${product.title} bulk, adit biorganic`}
+        schema={[
+          organizationSchema,
+          buildProductSchema(product),
+          buildProductFaqSchema(product),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: product.title, path: `/products/${product.slug}` },
+          ]),
+        ]}
+      />
       {/* Breadcrumb */}
       <div className="border-b border-border bg-muted/60">
         <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 text-sm text-muted-foreground sm:px-6 lg:px-8">
