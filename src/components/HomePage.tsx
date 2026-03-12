@@ -289,7 +289,7 @@ const HomePage = () => (
     </section>
 
     {/* ── Products Ticker / Marquee — like old site ── */}
-    <section className="py-12 lg:py-16">
+    <section className="py-12 lg:py-16 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
         <div className="text-center">
           <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
@@ -306,7 +306,7 @@ const HomePage = () => (
 
       {/* Scrolling product image strip */}
       <div className="relative overflow-hidden border-y border-border bg-muted py-6">
-        <div className="flex gap-0">
+        <div className="flex w-full gap-0">
           {/* First copy */}
           <div className="flex shrink-0 animate-[marquee_35s_linear_infinite] items-center gap-0">
             {[...productTicker, ...productTicker].map((p) => (
