@@ -8,6 +8,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { InsightCard } from "@/components/InsightCard";
 import { InquiryForm } from "@/components/InquiryForm";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { SEOHead } from "@/components/SEOHead";
 import { organizationSchema, websiteSchema, homeFaqSchema } from "@/data/seoSchemas";
 import { getAllBlogs } from "@/lib/content";
@@ -475,15 +476,15 @@ const HomePage = () => (
             <Link to="/products">View All Products</Link>
           </Button>
         </div>
-        <Carousel opts={{ align: "start", loop: true }} className="w-full">
-          <CarouselContent className="-ml-6 items-stretch">
+        <Carousel opts={{ align: "start", loop: true }} plugins={[Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })]} className="w-full">
+          <CarouselContent className="-ml-4 sm:-ml-6 items-stretch">
             {products.map((product) => (
-              <CarouselItem key={product.slug} className="pl-6 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={product.slug} className="pl-4 sm:pl-6 basis-[85%] sm:basis-1/2 lg:basis-1/3">
                 <Link
                   to={`/products/${product.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-border bg-surface-card shadow-[0_16px_50px_rgba(16,24,40,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,24,40,0.1)]"
                 >
-                  <div className="relative h-56 w-full shrink-0 overflow-hidden">
+                  <div className="relative h-48 sm:h-56 w-full shrink-0 overflow-hidden">
                     <img
                       src={product.imageUrl}
                       alt={product.title}
@@ -492,8 +493,8 @@ const HomePage = () => (
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-heading text-lg font-semibold text-foreground">{product.title}</h3>
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">{product.title}</h3>
                     <p className="mt-2 flex-1 text-sm leading-6 text-muted-foreground">{product.summary}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {product.fit.map((tag) => (
@@ -511,8 +512,8 @@ const HomePage = () => (
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="-left-4 top-1/2 -translate-y-1/2" />
-          <CarouselNext className="-right-4 top-1/2 -translate-y-1/2" />
+          <CarouselPrevious className="hidden md:flex -left-4 top-1/2 -translate-y-1/2" />
+          <CarouselNext className="hidden md:flex -right-4 top-1/2 -translate-y-1/2" />
         </Carousel>
       </div>
     </section>
