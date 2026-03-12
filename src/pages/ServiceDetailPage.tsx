@@ -100,8 +100,10 @@ export const ServiceDetailPage = () => {
             <ArrowLeft className="h-4 w-4" />
             All Services
           </Link>
-          <div className="mt-6 inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-            {concept}
+          <div className="mt-6 flex">
+            <div className="inline-flex rounded-full border border-border bg-surface-overlay px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+              {concept}
+            </div>
           </div>
           <h1 className="mt-4 font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             {title}
