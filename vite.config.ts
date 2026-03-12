@@ -5,25 +5,14 @@ import mdx from '@mdx-js/rollup';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import Sitemap from 'vite-plugin-sitemap';
-import viteCompression from 'vite-plugin-compression';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import banner from 'vite-plugin-banner';
 import { VitePWA } from 'vite-plugin-pwa';
-import sharp from 'sharp';
-import {
-  existsSync,
-  readFileSync,
-  readdirSync,
-  statSync,
-  writeFileSync,
-} from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
 const BASE_URL = 'https://aditbiorganic.com';
 const BUILD_DATE = new Date();
 const ROOT_DIR = process.cwd();
-const DIST_DIR = path.resolve(ROOT_DIR, 'dist');
-const SVG_WEBP_DENSITY = 192;
 
 function readTextIfExists(filePath: string): string {
   return existsSync(filePath) ? readFileSync(filePath, 'utf8') : '';
@@ -35,87 +24,6 @@ function readMdxSlugs(dirPath: string): string[] {
   return readdirSync(dirPath)
     .filter((file) => file.endsWith('.mdx'))
     .map((file) => file.replace(/\.mdx$/, ''));
-}
-
-function walkFiles(dirPath: string): string[] {
-  if (!existsSync(dirPath)) return [];
-
-  const entries = readdirSync(dirPath, { withFileTypes: true });
-
-  return entries.flatMap((entry) => {
-    const fullPath = path.join(dirPath, entry.name);
-
-    if (entry.isDirectory()) {
-      return walkFiles(fullPath);
-    }
-
-    return [fullPath];
-  });
-}
-
-interface LosslessWebpGeneratorOptions {
-  outDir?: string;
-  include?: RegExp;
-  writeEvenIfLarger?: boolean;
-  svgDensity?: number;
-}
-
-function losslessWebpGenerator(options: LosslessWebpGeneratorOptions = {}) {
-  const outDir = options.outDir || DIST_DIR;
-  const include = options.include || /\.(png|jpe?g|gif|svg)$/i;
-  const writeEvenIfLarger = options.writeEvenIfLarger ?? true;
-  const svgDensity = options.svgDensity || SVG_WEBP_DENSITY;
-
-  return {
-    name: 'lossless-webp-generator',
-    apply: 'build' as const,
-    async closeBundle() {
-      const files = walkFiles(outDir).filter((file) => include.test(file));
-
-      await Promise.all(
-        files.map(async (filePath) => {
-          const outputPath = filePath.replace(/\.[^.]+$/i, '.webp');
-          const originalSize = statSync(filePath).size;
-          const isGif = /\.gif$/i.test(filePath);
-          const isSvg = /\.svg$/i.test(filePath);
-
-          try {
-            const inputOptions: Parameters<typeof sharp>[1] = isGif
-              ? { animated: true }
-              : isSvg
-                ? { density: svgDensity }
-                : undefined;
-
-            const buffer = await sharp(filePath, inputOptions)
-              .webp({
-                lossless: true,
-                effort: 6,
-              })
-              .toBuffer();
-
-            if (!writeEvenIfLarger && buffer.length >= originalSize) {
-              return;
-            }
-
-            writeFileSync(outputPath, buffer);
-
-            const delta = originalSize - buffer.length;
-            const sign = delta >= 0 ? '-' : '+';
-
-            console.log(
-              `[webp] ${path.relative(outDir, filePath)} -> ${path.relative(
-                outDir,
-                outputPath,
-              )} (${sign}${Math.abs(delta)} bytes)`,
-            );
-          } catch (error) {
-            console.warn(`[webp] failed for ${filePath}`);
-            console.warn(error);
-          }
-        }),
-      );
-    },
-  };
 }
 
 const productsFile = path.resolve(ROOT_DIR, 'src/data/products.ts');
@@ -183,75 +91,6 @@ export default defineConfig({
     }),
 
     tailwindcss(),
-
-    ViteImageOptimizer({
-      test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,
-      includePublic: true,
-      cache: true,
-      logStats: true,
-
-      svg: {
-        multipass: true,
-        plugins: [
-          {
-            name: 'preset-default',
-            params: {
-              overrides: {
-                cleanupNumericValues: false,
-                removeViewBox: false,
-                convertPathData: false,
-              },
-            },
-          },
-          'sortAttrs',
-          {
-            name: 'addAttributesToSVGElement',
-            params: {
-              attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
-            },
-          },
-        ],
-      },
-
-      png: {
-        quality: 100,
-      },
-      jpeg: {
-        quality: 100,
-      },
-      jpg: {
-        quality: 100,
-      },
-      tiff: {
-        quality: 100,
-      },
-      webp: {
-        lossless: true,
-      },
-      avif: {
-        lossless: true,
-      },
-      gif: {},
-    }),
-
-    losslessWebpGenerator({
-      outDir: DIST_DIR,
-      include: /\.(png|jpe?g|gif|svg)$/i,
-      writeEvenIfLarger: true,
-      svgDensity: SVG_WEBP_DENSITY,
-    }),
-
-    viteCompression({
-      algorithm: 'gzip',
-      ext: '.gz',
-      threshold: 10240,
-    }),
-
-    viteCompression({
-      algorithm: 'brotliCompress',
-      ext: '.br',
-      threshold: 10240,
-    }),
 
     VitePWA({
       registerType: 'autoUpdate',
